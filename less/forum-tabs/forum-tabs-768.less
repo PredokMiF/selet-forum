@@ -1,0 +1,57 @@
+@media (max-device-width: 1279px) AND (min-device-width: 768px) {
+
+    .forum-select {
+        display: flex;
+        margin-top: 31px;
+        padding-left: 30px;
+        background-color: white;
+
+        .forum {
+            position: relative;
+            padding: 0 26px 0 44px;
+            color: #2e232d;
+            cursor: pointer;
+            transition: color ease 0.3s;
+
+            &:hover {
+                color: lighten(#2e232d, 10%)
+            }
+
+            &.active {
+                color: #62d0f2;
+                background-color: #2e232d;
+
+                &:hover {
+                    color: lighten(#62d0f2, 10%)
+                }
+            }
+
+            .forum-number {
+                position: absolute;
+                top: 8px;
+                left: 8px;
+                font-size: 57px;
+                font-weight: bold;
+                text-align: center;
+                line-height: 1;
+            }
+
+            .forum-body {
+                padding-top: 18px;
+                padding-bottom: 12px;
+                font-size: 10px;
+                line-height: 1.1;
+
+                .forum-dates {
+                    font-size: 8px;
+                }
+            }
+        }
+    }
+
+    .forum-select-split {
+        height: 5px;
+        background-color: #2e232d;
+    }
+
+}

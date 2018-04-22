@@ -1,0 +1,56 @@
+@media (min-device-width: 1280px) {
+
+    .forum-select {
+        display: flex;
+        margin-top: 50px;
+        padding-left: 50px;
+        background-color: white;
+
+        .forum {
+            position: relative;
+            padding: 0 26px 0 80px;
+            color: #2e232d;
+            cursor: pointer;
+            transition: color ease 0.3s;
+
+            &:hover {
+                color: lighten(#2e232d, 10%)
+            }
+
+            &.active {
+                color: #62d0f2;
+                background-color: #2e232d;
+
+                &:hover {
+                    color: lighten(#62d0f2, 10%)
+                }
+            }
+
+            .forum-number {
+                position: absolute;
+                top: 2px;
+                left: 20px;
+                font-size: 96px;
+                font-weight: bold;
+                text-align: center;
+            }
+
+            .forum-body {
+                padding-top: 30px;
+                padding-bottom: 20px;
+                font-size: 16px;
+                line-height: 1.1;
+
+                .forum-dates {
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+
+    .forum-select-split {
+        height: 20px;
+        background-color: #2e232d;
+    }
+
+}

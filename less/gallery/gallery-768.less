@@ -1,0 +1,97 @@
+@media (max-device-width: 1279px) AND (min-device-width: 768px) {
+
+    #galery-block {
+        position: relative;
+        height: 684px;
+        margin-bottom: 50px;
+        background: url("gallery-bg.png") 0 0 repeat;
+
+        a {
+            position: absolute;
+            display: block;
+
+            &:after {
+                position: absolute;
+                display: block;
+                content: '';
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                background-color: white;
+                opacity: 0;
+                transition: opacity ease 0.3s;
+            }
+
+            &:hover:after {
+                opacity: 0.1;
+            }
+        }
+
+        .img-001 {
+            top: 107px;
+            left: 32px;
+
+            img {
+                width: 288px;
+            }
+        }
+
+        .img-002 {
+            top: 310px;
+            left: 32px;
+
+            img {
+                width: 288px;
+            }
+        }
+
+        .img-003 {
+            top: 514px;
+            left: 152px;
+
+            img {
+                width: 168px;
+            }
+        }
+
+        .img-004 {
+            top: 43px;
+            left: 328px;
+
+            img {
+                width: 230px;
+            }
+        }
+
+        .img-005 {
+            top: 394px;
+            left: 328px;
+
+            img {
+                width: 348px;
+            }
+        }
+
+        .img-006 {
+            top: 97px;
+            left: 569px;
+
+            img {
+                width: 171px;
+            }
+        }
+
+        .img-007 {
+            top: 268px;
+            left: 569px;
+
+            img {
+                width: 171px;
+            }
+        }
+
+    }
+
+}
+

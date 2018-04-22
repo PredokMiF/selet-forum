@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="759 9477 69 76">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #3d5e98;
+      }
+
+      .cls-2 {
+        fill: #4c76be;
+      }
+
+      .cls-3 {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <g id="Group_409" data-name="Group 409" transform="translate(758.596 9477.077)">
+    <g id="Group_410" data-name="Group 410" transform="translate(0 6.757)">
+      <g id="Group_409-2" data-name="Group 409">
+        <rect id="Rectangle_472" data-name="Rectangle 472" class="cls-1" width="69" height="69" transform="translate(0.404 0.166)"/>
+      </g>
+    </g>
+    <rect id="Rectangle_473" data-name="Rectangle 473" class="cls-2" width="69" height="69" transform="translate(0.404 -0.077)"/>
+    <path id="Path_501" data-name="Path 501" class="cls-3" d="M25.7,12.13h5v-6c-.78,0-1.22-1-2-1h-4a9.805,9.805,0,0,0-6,2c-1.819,1.3-2.48,3.661-3,6a11.593,11.593,0,0,0,0,3v4h-6v8h6v18h7v-18h7c.26-2.339.48-5.661,1-8h-7v-5C23.437,12.791,24.137,12.13,25.7,12.13Z" transform="translate(14.708 8.793)"/>
+  </g>
+</svg>

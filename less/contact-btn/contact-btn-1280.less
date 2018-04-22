@@ -1,0 +1,40 @@
+@media (min-device-width: 1280px) {
+
+    .contact-btn {
+        width: 247px;
+        line-height: 51px;
+        border-radius: 50px;
+        border: solid 1px #ffffff;
+        font-size: 18px;
+        font-weight: 900;
+        color: #ffffff;
+        text-align: center;
+        text-decoration: none !important;
+        transition: color ease 0.3s, background-color ease-out 0.3s;
+
+        .contact-btn-inner {
+            position: relative;
+            display: inline-block;
+            line-height: 30px;
+
+            svg {
+                width: 29.4px;
+                height: 30px;
+                margin-right: 8px;
+                vertical-align: bottom;
+                fill: #ffffff;
+            }
+        }
+
+        &:hover {
+            color: #2e232d;
+            background-color: #ffffff;
+
+            svg {
+                fill: #2e232d;
+                transition: fill ease 0.3s;
+            }
+        }
+    }
+
+}

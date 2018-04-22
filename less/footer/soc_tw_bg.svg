@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="462 9477 68 75">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #634534;
+      }
+
+      .cls-2 {
+        fill: #7c5641;
+      }
+
+      .cls-3 {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <g id="Group_398" data-name="Group 398" transform="translate(461.536 9476.772)">
+    <g id="Group_397" data-name="Group 397" transform="translate(0 6.736)">
+      <g id="Group_396" data-name="Group 396">
+        <rect id="Rectangle_465" data-name="Rectangle 465" class="cls-1" width="68" height="68" transform="translate(0.464 0.491)"/>
+      </g>
+    </g>
+    <rect id="Rectangle_466" data-name="Rectangle 466" class="cls-2" width="68" height="69" transform="translate(0.464 0.228)"/>
+    <path id="Path_498" data-name="Path 498" class="cls-3" d="M72.7,6.364h-26c-3.109,0-5,2.891-5,6v25c0,3.109,1.891,6,5,6h26c3.109,0,5-2.891,5-6v-25C77.959,9.255,76.068,6.364,72.7,6.364Zm-5,5a1.047,1.047,0,0,1,1-1h4c.518,0,2,.482,2,1v4c0,.518-1.482,1-2,1h-4a1.047,1.047,0,0,1-1-1Zm-15,11a8.065,8.065,0,0,1,7-5,7.661,7.661,0,0,1,7,5c.259.777,0,1.223,0,2a7,7,0,1,1-14,0C52.7,23.587,52.441,23.141,52.7,22.364Zm22,15a2.094,2.094,0,0,1-2,2h-25a2.094,2.094,0,0,1-2-2v-15h3c-.259.777,0,1.223,0,2a11,11,0,1,0,22,0c0-1.036.259-1.223,0-2h4Z" transform="translate(-25.236 9.864)"/>
+  </g>
+</svg>

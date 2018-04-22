@@ -1,0 +1,92 @@
+@import "bootstrap-reboot.css";
+@import "../fonts/raleway.css";
+@import "../fonts/roboto.css";
+
+body {
+    width: 100%;
+    font-family: Raleway, sans-serif;
+    font-weight: 500;
+    color: #ffffff;
+
+    //background-color: lightpink;
+
+    .black-block {
+        color: #ffffff;
+        background-color: #2e232d;
+    }
+
+    .white-block {
+        color: #2e232d;
+        background-color: white;
+    }
+
+    h1, h2, h3, h4, h5 {
+        font-weight: 500;
+    }
+}
+
+.numbers {
+    font-family: Roboto, sans-serif;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (min-device-width: 1280px) {
+    body {
+        width: 1280px;
+        margin: 0 auto;
+        font-size: 20px;
+        line-height: 1.2;
+    }
+}
+
+@media (max-device-width: 1279px) AND (min-device-width: 768px) {
+    body {
+        width: 768px;
+        margin: 0 auto;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+}
+
+// Компонент табов
+
+.component-tab-wrapper {
+    .component-tab-header-wrapper {
+        .component-tab-header {}
+    }
+
+    .component-tab-body-wrapper {
+        .component-tab-body {
+            display: none;
+
+            &.active {
+                display: block;
+            }
+        }
+    }
+}
+
+@import "forum-tabs/forum-tabs";
+@import "contact-btn/contact-btn";
+
+
+@import "header/header";
+
+@import "statistic/statistic";
+
+@import "sel-forum/sel-forum";
+
+@import "speakers/speakers";
+
+@import "gallery/gallery";
+
+@import "faq/faq";
+
+@import "map/map";
+
+@import "org-and-partners/org-and-partners";
+
+@import "footer/footer";

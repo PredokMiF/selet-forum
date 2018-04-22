@@ -1,0 +1,105 @@
+@media (max-device-width: 1279px) AND (min-device-width: 768px) {
+
+    #footer-block {
+        position: relative;
+        height: 379px;
+        padding-top: 62px;
+
+
+        .social-link-wrapper {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto 65px;
+            width: 280px;
+
+            .social-link {
+                position: relative;
+                display: block;
+                width: 42px;
+                height: 42px;
+
+                &.selet {
+                    background: url("soc_selet_bg.svg") center center no-repeat;
+                }
+
+                &.tw {
+                    background: url("soc_tw_bg.svg") center center no-repeat;
+                }
+
+                &.vk {
+                    background: url("soc_vk_bg.svg") center center no-repeat;
+                }
+
+                &.yt {
+                    background: url("soc_yt_bg.svg") center center no-repeat;
+                }
+
+                &.f {
+                    background: url("soc_f_bg.svg") center center no-repeat;
+                }
+
+
+
+                &:after {
+                    position: absolute;
+                    display: block;
+                    content: '';
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background-color: white;
+                    opacity: 0;
+                    transition: opacity ease 0.3s;
+                }
+
+                &:hover:after {
+                    opacity: 0.1;
+                }
+            }
+        }
+
+        .callback-text {
+            line-height: 24px;
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 25px;
+
+            .callback-text-qst {
+                font-size: 20px;
+                font-weight: 900;
+            }
+        }
+
+        .contact-btn-wrapper {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto 96px;
+            width: 600px;
+        }
+
+        .copyright {
+            position: absolute;
+            left: 37px;
+            bottom: 25px;
+        }
+
+        .master {
+            position: absolute;
+            right: 31px;
+            bottom: 23px;
+
+            a {
+                @color: #fbd33a;
+                color: @color;
+                transition: color ease 0.3s;
+                text-decoration: underline;
+
+                &:hover {
+                    color: lighten(@color, 10%);
+                }
+            }
+        }
+    }
+
+}
