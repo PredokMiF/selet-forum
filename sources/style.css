@@ -656,6 +656,14 @@ body h5 {
     line-height: 1.5;
   }
 }
+@media (max-device-width: 767px) {
+  body {
+    width: 414px;
+    margin: 0 auto;
+    font-size: 20px;
+    line-height: 1.5;
+  }
+}
 .component-tab-wrapper .component-tab-body-wrapper .component-tab-body {
   display: none;
 }
@@ -812,6 +820,41 @@ body h5 {
     width: 30px;
     height: 28px;
     margin-right: 14px;
+    vertical-align: bottom;
+    fill: #ffffff;
+  }
+  .contact-btn:hover {
+    color: #2e232d;
+    background-color: #ffffff;
+  }
+  .contact-btn:hover svg {
+    fill: #2e232d;
+    transition: fill ease 0.3s;
+  }
+}
+@media (max-device-width: 767px) {
+  .contact-btn {
+    width: 227px;
+    line-height: 51px;
+    border-radius: 24px;
+    border: solid 1px #ffffff;
+    font-size: 18px;
+    font-weight: 900;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none !important;
+    transition: color ease 0.3s, background-color ease-out 0.3s;
+  }
+  .contact-btn .contact-btn-inner {
+    position: relative;
+    display: inline-block;
+    line-height: 31px;
+    font-size: 18px;
+  }
+  .contact-btn .contact-btn-inner svg {
+    width: 31px;
+    height: 32px;
+    margin-right: 12px;
     vertical-align: bottom;
     fill: #ffffff;
   }
@@ -997,6 +1040,76 @@ body h5 {
   }
   #header-block .I-will-wrapper .I-will:hover {
     color: #e6e6e6;
+  }
+}
+@media (max-device-width: 767px) {
+  #header-block {
+    position: relative;
+    height: 589px;
+    background: url(app-header-bg-414.png) top center no-repeat;
+  }
+  #header-block iframe {
+    display: none;
+  }
+  #header-block .lang-sel {
+    padding-top: 20px;
+    font-weight: 900;
+    text-align: center;
+  }
+  #header-block .lang-sel .rus {
+    padding: 0 16px 0 24px;
+    border-radius: 24px 0 0 24px;
+  }
+  #header-block .lang-sel .tat {
+    margin-left: -1px;
+    padding: 0 24px 0 15px;
+    border-radius: 0 24px 24px 0;
+  }
+  #header-block .lang-sel .rus,
+  #header-block .lang-sel .tat {
+    display: inline-block;
+    line-height: 50px;
+    cursor: pointer;
+    border: solid 1px;
+    background: transparent;
+    transition: background-color ease 0.3s;
+  }
+  #header-block .lang-sel .rus.active,
+  #header-block .lang-sel .tat.active {
+    background: rgba(255, 255, 255, 0.3);
+  }
+  #header-block .contact-btn-wrapper {
+    position: absolute;
+    top: 445px;
+    right: 93px;
+  }
+  #header-block .contact-btn-wrapper .contact-btn {
+    display: block;
+    margin-bottom: 10px;
+    border: solid 1px #2e232d;
+    color: #2e232d;
+  }
+  #header-block .contact-btn-wrapper .contact-btn svg {
+    fill: #2e232d;
+  }
+  #header-block .contact-btn-wrapper .contact-btn:hover {
+    color: #4b3949;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  #header-block .contact-btn-wrapper .contact-btn:hover svg {
+    fill: #4b3949;
+  }
+  #header-block .emblem {
+    position: absolute;
+    top: 139px;
+    left: 50%;
+    margin-left: -52px;
+    width: 104px;
+    height: 280px;
+    background: url(app-header-salet.svg) 0 0 no-repeat;
+  }
+  #header-block .I-will-wrapper {
+    display: none;
   }
 }
 @media (min-device-width: 1280px) {
@@ -1201,6 +1314,63 @@ body h5 {
     text-align: center;
   }
   #statistic-block .round-tent-count .text {
+    text-align: center;
+  }
+}
+@media (max-device-width: 767px) {
+  #statistic-block {
+    position: relative;
+    background: url(app-statistic-bg-414.png) top center no-repeat;
+  }
+  #statistic-block p {
+    width: 400px;
+    margin: 0 auto;
+    padding-bottom: 30px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 30px;
+  }
+  #statistic-block .statistic-wrapper {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding-top: 80px;
+  }
+  #statistic-block .statistic {
+    width: 190px;
+    padding-bottom: 40px;
+  }
+  #statistic-block .statistic .numbers {
+    font-size: 107px;
+    font-weight: 900;
+    line-height: 0.90;
+    text-align: center;
+  }
+  #statistic-block .statistic .text {
+    font-weight: 800;
+    line-height: 1;
+    text-align: center;
+  }
+  #statistic-block .participant-count .numbers {
+    color: #fa4c5f;
+  }
+  #statistic-block .summer-shifts .numbers {
+    color: #fbd33a;
+  }
+  #statistic-block .rf-regions .numbers {
+    color: #60d0dd;
+  }
+  #statistic-block .summer-forums .numbers {
+    color: #fbd33a;
+  }
+  #statistic-block .tent-count .numbers {
+    color: #fa4c5f;
+  }
+  #statistic-block .round-tent-count .numbers {
+    color: #60d0dd;
     text-align: center;
   }
 }

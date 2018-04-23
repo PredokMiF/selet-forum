@@ -51,21 +51,12 @@ body {
     }
 }
 
-// Компонент табов
-
-.component-tab-wrapper {
-    .component-tab-header-wrapper {
-        .component-tab-header {}
-    }
-
-    .component-tab-body-wrapper {
-        .component-tab-body {
-            display: none;
-
-            &.active {
-                display: block;
-            }
-        }
+@media (max-device-width: 767px) {
+    body {
+        width: 414px;
+        margin: 0 auto;
+        font-size: 20px;
+        line-height: 1.5;
     }
 }
 
