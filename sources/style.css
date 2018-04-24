@@ -765,6 +765,79 @@ body h5 {
     background-color: #2e232d;
   }
 }
+@media (max-device-width: 767px) {
+  .forum-select {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin-top: 27px;
+    background-color: white;
+  }
+  .forum-select .forum {
+    position: relative;
+    width: 33%;
+    -ms-flex-positive: 1;
+        flex-grow: 1;
+    margin: 20px -1px 10px 0;
+    padding-left: 50px;
+    color: #2e232d;
+    border-width: 1px;
+    border-style: none solid none none;
+    cursor: pointer;
+    transition: color ease 0.3s;
+  }
+  .forum-select .forum:hover {
+    color: #4b3949;
+  }
+  .forum-select .forum.active {
+    color: #62d0f2;
+    border: none;
+  }
+  .forum-select .forum.active:before {
+    position: absolute;
+    display: block;
+    content: '';
+    left: 0;
+    top: -17px;
+    right: 0;
+    bottom: -17px;
+    background-color: #2e232d;
+  }
+  .forum-select .forum.active:hover {
+    color: #91def6;
+  }
+  .forum-select .forum.active:hover:before {
+    background-color: #4b3949;
+  }
+  .forum-select .forum .forum-number {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 50px;
+    font-size: 67px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 0.7;
+  }
+  .forum-select .forum .forum-body {
+    position: relative;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 12px;
+    line-height: 1.1;
+  }
+  .forum-select .forum .forum-body .forum-header {
+    font-weight: 800;
+    letter-spacing: 1.4px;
+  }
+  .forum-select .forum .forum-body .forum-dates {
+    font-size: 10px;
+  }
+  .forum-select-split {
+    padding-bottom: 20px;
+  }
+}
 @media (min-device-width: 1280px) {
   .contact-btn {
     width: 247px;
@@ -1407,7 +1480,8 @@ body h5 {
     background: url(app-forum-06.svg) 0 0 repeat;
     background-size: 100%;
   }
-  #sel-forum-block .sel-forum-text-column-wrapper {
+  #sel-forum-block .sel-forum-text-column-wrapper,
+  #sel-forum-block .sel-forum-text-column-wrapper .carousel-page {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: center;
@@ -1496,7 +1570,8 @@ body h5 {
     background: url(app-forum-06.svg) 0 0 repeat;
     background-size: 100%;
   }
-  #sel-forum-block .sel-forum-text-column-wrapper {
+  #sel-forum-block .sel-forum-text-column-wrapper,
+  #sel-forum-block .sel-forum-text-column-wrapper .carousel-page {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: center;
@@ -1547,6 +1622,124 @@ body h5 {
   #sel-forum-block .video iframe {
     position: relative;
     z-index: 1;
+  }
+}
+@media (max-device-width: 767px) {
+  #sel-forum-block {
+    padding-top: 29px;
+  }
+  #sel-forum-block h3 {
+    font-weight: 800;
+    font-size: 20px;
+    text-align: center;
+  }
+  #sel-forum-block .sel-forum-page {
+    padding-bottom: 20px;
+  }
+  #sel-forum-block .component-tab-body[data-page-id="SOFT SKILS"] {
+    background: url(app-forum-01.svg) 0 0 repeat;
+    background-size: 100%;
+  }
+  #sel-forum-block .component-tab-body[data-page-id="ARTS"] {
+    background: url(app-forum-02.svg) 0 0 repeat;
+    background-size: 100%;
+  }
+  #sel-forum-block .component-tab-body[data-page-id="SELET"] {
+    background: url(app-forum-03.svg) 0 0 repeat;
+    background-size: 100%;
+  }
+  #sel-forum-block .component-tab-body[data-page-id="IT"] {
+    background: url(app-forum-04.svg) 0 0 repeat;
+    background-size: 100%;
+  }
+  #sel-forum-block .component-tab-body[data-page-id="LEADERS"] {
+    background: url(app-forum-05.svg) 0 0 repeat;
+    background-size: 100%;
+  }
+  #sel-forum-block .component-tab-body[data-page-id="MEDIA"] {
+    background: url(app-forum-06.svg) 0 0 repeat;
+    background-size: 100%;
+  }
+  #sel-forum-block .carousel-wrapper {
+    display: -ms-flexbox;
+    display: flex;
+  }
+  #sel-forum-block .carousel-wrapper .carousel-viewport {
+    position: relative;
+    overflow: hidden;
+    -ms-flex-positive: 0;
+        flex-grow: 0;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    -ms-flex-preferred-size: 294px;
+        flex-basis: 294px;
+    height: 460px;
+  }
+  #sel-forum-block .carousel-wrapper .carousel-flip {
+    -ms-flex-positive: 0;
+        flex-grow: 0;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    -ms-flex-preferred-size: 60px;
+        flex-basis: 60px;
+    cursor: pointer;
+  }
+  #sel-forum-block .carousel-wrapper .carousel-flip[data-flip=prev] {
+    background: url(app-flip-left.png) center center no-repeat;
+  }
+  #sel-forum-block .carousel-wrapper .carousel-flip[data-flip=next] {
+    background: url(app-flip-right.png) center center no-repeat;
+  }
+  #sel-forum-block .carousel-wrapper .carousel-page {
+    position: absolute;
+    top: 0;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 294px;
+    transition: left 0.3s ease-in-out;
+  }
+  #sel-forum-block .carousel-wrapper .carousel-card {
+    width: 294px;
+    height: 460px;
+    padding: 42px 0 0;
+    margin: 0;
+    border-radius: 5px;
+    font-size: 20px;
+  }
+  #sel-forum-block .carousel-wrapper .carousel-card h5 {
+    display: none;
+  }
+  #sel-forum-block .carousel-paging {
+    text-align: center;
+    padding: 22px 0 50px;
+  }
+  #sel-forum-block .carousel-paging .carousel-paging-item {
+    display: inline-block;
+    cursor: pointer;
+    padding: 5px;
+  }
+  #sel-forum-block .carousel-paging .carousel-paging-item .carousel-paging-item-inner {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 6px;
+    background-color: #ffffff;
+    border: solid 1px #707070;
+  }
+  #sel-forum-block .carousel-paging .carousel-paging-item.active .carousel-paging-item-inner {
+    background-color: #707070;
+    border: solid 1px #707070;
+  }
+  #sel-forum-block .video {
+    border-top: 10px solid #fbd33a;
+    border-bottom: 10px solid #fa4c5f;
+  }
+  #sel-forum-block .video iframe {
+    display: block;
+    width: 414px;
+    height: 232px;
   }
 }
 @media (min-device-width: 1280px) {
@@ -1732,6 +1925,109 @@ body h5 {
     left: -39px;
     top: -13px;
     font-size: 61px;
+    font-weight: 900;
+    line-height: 1;
+  }
+  #speakers-block .speaker-block.avatar-yellow .speaker-img-bg {
+    background-color: #fbd33a;
+  }
+  #speakers-block .speaker-block.avatar-yellow .speaker-intro:before {
+    color: #fbd33a;
+  }
+  #speakers-block .speaker-block.avatar-red .speaker-img-bg {
+    background-color: #fa4c5f;
+  }
+  #speakers-block .speaker-block.avatar-red .speaker-intro:before {
+    color: #fa4c5f;
+  }
+  #speakers-block .speaker-block.avatar-aqua .speaker-img-bg {
+    background-color: #60d0dd;
+  }
+  #speakers-block .speaker-block.avatar-aqua .speaker-intro:before {
+    color: #60d0dd;
+  }
+  #speakers-block .speaker-block.avatar-pink .speaker-img-bg {
+    background-color: #e35393;
+  }
+  #speakers-block .speaker-block.avatar-pink .speaker-intro:before {
+    color: #e35393;
+  }
+}
+@media (max-device-width: 767px) {
+  #speakers-block {
+    padding-top: 50px;
+    padding-bottom: 13px;
+  }
+  #speakers-block .speaker-block {
+    width: 294px;
+    margin: 0 auto 40px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+  }
+  #speakers-block .speaker-block .speaker-avatar {
+    position: relative;
+    padding: 8px;
+    text-align: center;
+  }
+  #speakers-block .speaker-block .speaker-avatar .speaker-img-bg {
+    position: absolute;
+    display: block;
+    width: 222px;
+    height: 222px;
+    border-radius: 110px;
+    left: 50%;
+    margin-left: -111px;
+  }
+  #speakers-block .speaker-block .speaker-avatar img {
+    position: relative;
+    width: 222px;
+  }
+  #speakers-block .speaker-block.avatar-bg-lt .speaker-img-bg {
+    margin-left: -119px;
+    top: 0;
+  }
+  #speakers-block .speaker-block.avatar-bg-lb .speaker-img-bg {
+    margin-left: -119px;
+    top: 16px;
+  }
+  #speakers-block .speaker-block.avatar-bg-rt .speaker-img-bg {
+    margin-left: -103px;
+    top: 0;
+  }
+  #speakers-block .speaker-block.avatar-bg-rb .speaker-img-bg {
+    margin-left: -103px;
+    top: 16px;
+  }
+  #speakers-block .speaker-block .speaker-body {
+    padding-top: 14px;
+  }
+  #speakers-block .speaker-block .speaker-body h5 {
+    text-align: center;
+    margin-bottom: 12px;
+    font-size: 30px;
+    font-weight: 900;
+    line-height: 1;
+    text-shadow: 2px 2px 0 #ffffff;
+    -webkit-text-stroke: 1px #ffffff;
+  }
+  #speakers-block .speaker-block .speaker-body .speaker-info {
+    line-height: 1.2;
+    text-align: center;
+  }
+  #speakers-block .speaker-block .speaker-body .speaker-intro {
+    position: relative;
+    margin: 35px 0 0 40px;
+    width: 254px;
+    font-weight: 900;
+    line-height: 1.2;
+  }
+  #speakers-block .speaker-block .speaker-body .speaker-intro:before {
+    position: absolute;
+    display: block;
+    content: '\201C';
+    left: -66px;
+    top: -28px;
+    font-size: 103px;
     font-weight: 900;
     line-height: 1;
   }
@@ -1961,12 +2257,13 @@ body h5 {
     font-weight: 500;
     text-align: center;
   }
-  #faq-block .faq-carousel-wrapper {
+  #faq-block .carousel-wrapper {
     display: -ms-flexbox;
     display: flex;
+    padding-bottom: 40px;
     color: #2e232d;
   }
-  #faq-block .faq-carousel-wrapper .faq-carousel-viewport {
+  #faq-block .carousel-wrapper .carousel-viewport {
     position: relative;
     overflow: hidden;
     -ms-flex-positive: 0;
@@ -1977,7 +2274,7 @@ body h5 {
         flex-basis: 1080px;
     height: 616px;
   }
-  #faq-block .faq-carousel-wrapper .faq-carousel-flip {
+  #faq-block .carousel-wrapper .carousel-flip {
     -ms-flex-positive: 0;
         flex-grow: 0;
     -ms-flex-negative: 0;
@@ -1986,13 +2283,13 @@ body h5 {
         flex-basis: 100px;
     cursor: pointer;
   }
-  #faq-block .faq-carousel-wrapper .faq-carousel-flip[data-flip=prev] {
+  #faq-block .carousel-wrapper .carousel-flip[data-flip=prev] {
     background: url(app-flip-left.png) center center no-repeat;
   }
-  #faq-block .faq-carousel-wrapper .faq-carousel-flip[data-flip=next] {
+  #faq-block .carousel-wrapper .carousel-flip[data-flip=next] {
     background: url(app-flip-right.png) center center no-repeat;
   }
-  #faq-block .faq-carousel-wrapper .faq-carousel-page {
+  #faq-block .carousel-wrapper .carousel-page {
     position: absolute;
     top: 0;
     display: -ms-flexbox;
@@ -2002,7 +2299,7 @@ body h5 {
     width: 1080px;
     transition: left 0.3s ease-in-out;
   }
-  #faq-block .faq-carousel-wrapper .faq-carousel-card {
+  #faq-block .carousel-wrapper .carousel-card {
     width: 344px;
     height: 288px;
     margin-right: 24px;
@@ -2010,35 +2307,35 @@ body h5 {
     border-radius: 5px;
     padding: 16px 20px 0;
   }
-  #faq-block .faq-carousel-wrapper .faq-carousel-card.last {
+  #faq-block .carousel-wrapper .carousel-card.last {
     margin-right: 0;
   }
-  #faq-block .faq-carousel-wrapper .faq-carousel-card h5 {
+  #faq-block .carousel-wrapper .carousel-card h5 {
     margin: 0;
     height: 137px;
     font-size: 20px;
     font-weight: 900;
     line-height: 1.5;
   }
-  #faq-block .faq-carousel-wrapper .faq-carousel-card.card-red {
+  #faq-block .carousel-wrapper .carousel-card.card-red {
     background-color: #fa4c5f;
   }
-  #faq-block .faq-carousel-wrapper .faq-carousel-card.card-aqua {
+  #faq-block .carousel-wrapper .carousel-card.card-aqua {
     background-color: #60d0dd;
   }
-  #faq-block .faq-carousel-wrapper .faq-carousel-card.card-yellow {
+  #faq-block .carousel-wrapper .carousel-card.card-yellow {
     background-color: #fbd33a;
   }
-  #faq-block .faq-carousel-paging {
+  #faq-block .carousel-paging {
     text-align: center;
-    padding: 40px 0;
+    padding-bottom: 40px;
   }
-  #faq-block .faq-carousel-paging .faq-carousel-paging-item {
+  #faq-block .carousel-paging .carousel-paging-item {
     display: inline-block;
     cursor: pointer;
     padding: 5px;
   }
-  #faq-block .faq-carousel-paging .faq-carousel-paging-item .faq-carousel-paging-item-inner {
+  #faq-block .carousel-paging .carousel-paging-item .carousel-paging-item-inner {
     display: inline-block;
     width: 14px;
     height: 14px;
@@ -2046,7 +2343,7 @@ body h5 {
     background-color: #ffffff;
     border: solid 1px #707070;
   }
-  #faq-block .faq-carousel-paging .faq-carousel-paging-item.active .faq-carousel-paging-item-inner {
+  #faq-block .carousel-paging .carousel-paging-item.active .carousel-paging-item-inner {
     background-color: #fbd33a;
     border: solid 1px #707070;
   }
@@ -2120,12 +2417,12 @@ body h5 {
     font-weight: 500;
     text-align: center;
   }
-  #faq-block .faq-carousel-wrapper {
+  #faq-block .carousel-wrapper {
     display: -ms-flexbox;
     display: flex;
     color: #2e232d;
   }
-  #faq-block .faq-carousel-wrapper .faq-carousel-viewport {
+  #faq-block .carousel-wrapper .carousel-viewport {
     position: relative;
     overflow: hidden;
     -ms-flex-positive: 0;
@@ -2136,7 +2433,7 @@ body h5 {
         flex-basis: 668px;
     height: 596px;
   }
-  #faq-block .faq-carousel-wrapper .faq-carousel-flip {
+  #faq-block .carousel-wrapper .carousel-flip {
     -ms-flex-positive: 0;
         flex-grow: 0;
     -ms-flex-negative: 0;
@@ -2145,13 +2442,13 @@ body h5 {
         flex-basis: 50px;
     cursor: pointer;
   }
-  #faq-block .faq-carousel-wrapper .faq-carousel-flip[data-flip=prev] {
+  #faq-block .carousel-wrapper .carousel-flip[data-flip=prev] {
     background: url(app-flip-left.png) center center no-repeat;
   }
-  #faq-block .faq-carousel-wrapper .faq-carousel-flip[data-flip=next] {
+  #faq-block .carousel-wrapper .carousel-flip[data-flip=next] {
     background: url(app-flip-right.png) center center no-repeat;
   }
-  #faq-block .faq-carousel-wrapper .faq-carousel-page {
+  #faq-block .carousel-wrapper .carousel-page {
     position: absolute;
     top: 0;
     display: -ms-flexbox;
@@ -2161,7 +2458,7 @@ body h5 {
     width: 668px;
     transition: left 0.3s ease-in-out;
   }
-  #faq-block .faq-carousel-wrapper .faq-carousel-card {
+  #faq-block .carousel-wrapper .carousel-card {
     width: 322px;
     height: 288px;
     margin-right: 24px;
@@ -2170,35 +2467,35 @@ body h5 {
     padding: 16px 20px 0;
     font-size: 20px;
   }
-  #faq-block .faq-carousel-wrapper .faq-carousel-card.last {
+  #faq-block .carousel-wrapper .carousel-card.last {
     margin-right: 0;
   }
-  #faq-block .faq-carousel-wrapper .faq-carousel-card h5 {
+  #faq-block .carousel-wrapper .carousel-card h5 {
     margin: 0;
     height: 137px;
     font-size: 20px;
     font-weight: 900;
     line-height: 1.5;
   }
-  #faq-block .faq-carousel-wrapper .faq-carousel-card.card-red {
+  #faq-block .carousel-wrapper .carousel-card.card-red {
     background-color: #fa4c5f;
   }
-  #faq-block .faq-carousel-wrapper .faq-carousel-card.card-aqua {
+  #faq-block .carousel-wrapper .carousel-card.card-aqua {
     background-color: #60d0dd;
   }
-  #faq-block .faq-carousel-wrapper .faq-carousel-card.card-yellow {
+  #faq-block .carousel-wrapper .carousel-card.card-yellow {
     background-color: #fbd33a;
   }
-  #faq-block .faq-carousel-paging {
+  #faq-block .carousel-paging {
     text-align: center;
     padding: 30px 0 50px;
   }
-  #faq-block .faq-carousel-paging .faq-carousel-paging-item {
+  #faq-block .carousel-paging .carousel-paging-item {
     display: inline-block;
     cursor: pointer;
     padding: 5px;
   }
-  #faq-block .faq-carousel-paging .faq-carousel-paging-item .faq-carousel-paging-item-inner {
+  #faq-block .carousel-paging .carousel-paging-item .carousel-paging-item-inner {
     display: inline-block;
     width: 14px;
     height: 14px;
@@ -2206,7 +2503,7 @@ body h5 {
     background-color: #ffffff;
     border: solid 1px #707070;
   }
-  #faq-block .faq-carousel-paging .faq-carousel-paging-item.active .faq-carousel-paging-item-inner {
+  #faq-block .carousel-paging .carousel-paging-item.active .carousel-paging-item-inner {
     background-color: #fbd33a;
     border: solid 1px #707070;
   }
@@ -2234,6 +2531,23 @@ body h5 {
     position: absolute;
     width: 100%;
     top: 34px;
+    font-size: 20px;
+    text-align: center;
+  }
+  #map-block img {
+    width: 100%;
+  }
+}
+@media (max-device-width: 767px) {
+  #map-block {
+    position: relative;
+    background-color: #4ea9a4;
+    padding-top: 34px;
+  }
+  #map-block h3 {
+    position: absolute;
+    width: 100%;
+    top: 27px;
     font-size: 20px;
     text-align: center;
   }

@@ -12,13 +12,17 @@ export function initComponents(wrapper) {
 
     // CAROUSEL
 
-    $wrapper.find('.faq-carousel-wrapper').each((i, el) => {
+    $wrapper.find('.carousel-wrapper').each((i, el) => {
         initCarousel(el)
     })
 
 }
 
 $(initComponents);
+
+$(window).on('resize', () => {
+    setInterval(initComponents, 1000)
+});
 
 (function () {
     const galeryList = document.getElementsByClassName('galery')

@@ -86,12 +86,16 @@ function initComponents(wrapper) {
 
     // CAROUSEL
 
-    $wrapper.find('.faq-carousel-wrapper').each(function (i, el) {
+    $wrapper.find('.carousel-wrapper').each(function (i, el) {
         Object(__WEBPACK_IMPORTED_MODULE_0__carousel__["a" /* initCarousel */])(el);
     });
 }
 
 $(initComponents);
+
+$(window).on('resize', function () {
+    setInterval(initComponents, 1000);
+});
 
 (function () {
     var galeryList = document.getElementsByClassName('galery');
@@ -108,34 +112,38 @@ $(initComponents);
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = initCarousel;
 function initCarousel(el) {
+    var $el = $(el);
     var $cWrapper = $(el);
-    var $cViewport = $cWrapper.find('.faq-carousel-viewport');
-    var $cPaging = $cWrapper.parent().find('.faq-carousel-paging');
+    var $cViewport = $cWrapper.find('.carousel-viewport');
+    var $cPaging = $cWrapper.parent().find('.carousel-paging');
 
-    if ($cWrapper.data('initialized')) {
-        return;
-    }
     $cWrapper.data('initialized', 'true');
 
-    var fullWwidth = $cWrapper.outerWidth();
+    var fullWidth = $cWrapper.outerWidth();
     var width = $cViewport.outerWidth();
 
-    var pageSize = fullWwidth >= 1280 ? 6 : fullWwidth >= 768 ? 4 : 1;
+    var pageSize = new Function('fullWidth', $el.data('coutFoo'))(fullWidth); //fullWidth >= 1280 ? 6 : fullWidth >= 768 ? 4 : 1
     var pageCloumns = Math.ceil(pageSize / 2);
     var pages = [];
 
-    var space = (width - $cViewport.find('.faq-carousel-card').outerWidth() * pageCloumns) / (pageCloumns === 1 ? 1 : pageCloumns - 1);
+    var space = (width - $cViewport.find('.carousel-card').outerWidth() * pageCloumns) / (pageCloumns === 1 ? 1 : pageCloumns - 1);
     var stepWidth = width + space;
+
+    if ($cWrapper.data('initialized') && pageSize.toString() === $el.data('pageSize')) {
+        return;
+    }
+
+    $el.data('pageSize', pageSize.toString());
 
     $cViewport[0].scrollLeft = 0;
 
-    var $cardList = $cViewport.find('.faq-carousel-card');
+    var $cardList = $cViewport.find('.carousel-card');
 
     $cardList.removeClass('last');
 
     $cardList.each(function (i, el) {
         if (i % pageSize === 0) {
-            var $page = $('<div class="faq-carousel-page"></div>');
+            var $page = $('<div class="carousel-page"></div>');
 
             $page.css('left', pages.length * stepWidth + 'px');
 
@@ -152,9 +160,15 @@ function initCarousel(el) {
         return $cViewport.append($el);
     });
 
+    if (pages.length > 1) {
+        $el.addClass('multipage').removeClass('singlepage');
+    } else {
+        $el.addClass('singlepage').removeClass('multipage');
+    }
+
     $cPaging.empty();
     pages.forEach(function (el, i) {
-        var $pagingItem = $('<div class="faq-carousel-paging-item"><div class="faq-carousel-paging-item-inner"></div></div>');
+        var $pagingItem = $('<div class="carousel-paging-item"><div class="carousel-paging-item-inner"></div></div>');
 
         if (i === 0) {
             $pagingItem.addClass('active');
@@ -163,12 +177,11 @@ function initCarousel(el) {
 
         $cPaging.append($pagingItem);
     });
-    //
 
     // ACIONS
 
     var active = 0;
-    $cWrapper.on('click', '.faq-carousel-flip', function (e) {
+    $cWrapper.on('click', '.carousel-flip', function (e) {
         var $btn = $(e.currentTarget);
         $btn.data('flip') === 'prev' ? active-- : active++;
 
@@ -181,7 +194,7 @@ function initCarousel(el) {
         flip();
     });
 
-    $cWrapper.parent().on('click', '.faq-carousel-paging-item', function (e) {
+    $cWrapper.parent().on('click', '.carousel-paging-item', function (e) {
         var $btn = $(e.currentTarget);
 
         var newActive = +$btn.data('active');
@@ -195,18 +208,17 @@ function initCarousel(el) {
     // HELPERS
 
     function flip() {
-        $cViewport.find('.faq-carousel-page').each(function (i, el) {
+        $cViewport.find('.carousel-page').each(function (i, el) {
             $(el).css('left', i * stepWidth - active * stepWidth + 'px');
         });
 
-        var $pagingItems = $cPaging.find('.faq-carousel-paging-item');
+        var $pagingItems = $cPaging.find('.carousel-paging-item');
         $pagingItems.removeClass('active');
         $($pagingItems[active]).addClass('active');
     }
 }
-//
-//
-// });
+
+window.initCarousel = initCarousel;
 
 /***/ }),
 /* 2 */

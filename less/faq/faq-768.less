@@ -80,7 +80,7 @@
             text-align: center;
         }
 
-        .faq-carousel-wrapper {
+        .carousel-wrapper {
             display: flex;
             color: #2e232d;
 
@@ -90,7 +90,7 @@
             @cardHeight: 288px;
             @cardPadBotom: 20px;
 
-            .faq-carousel-viewport {
+            .carousel-viewport {
                 position: relative;
                 overflow: hidden;
                 flex-grow: 0;
@@ -99,7 +99,7 @@
                 height: @cardHeight * 2 + @cardPadBotom;
             }
 
-            .faq-carousel-flip {
+            .carousel-flip {
                 flex-grow: 0;
                 flex-shrink: 0;
                 flex-basis: @flipWidth;
@@ -114,7 +114,7 @@
                 }
             }
 
-            .faq-carousel-page {
+            .carousel-page {
                 position: absolute;
                 top: 0;
                 display: flex;
@@ -123,7 +123,7 @@
                 transition: left 0.3s ease-in-out;
             }
 
-            .faq-carousel-card {
+            .carousel-card {
                 width: @cardWidth;
                 height: @cardHeight;
                 margin-right: @resolution - @flipWidth * 2 - @cardWidth * 2;
@@ -158,16 +158,16 @@
             }
         }
 
-        .faq-carousel-paging {
+        .carousel-paging {
             text-align: center;
             padding: 30px 0 50px;
 
-            .faq-carousel-paging-item {
+            .carousel-paging-item {
                 display: inline-block;
                 cursor: pointer;
                 padding: 5px;
 
-                .faq-carousel-paging-item-inner {
+                .carousel-paging-item-inner {
                     display: inline-block;
                     width: 14px;
                     height: 14px;
@@ -176,7 +176,7 @@
                     border: solid 1px #707070;
                 }
 
-                &.active .faq-carousel-paging-item-inner {
+                &.active .carousel-paging-item-inner {
                     background-color: #fbd33a;
                     border: solid 1px #707070;
                 }

@@ -1,0 +1,139 @@
+@media (max-device-width: 767px) {
+
+    #sel-forum-block {
+        padding-top: 29px;
+
+        h3 {
+            font-weight: 800;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .sel-forum-page {
+            padding-bottom: 20px;
+        }
+
+        .component-tab-body[data-page-id="SOFT SKILS"] {
+            background: url("forum-01.svg") 0 0 repeat;
+            background-size: 100%;
+        }
+
+        .component-tab-body[data-page-id="ARTS"] {
+            background: url("forum-02.svg") 0 0 repeat;
+            background-size: 100%;
+        }
+
+        .component-tab-body[data-page-id="SELET"] {
+            background: url("forum-03.svg") 0 0 repeat;
+            background-size: 100%;
+        }
+
+        .component-tab-body[data-page-id="IT"] {
+            background: url("forum-04.svg") 0 0 repeat;
+            background-size: 100%;
+        }
+
+        .component-tab-body[data-page-id="LEADERS"] {
+            background: url("forum-05.svg") 0 0 repeat;
+            background-size: 100%;
+        }
+
+        .component-tab-body[data-page-id="MEDIA"] {
+            background: url("forum-06.svg") 0 0 repeat;
+            background-size: 100%;
+        }
+
+        .carousel-wrapper {
+            display: flex;
+            @resolution: 414px;
+            @flipWidth: 60px;
+            @cardWidth: @resolution - 2 * @flipWidth;
+            @cardHeight: 460px;
+
+            .carousel-viewport {
+                position: relative;
+                overflow: hidden;
+                flex-grow: 0;
+                flex-shrink: 0;
+                flex-basis: @resolution - 2 * @flipWidth;
+                height: @cardHeight;
+            }
+
+            .carousel-flip {
+                flex-grow: 0;
+                flex-shrink: 0;
+                flex-basis: @flipWidth;
+                cursor: pointer;
+
+                &[data-flip=prev] {
+                    background: url("flip-left.png") center center no-repeat;
+                }
+
+                &[data-flip=next] {
+                    background: url("flip-right.png") center center no-repeat;
+                }
+            }
+
+            .carousel-page {
+                position: absolute;
+                top: 0;
+                display: flex;
+                flex-wrap: wrap;
+                width: @resolution - 2 * @flipWidth;
+                transition: left 0.3s ease-in-out;
+            }
+
+            .carousel-card {
+                width: @cardWidth;
+                height: @cardHeight;
+                padding: 42px 0 0;
+                margin: 0;
+                border-radius: 5px;
+                font-size: 20px;
+
+                h5 {
+                    display: none;
+                }
+            }
+        }
+
+        .carousel-paging {
+            text-align: center;
+            padding: 22px 0 50px;
+
+            .carousel-paging-item {
+                display: inline-block;
+                cursor: pointer;
+                padding: 5px;
+
+                .carousel-paging-item-inner {
+                    display: inline-block;
+                    width: 14px;
+                    height: 14px;
+                    border-radius: 6px;
+                    background-color: #ffffff;
+                    border: solid 1px #707070;
+                }
+
+                &.active .carousel-paging-item-inner {
+                    background-color: #707070;
+                    border: solid 1px #707070;
+                }
+            }
+
+        }
+
+        .video {
+
+            border-top: 10px solid #fbd33a;
+            border-bottom: 10px solid #fa4c5f;
+
+            iframe {
+                display: block;
+                width: 414px;
+                height: 232px;
+            }
+        }
+    }
+
+}
