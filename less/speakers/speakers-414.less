@@ -1,14 +1,16 @@
 @media (max-width: 767px) {
 
     #speakers-block {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         padding-top: 50px;
         padding-bottom: 13px;
 
         .speaker-block {
             width: 294px;
-            margin: 0 auto 40px;
-            padding-top: 40px;
-            padding-bottom: 20px;
+            margin: 0 20px;
+            padding: 40px 0 20px;
 
             .speaker-avatar {
                 position: relative;
@@ -67,12 +69,12 @@
                 .speaker-info {
                     line-height: 1.2;
                     text-align: center;
+                    min-height: 50px;
                 }
 
                 .speaker-intro {
                     position: relative;
                     margin: 35px 0 0 40px;
-                    width: 254px;
                     font-weight: 900;
                     line-height: 1.2;
 

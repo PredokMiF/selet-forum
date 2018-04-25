@@ -1862,11 +1862,12 @@ body h5 {
         flex-wrap: wrap;
     -ms-flex-pack: center;
         justify-content: center;
+    margin: 0 40px;
     padding-top: 50px;
     padding-bottom: 13px;
   }
   #speakers-block .speaker-block {
-    width: 243px;
+    width: 261px;
     padding-bottom: 20px;
   }
   #speakers-block .speaker-block .speaker-avatar {
@@ -1922,7 +1923,6 @@ body h5 {
   #speakers-block .speaker-block .speaker-body .speaker-intro {
     position: relative;
     margin: 13px 0 0;
-    width: 174px;
     font-weight: 900;
     line-height: 1.6;
   }
@@ -1963,14 +1963,19 @@ body h5 {
 }
 @media (max-width: 767px) {
   #speakers-block {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: center;
+        justify-content: center;
     padding-top: 50px;
     padding-bottom: 13px;
   }
   #speakers-block .speaker-block {
     width: 294px;
-    margin: 0 auto 40px;
-    padding-top: 40px;
-    padding-bottom: 20px;
+    margin: 0 20px;
+    padding: 40px 0 20px;
   }
   #speakers-block .speaker-block .speaker-avatar {
     position: relative;
@@ -2021,11 +2026,11 @@ body h5 {
   #speakers-block .speaker-block .speaker-body .speaker-info {
     line-height: 1.2;
     text-align: center;
+    min-height: 50px;
   }
   #speakers-block .speaker-block .speaker-body .speaker-intro {
     position: relative;
     margin: 35px 0 0 40px;
-    width: 254px;
     font-weight: 900;
     line-height: 1.2;
   }
