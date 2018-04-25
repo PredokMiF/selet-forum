@@ -4,6 +4,7 @@
 
 body {
     width: 100%;
+    margin: 0;
     font-family: Raleway, sans-serif;
     font-weight: 500;
     color: #ffffff;
@@ -33,30 +34,37 @@ body {
     display: none;
 }
 
-@media (min-device-width: 1280px) {
+@media (min-width: 1300px) {
     body {
         width: 1280px;
         margin: 0 auto;
+    }
+}
+
+@media (min-width: 1280px) {
+    body {
         font-size: 20px;
         line-height: 1.2;
     }
 }
 
-@media (max-device-width: 1279px) AND (min-device-width: 768px) {
+@media (max-width: 1279px) AND (min-width: 768px) {
     body {
-        width: 768px;
-        margin: 0 auto;
         font-size: 14px;
         line-height: 1.5;
     }
 }
 
-@media (max-device-width: 767px) {
+@media (max-width: 767px) {
     body {
-        width: 414px;
-        margin: 0 auto;
         font-size: 20px;
         line-height: 1.5;
+    }
+}
+
+@media (max-width: 413px) {
+    body {
+        width: 414px;
     }
 }
 
