@@ -9,15 +9,16 @@
 </head>
 <body>
 
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<!--<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>-->
+<!--<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>-->
+<!--<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>-->
 
 <!-- HEADER -->
 
 <!-- https://codepen.io/mattgrosswork/pen/jrdwK -->
-<!--<div id="header-block" class="black-block">
+<div id="header-block" class="black-block">
     <iframe id="header-bg-video" src="https://www.youtube.com/embed/gJ0EGZAtqJo?rel=0&controls=0&showinfo=0&iv_load_policy=3&autoplay=1&disablekb=1&loop=1&modestbranding=1&showing=0&playlist=gJ0EGZAtqJo&mute=1&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media"></iframe>
+
     <div class="video-overflow">
         <div class="lang-sel"><span class="rus active">Рус</span><span class="tat">Тат</span></div>
 
@@ -46,12 +47,12 @@
             <a href="#" class="contact-btn">Оставить сообщение</a>
         </div>
 
-        <div class="emblem"></div>
-        <div class="I-will-wrapper">
+        <div class="emblem animate-show"></div>
+        <div class="I-will-wrapper animate-show">
             <a class="I-will" href="#">Я&nbsp;еду!</a>
         </div>
     </div>
-</div>-->
+</div>
 
 <!-- STATISTIC -->
 
@@ -71,9 +72,9 @@
     </div>
 </div>
 
-<!-- SELECT FORUM -->
+<!-- SELECT FORUM TODO: MOBILE -->
 
-<!--<div id="sel-forum-block" class="white-block">
+<div id="sel-forum-block" class="white-block">
     <h3>Выбери свой форум!</h3>
     <div class="component-tab-wrapper" data-get-active-tab-on-init="const now = +new Date(); return now <= +new Date('2018-06-25')? 'SOFT SKILS' : now <= +new Date('2018-06-30') ? 'ARTS' : now <= +new Date('2018-07-09') ? 'SELET' : now <= +new Date('2018-07-21') ? 'IT' : now <= +new Date('2018-07-30') ? 'LEADERS' : 'MEDIA'">
         <div class="forum-select component-tab-header-wrapper">
@@ -145,7 +146,7 @@
 
                     <div class="carousel-paging"></div>
 
-                    <div class="video">
+                    <div class="video animate-show">
                         <iframe src="https://www.youtube.com/embed/gJ0EGZAtqJo?rel=0&controls=0&showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                     </div>
                 </div>
@@ -158,7 +159,7 @@
         </div>
 
     </div>
-</div>-->
+</div>
 
 <!-- SPEAKERS -->
 
@@ -226,7 +227,7 @@
 
 </div>
 
-<!-- GALLERY -->
+<!-- GALLERY TODO: MOBILE -->
 
 <div id="galery-block" class="black-block">
     <div class="galery galery-block-inner">
@@ -257,7 +258,7 @@
     </script>-->
 </div>
 
-<!-- FAQ -->
+<!-- FAQ TODO: MOBILE -->
 
 <div id="faq-block" class="black-block component-tab-wrapper" data-get-active-tab-on-init="const now = +new Date(); return now <= +new Date('2018-06-25')? 'SOFT SKILS' : now <= +new Date('2018-06-30') ? 'ARTS' : now <= +new Date('2018-07-09') ? 'SELET' : now <= +new Date('2018-07-21') ? 'IT' : now <= +new Date('2018-07-30') ? 'LEADERS' : 'MEDIA'">
     <div class="forum-select component-tab-header-wrapper">
@@ -321,12 +322,12 @@
                 <a href="#" class="who-link">Гость</a>
             </div>
             <p>Чтобы стать участником, необходимо пройти<br/>конкурсный отбор на одну из следующих<br/>профильных смен сообщества Сәләт: Тел, Осталар<br/>бистәсе, Болгар Туган тел, Изге Чишмә.</p>
-            <div class="portfolio-selet-link-wrapper animate-show">
+            <div class="portfolio-selet-link-wrapper">
                 <a href="https://portfolio-selet.ru/" class="portfolio-selet-link">portfolio-selet.ru</a>
             </div>
-            <h2>Часто задаваемые вопросы</h2>
+            <h2 class="animate-show">Часто задаваемые вопросы</h2>
 
-            <div class="carousel-wrapper" data-cout-foo="return fullWidth >= 1280 ? 6 : fullWidth >= 768 ? 4 : 1">
+            <div class="carousel-wrapper animate-show" data-cout-foo="return fullWidth >= 1280 ? 6 : fullWidth >= 768 ? 4 : 1">
                 <div class="carousel-flip" data-flip="prev"></div>
                 <div class="carousel-viewport">
                     <!--<div class="carousel-page">-->
@@ -500,6 +501,18 @@
 <script src="static/vendors/jquery-3.3.1.min.js"></script>
 <script src="static/vendors/lightgallery.js-1.0.2/js/lightgallery.min.js"></script>
 <script src="sources/app.js"></script>
+
+<script>
+    $(function(){
+        function calc() {
+            const $iframe = $('#header-bg-video');
+            $iframe.css('height', $iframe.outerWidth() / 1.777777777 + 'px');
+        }
+
+        $(window).on('resize', debounce(calc, 300));
+        calc();
+    });
+</script>
 
 </body>
 </html>

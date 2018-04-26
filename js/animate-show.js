@@ -81,4 +81,6 @@ import './animate-show.less'
         $(window).on('scroll', scroll)
     })
 
+    window.debounce = debounce
+
 })();

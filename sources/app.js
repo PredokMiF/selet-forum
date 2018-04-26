@@ -327,6 +327,8 @@ window.initCarousel = initCarousel;
         $(window).on('resize', init);
         $(window).on('scroll', scroll);
     });
+
+    window.debounce = debounce;
 })();
 
 /***/ }),
