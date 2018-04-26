@@ -338,7 +338,7 @@ function initTabs(el) {
         });
 
         el2ShowList = calcHeights(getEls2Show());
-    }, 300);
+    }, 50);
 
     function getEls2Show() {
         var animateToShow = $('.animate-show').toArray();

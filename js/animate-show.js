@@ -34,7 +34,7 @@ import './animate-show.less'
         })
 
         el2ShowList = calcHeights(getEls2Show())
-    }, 300)
+    }, 50)
 
     function getEls2Show() {
         const animateToShow = $('.animate-show').toArray()
