@@ -1,3 +1,4 @@
+import { debounce } from './debounce'
 import './animate-show.less'
 
 
@@ -55,19 +56,6 @@ import './animate-show.less'
         return arr
     }
 
-    function debounce(fn, ms) {
-        let t
-        return function () {
-            if (t) {
-                return
-            }
-            t = setTimeout(() => {
-                t = null;
-                fn()
-            }, ms)
-        }
-    }
-
 
     new Promise(resolve => {
         // Начинаем показывать через секунду, или как загрузится. Что наступит раньше
@@ -80,7 +68,5 @@ import './animate-show.less'
         $(window).on('resize', init)
         $(window).on('scroll', scroll)
     })
-
-    window.debounce = debounce
 
 })();

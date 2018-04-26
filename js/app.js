@@ -1,3 +1,4 @@
+import { debounce } from './debounce'
 import { initCarousel } from './carousel'
 import { initTabs } from './tabs'
 import './animate-show'
@@ -19,15 +20,36 @@ export function initComponents(wrapper) {
 
 }
 
-$(initComponents);
 
-$(window).on('resize', () => {
-    setInterval(initComponents, 1000)
-});
 
 (function () {
-    const galeryList = document.getElementsByClassName('galery')
 
+    //////////////////////////////
+    // VIDEO
+    //////////////////////////////
+
+    function calc() {
+        const $iframe = $('#header-bg-video');
+        $iframe.css('height', $iframe.outerWidth() / 1.777777777 + 'px');
+    }
+
+    $(window).on('resize', debounce(calc, 300));
+    calc();
+
+
+    //////////////////////////////
+    // CMN CMP
+    //////////////////////////////
+
+    $(initComponents);
+    $(window).on('resize', debounce(initComponents, 1000));
+
+
+    //////////////////////////////
+    // Галерея
+    //////////////////////////////
+
+    const galeryList = document.getElementsByClassName('galery')
     for (let i = 0; i < galeryList.length; i++) {
         lightGallery(galeryList[i], {})
     }

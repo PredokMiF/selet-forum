@@ -615,7 +615,6 @@ template {
     font-style: italic;
 }body {
   width: 100%;
-  margin: 0;
   font-family: Raleway, sans-serif;
   font-weight: 500;
   color: #ffffff;
@@ -640,12 +639,6 @@ body h5 {
 }
 .hidden {
   display: none;
-}
-@media (min-width: 1300px) {
-  body {
-    width: 1280px;
-    margin: 0 auto;
-  }
 }
 @media (min-width: 1280px) {
   body {
@@ -680,7 +673,8 @@ body h5 {
   .forum-select {
     display: -ms-flexbox;
     display: flex;
-    margin-top: 50px;
+    max-width: 1280px;
+    margin: 50px auto 0;
     padding-left: 50px;
     background-color: white;
   }
@@ -721,6 +715,11 @@ body h5 {
   .forum-select-split {
     height: 20px;
     background-color: #2e232d;
+  }
+  .component-tab-body-wrapper > .component-tab-body {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 @media (max-width: 1279px) AND (min-width: 768px) {
@@ -954,8 +953,7 @@ body h5 {
   }
   #header-block iframe {
     display: block;
-    width: 1280px;
-    height: 720px;
+    width: 100%;
   }
   #header-block .video-overflow {
     position: absolute;
@@ -1198,6 +1196,8 @@ body h5 {
     position: relative;
     background: url(app-statistic-bg-1280.png) top center no-repeat;
     height: 824px;
+    max-width: 1280px;
+    margin: 0 auto;
     padding-top: 137px;
   }
   #statistic-block p {
@@ -1755,6 +1755,9 @@ body h5 {
 }
 @media (min-width: 1280px) {
   #speakers-block {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
@@ -2075,6 +2078,8 @@ body h5 {
 @media (min-width: 1280px) {
   #galery-block {
     position: relative;
+    max-width: 1280px;
+    margin: 0 auto;
     height: 1142px;
     background: url(app-gallery-bg.png) 0 0 repeat;
   }
@@ -2541,6 +2546,8 @@ body h5 {
 @media (min-width: 1280px) {
   #map-block {
     position: relative;
+    max-width: 1280px;
+    margin: 0 auto;
   }
   #map-block h3 {
     position: absolute;
@@ -2782,11 +2789,12 @@ body h5 {
   }
 }
 @media (min-width: 1280px) {
-  #footer-block {
+  #footer-block .footer-inner {
     position: relative;
+    max-width: 1280px;
+    margin: 0 auto;
     height: 619px;
     padding-top: 100px;
-    background-color: #2e232d;
   }
   #footer-block .social-link-wrapper {
     display: -ms-flexbox;
