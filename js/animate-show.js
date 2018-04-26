@@ -15,7 +15,7 @@ import './animate-show.less'
         const $window = $(window)
         const wHeight = $window.height()
         const scrollTop = $window.scrollTop()
-        const wndBottom = scrollTop + wHeight - 0.1 * wHeight
+        const wndBottom = scrollTop + wHeight - 0.3 * wHeight
 
         el2ShowList.forEach(({ el, top }) => {
             if (top <= wndBottom) {

@@ -63,9 +63,8 @@
 /******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
-/******/ ({
-
-/***/ 0:
+/******/ ([
+/* 0 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -73,7 +72,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (immutable) */ __webpack_exports__["initComponents"] = initComponents;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__carousel__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__tabs__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__animate_show__ = __webpack_require__(127);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__animate_show__ = __webpack_require__(3);
 
 
 
@@ -109,8 +108,7 @@ $(window).on('resize', function () {
 })();
 
 /***/ }),
-
-/***/ 1:
+/* 1 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -225,12 +223,74 @@ function initCarousel(el) {
 window.initCarousel = initCarousel;
 
 /***/ }),
-
-/***/ 127:
+/* 2 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__animate_show_less__ = __webpack_require__(128);
+/* harmony export (immutable) */ __webpack_exports__["a"] = initTabs;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app__ = __webpack_require__(0);
+
+
+function initTabs(el) {
+    var $tWrapper = $(el);
+
+    if ($tWrapper.data('initialized')) {
+        return;
+    }
+    $tWrapper.data('initialized', 'true');
+
+    var getActiveTabOnInit = new Function($tWrapper.data('getActiveTabOnInit') || 'return \'' + $tabHederList[0].dataset.pageId + '\'');
+
+    var $tHeader = $tWrapper.find('.component-tab-header-wrapper');
+    var $tabHederList = $tWrapper.find('.component-tab-header[data-page-id]');
+    var $tBody = $tWrapper.find('.component-tab-body-wrapper');
+
+    var activeTab = void 0;
+
+    // INIT
+
+    selectTab(getActiveTabOnInit());
+
+    // ACTIONS
+
+    $tHeader.on('click', '.component-tab-header[data-page-id]', function (e) {
+        var $tab = $(e.currentTarget);
+        var tabId = $tab.data('pageId');
+
+        selectTab(tabId);
+    });
+
+    // HELPERS
+
+    function selectTab(tabName) {
+        if (activeTab === tabName) {
+            return;
+        }
+        activeTab = tabName;
+
+        // HEADER
+        $tabHederList.removeClass('active');
+        $tHeader.find('.component-tab-header[data-page-id="' + tabName + '"]').addClass('active');
+
+        // PAGE
+        var $prevActiveTab = $tBody.find('.component-tab-body.active').removeClass('active');
+        var $nextActiveTab = $tBody.find('.component-tab-body[data-page-id="' + tabName + '"]');
+
+        // Уничтожаем все ссылки yна объекты
+        $prevActiveTab.html($prevActiveTab.html());
+        $nextActiveTab.html($nextActiveTab.html());
+
+        $nextActiveTab.addClass('active');
+        Object(__WEBPACK_IMPORTED_MODULE_0__app__["initComponents"])($nextActiveTab);
+    }
+}
+
+/***/ }),
+/* 3 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__animate_show_less__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__animate_show_less___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__animate_show_less__);
 
 
@@ -248,7 +308,7 @@ window.initCarousel = initCarousel;
         var $window = $(window);
         var wHeight = $window.height();
         var scrollTop = $window.scrollTop();
-        var wndBottom = scrollTop + wHeight - 0.1 * wHeight;
+        var wndBottom = scrollTop + wHeight - 0.3 * wHeight;
 
         el2ShowList.forEach(function (_ref) {
             var el = _ref.el,
@@ -332,77 +392,11 @@ window.initCarousel = initCarousel;
 })();
 
 /***/ }),
-
-/***/ 128:
+/* 4 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
-/***/ }),
-
-/***/ 2:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = initTabs;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app__ = __webpack_require__(0);
-
-
-function initTabs(el) {
-    var $tWrapper = $(el);
-
-    if ($tWrapper.data('initialized')) {
-        return;
-    }
-    $tWrapper.data('initialized', 'true');
-
-    var getActiveTabOnInit = new Function($tWrapper.data('getActiveTabOnInit') || 'return \'' + $tabHederList[0].dataset.pageId + '\'');
-
-    var $tHeader = $tWrapper.find('.component-tab-header-wrapper');
-    var $tabHederList = $tWrapper.find('.component-tab-header[data-page-id]');
-    var $tBody = $tWrapper.find('.component-tab-body-wrapper');
-
-    var activeTab = void 0;
-
-    // INIT
-
-    selectTab(getActiveTabOnInit());
-
-    // ACTIONS
-
-    $tHeader.on('click', '.component-tab-header[data-page-id]', function (e) {
-        var $tab = $(e.currentTarget);
-        var tabId = $tab.data('pageId');
-
-        selectTab(tabId);
-    });
-
-    // HELPERS
-
-    function selectTab(tabName) {
-        if (activeTab === tabName) {
-            return;
-        }
-        activeTab = tabName;
-
-        // HEADER
-        $tabHederList.removeClass('active');
-        $tHeader.find('.component-tab-header[data-page-id="' + tabName + '"]').addClass('active');
-
-        // PAGE
-        var $prevActiveTab = $tBody.find('.component-tab-body.active').removeClass('active');
-        var $nextActiveTab = $tBody.find('.component-tab-body[data-page-id="' + tabName + '"]');
-
-        // Уничтожаем все ссылки yна объекты
-        $prevActiveTab.html($prevActiveTab.html());
-        $nextActiveTab.html($nextActiveTab.html());
-
-        $nextActiveTab.addClass('active');
-        Object(__WEBPACK_IMPORTED_MODULE_0__app__["initComponents"])($nextActiveTab);
-    }
-}
-
 /***/ })
-
-/******/ });
+/******/ ]);
 //# sourceMappingURL=app.js.map

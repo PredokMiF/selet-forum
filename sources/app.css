@@ -1,6 +1,7 @@
 .animate-show {
   opacity: 0;
   transition: opacity ease 1s;
+  transition-delay: 300ms;
 }
 .animate-show.animating {
   opacity: 1;
@@ -10,6 +11,7 @@
   transition-property: transform;
   transition-duration: 1s;
   transition-timing-function: ease;
+  transition-delay: 300ms;
 }
 .animate-shift.animating {
   transform: translate(0, 0);
