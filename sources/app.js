@@ -63,8 +63,9 @@
 /******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ 0:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -72,6 +73,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (immutable) */ __webpack_exports__["initComponents"] = initComponents;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__carousel__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__tabs__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__animate_show__ = __webpack_require__(127);
+
 
 
 
@@ -106,7 +109,8 @@ $(window).on('resize', function () {
 })();
 
 /***/ }),
-/* 1 */
+
+/***/ 1:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -221,7 +225,120 @@ function initCarousel(el) {
 window.initCarousel = initCarousel;
 
 /***/ }),
-/* 2 */
+
+/***/ 127:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__animate_show_less__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__animate_show_less___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__animate_show_less__);
+
+
+(function () {
+
+    var transitionTime = 1700;
+    var el2ShowList = void 0;
+
+    function init() {
+        el2ShowList = calcHeights(getEls2Show());
+        scroll();
+    }
+
+    var scroll = debounce(function _scroll() {
+        var $window = $(window);
+        var wHeight = $window.height();
+        var scrollTop = $window.scrollTop();
+        var wndBottom = scrollTop + wHeight - 0.1 * wHeight;
+
+        el2ShowList.forEach(function (_ref) {
+            var el = _ref.el,
+                top = _ref.top;
+
+            if (top <= wndBottom) {
+                var $el = $(el);
+                $el.addClass('animating');
+
+                var textShifted = $el.find('.animate-shift').toArray().map(function (el) {
+                    return $(el);
+                });
+                textShifted = textShifted.filter(function ($el) {
+                    return !$el.hasClass('animating');
+                });
+                textShifted.forEach(function ($el) {
+                    return $el.addClass('animating');
+                });
+
+                setTimeout(function () {
+                    $el.removeClass('animate-show animating');
+                    textShifted.forEach(function ($el) {
+                        return $el.removeClass('animate-shift animating');
+                    });
+                }, transitionTime);
+            }
+        });
+
+        el2ShowList = calcHeights(getEls2Show());
+    }, 300);
+
+    function getEls2Show() {
+        var animateToShow = $('.animate-show').toArray();
+
+        return animateToShow.filter(function (el) {
+            return !$(el).hasClass('animating');
+        });
+    }
+
+    function calcHeights(els) {
+        var arr = [];
+
+        els.forEach(function (el) {
+            arr.push({
+                el: el,
+                top: $(el).position().top
+            });
+        });
+
+        return arr;
+    }
+
+    function debounce(fn, ms) {
+        var t = void 0;
+        return function () {
+            if (t) {
+                return;
+            }
+            t = setTimeout(function () {
+                t = null;
+                fn();
+            }, ms);
+        };
+    }
+
+    new Promise(function (resolve) {
+        // Начинаем показывать через секунду, или как загрузится. Что наступит раньше
+        setTimeout(resolve, 1000);
+        $(resolve);
+    }).then(function () {
+        init();
+
+        $(function () {
+            return init;
+        });
+        $(window).on('resize', init);
+        $(window).on('scroll', scroll);
+    });
+})();
+
+/***/ }),
+
+/***/ 128:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 2:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -284,5 +401,6 @@ function initTabs(el) {
 }
 
 /***/ })
-/******/ ]);
+
+/******/ });
 //# sourceMappingURL=app.js.map

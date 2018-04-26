@@ -1,5 +1,6 @@
 import { initCarousel } from './carousel'
 import { initTabs } from './tabs'
+import './animate-show'
 
 export function initComponents(wrapper) {
     const $wrapper = $(wrapper || document.body)

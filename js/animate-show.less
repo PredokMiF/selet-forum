@@ -1,0 +1,19 @@
+.animate-show {
+    opacity: 0;
+    transition: opacity ease 1s;
+
+    &.animating {
+        opacity: 1;
+    }
+}
+
+.animate-shift {
+    transform: translate(0, 50px);
+    transition-property: transform;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+
+    &.animating {
+        transform: translate(0, 0);
+    }
+}
