@@ -2128,10 +2128,14 @@ body h5 {
 }
 @media (max-width: 1279px) AND (min-width: 768px) {
   #galery-block {
-    position: relative;
     height: 684px;
     margin-bottom: 50px;
-    background: url(app-gallery-bg.png) 0 0 repeat;
+    background: url(app-gallery-bg.png) top center repeat;
+  }
+  #galery-block .galery-block-inner {
+    position: relative;
+    width: 768px;
+    margin: 0 auto;
   }
   #galery-block a {
     position: absolute;
@@ -2200,6 +2204,12 @@ body h5 {
   }
   #galery-block .img-007 img {
     width: 171px;
+  }
+}
+@media (max-width: 767px) {
+  #galery-block img {
+    max-width: 414px;
+    height: 414px;
   }
 }
 @media (min-width: 1280px) {
@@ -2276,6 +2286,8 @@ body h5 {
   #faq-block .carousel-wrapper {
     display: -ms-flexbox;
     display: flex;
+    -ms-flex-pack: center;
+        justify-content: center;
     padding-bottom: 40px;
     color: #2e232d;
   }
@@ -2286,8 +2298,8 @@ body h5 {
         flex-grow: 0;
     -ms-flex-negative: 0;
         flex-shrink: 0;
-    -ms-flex-preferred-size: 1080px;
-        flex-basis: 1080px;
+    -ms-flex-preferred-size: 1060px;
+        flex-basis: 1060px;
     height: 616px;
   }
   #faq-block .carousel-wrapper .carousel-flip {
@@ -2312,13 +2324,13 @@ body h5 {
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    width: 1080px;
+    width: 1060px;
     transition: left 0.3s ease-in-out;
   }
   #faq-block .carousel-wrapper .carousel-card {
     width: 344px;
     height: 288px;
-    margin-right: 24px;
+    margin-right: 14px;
     margin-bottom: 40px;
     border-radius: 5px;
     padding: 16px 20px 0;
@@ -2436,6 +2448,8 @@ body h5 {
   #faq-block .carousel-wrapper {
     display: -ms-flexbox;
     display: flex;
+    -ms-flex-pack: center;
+        justify-content: center;
     color: #2e232d;
   }
   #faq-block .carousel-wrapper .carousel-viewport {

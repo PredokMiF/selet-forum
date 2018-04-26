@@ -84,22 +84,29 @@
 
         .carousel-wrapper {
             display: flex;
+            justify-content: center;
             padding-bottom: 40px;
             color: #2e232d;
+
+            @resolution: 1260px;
+            @flipWidth: 100px;
+            @cardWidth: 344px;
+            @cardHeight: 288px;
+            @cardPadBotom: 40px;
 
             .carousel-viewport {
                 position: relative;
                 overflow: hidden;
                 flex-grow: 0;
                 flex-shrink: 0;
-                flex-basis: 1080px;
-                height: 288px * 2 + 40px;
+                flex-basis: @resolution - 2 * @flipWidth;
+                height: @cardHeight * 2 + @cardPadBotom;
             }
 
             .carousel-flip {
                 flex-grow: 0;
                 flex-shrink: 0;
-                flex-basis: 100px;
+                flex-basis: @flipWidth;
                 cursor: pointer;
 
                 &[data-flip=prev] {
@@ -116,15 +123,15 @@
                 top: 0;
                 display: flex;
                 flex-wrap: wrap;
-                width: 1080px;
+                width: @resolution - 2 * @flipWidth;
                 transition: left 0.3s ease-in-out;
             }
 
             .carousel-card {
-                width: 344px;
-                height: 288px;
-                margin-right: (1080px - 344px*3) / 2;
-                margin-bottom: 40px;
+                width: @cardWidth;
+                height: @cardHeight;
+                margin-right: (@resolution - @flipWidth * 2 - @cardWidth * 3) / 2;
+                margin-bottom: @cardPadBotom;
                 border-radius: 5px;
                 padding: 16px 20px 0;
 

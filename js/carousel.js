@@ -6,7 +6,7 @@ export function initCarousel(el) {
 
     $cWrapper.data('initialized', 'true')
 
-    let fullWidth = $cWrapper.outerWidth()
+    let fullWidth = $(window).outerWidth()
     let width = $cViewport.outerWidth()
 
     const pageSize = (new Function('fullWidth', $el.data('coutFoo')))(fullWidth)//fullWidth >= 1280 ? 6 : fullWidth >= 768 ? 4 : 1

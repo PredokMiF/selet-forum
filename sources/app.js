@@ -123,7 +123,7 @@ function initCarousel(el) {
 
     $cWrapper.data('initialized', 'true');
 
-    var fullWidth = $cWrapper.outerWidth();
+    var fullWidth = $(window).outerWidth();
     var width = $cViewport.outerWidth();
 
     var pageSize = new Function('fullWidth', $el.data('coutFoo'))(fullWidth); //fullWidth >= 1280 ? 6 : fullWidth >= 768 ? 4 : 1
@@ -294,7 +294,7 @@ window.initCarousel = initCarousel;
         els.forEach(function (el) {
             arr.push({
                 el: el,
-                top: $(el).position().top
+                top: $(el).offset().top
             });
         });
 

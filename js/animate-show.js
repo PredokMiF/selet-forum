@@ -48,7 +48,7 @@ import './animate-show.less'
         els.forEach(el => {
             arr.push({
                 el,
-                top: $(el).position().top,
+                top: $(el).offset().top,
             })
         })
 
