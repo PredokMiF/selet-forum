@@ -1303,11 +1303,13 @@ body h5 {
 @media (max-width: 1279px) AND (min-width: 768px) {
   #statistic-block {
     position: relative;
-    background: url(app-statistic-bg-768.png) top center no-repeat;
     height: 600px;
-    padding-top: 79px;
   }
-  #statistic-block p {
+  #statistic-block .text-wrapper {
+    padding: 79px 20px 0;
+    background: url(app-statistic-bg-768.png) center top;
+  }
+  #statistic-block .text-wrapper p {
     width: 400px;
     margin: 0 auto;
     padding-bottom: 30px;
@@ -1329,7 +1331,7 @@ body h5 {
   }
   #statistic-block .participant-count {
     top: 44px;
-    left: 20px;
+    left: 3%;
   }
   #statistic-block .participant-count .numbers {
     color: #fa4c5f;
@@ -1342,7 +1344,7 @@ body h5 {
   }
   #statistic-block .summer-shifts {
     top: 233px;
-    left: 63px;
+    left: 9%;
   }
   #statistic-block .summer-shifts .numbers {
     color: #fbd33a;
@@ -1353,7 +1355,7 @@ body h5 {
   }
   #statistic-block .rf-regions {
     top: 405px;
-    left: 50px;
+    left: 7%;
   }
   #statistic-block .rf-regions .numbers {
     color: #60d0dd;
@@ -1364,7 +1366,7 @@ body h5 {
   }
   #statistic-block .summer-forums {
     top: 70px;
-    left: 579px;
+    right: 9%;
   }
   #statistic-block .summer-forums .numbers {
     color: #fbd33a;
@@ -1376,7 +1378,7 @@ body h5 {
   }
   #statistic-block .tent-count {
     top: 250px;
-    left: 588px;
+    right: 1%;
   }
   #statistic-block .tent-count .numbers {
     color: #fa4c5f;
@@ -1388,7 +1390,7 @@ body h5 {
   }
   #statistic-block .round-tent-count {
     top: 395px;
-    left: 609px;
+    right: 5%;
   }
   #statistic-block .round-tent-count .numbers {
     color: #60d0dd;
@@ -1401,11 +1403,12 @@ body h5 {
 @media (max-width: 767px) {
   #statistic-block {
     position: relative;
-    background: url(app-statistic-bg-414.png) top center no-repeat;
   }
-  #statistic-block p {
-    width: 400px;
-    margin: 0 auto;
+  #statistic-block .text-wrapper {
+    padding: 0 20px;
+    background: url(app-statistic-bg-414.png) left top;
+  }
+  #statistic-block .text-wrapper p {
     padding-bottom: 30px;
     font-size: 20px;
     text-align: center;
