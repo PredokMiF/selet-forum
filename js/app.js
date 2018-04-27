@@ -1,4 +1,5 @@
 import { debounce } from './debounce'
+import { initVideo } from './video'
 import { initCarousel } from './carousel'
 import { initTabs } from './tabs'
 import './animate-show'
@@ -24,17 +25,7 @@ export function initComponents(wrapper) {
 
 (function () {
 
-    //////////////////////////////
-    // VIDEO
-    //////////////////////////////
-
-    function calc() {
-        const $iframe = $('#header-bg-video');
-        $iframe.css('height', $iframe.outerWidth() / 1.777777777 + 'px');
-    }
-
-    $(window).on('resize', debounce(calc, 300));
-    calc();
+    initVideo();
 
 
     //////////////////////////////

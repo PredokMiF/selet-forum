@@ -63,17 +63,20 @@
 /******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ 0:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (immutable) */ __webpack_exports__["initComponents"] = initComponents;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__debounce__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__carousel__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tabs__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__animate_show__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__video__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__carousel__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tabs__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__animate_show__ = __webpack_require__(4);
+
 
 
 
@@ -85,29 +88,19 @@ function initComponents(wrapper) {
     // TAB
 
     $wrapper.find('.component-tab-wrapper').each(function (i, el) {
-        Object(__WEBPACK_IMPORTED_MODULE_2__tabs__["a" /* initTabs */])(el);
+        Object(__WEBPACK_IMPORTED_MODULE_3__tabs__["a" /* initTabs */])(el);
     });
 
     // CAROUSEL
 
     $wrapper.find('.carousel-wrapper').each(function (i, el) {
-        Object(__WEBPACK_IMPORTED_MODULE_1__carousel__["a" /* initCarousel */])(el);
+        Object(__WEBPACK_IMPORTED_MODULE_2__carousel__["a" /* initCarousel */])(el);
     });
 }
 
 (function () {
 
-    //////////////////////////////
-    // VIDEO
-    //////////////////////////////
-
-    function calc() {
-        var $iframe = $('#header-bg-video');
-        $iframe.css('height', $iframe.outerWidth() / 1.777777777 + 'px');
-    }
-
-    $(window).on('resize', Object(__WEBPACK_IMPORTED_MODULE_0__debounce__["a" /* debounce */])(calc, 300));
-    calc();
+    Object(__WEBPACK_IMPORTED_MODULE_1__video__["a" /* initVideo */])();
 
     //////////////////////////////
     // CMN CMP
@@ -127,7 +120,8 @@ function initComponents(wrapper) {
 })();
 
 /***/ }),
-/* 1 */
+
+/***/ 1:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -146,7 +140,111 @@ function debounce(fn, ms) {
 }
 
 /***/ }),
-/* 2 */
+
+/***/ 131:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = initVideo;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__debounce__ = __webpack_require__(1);
+
+
+function initVideo() {
+
+    var $window = $(window);
+
+    // Async add script
+
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    // Ждем инициализацию видео
+
+    new Promise(function (resolve) {
+        window.onYouTubeIframeAPIReady = resolve;
+    }).then(ytInitialized, function (e) {
+        return console.error(e);
+    });
+
+    function ytInitialized() {
+        var player = void 0;
+        var playing = void 0;
+        var $iframe = void 0;
+
+        startVideo();
+
+        $(window).on('resize', Object(__WEBPACK_IMPORTED_MODULE_0__debounce__["a" /* debounce */])(startVideo, 50));
+
+        function startVideo() {
+            var resolution = getResolution();
+
+            tryVideoWidth();
+
+            if (resolution >= 768) {
+                if (!player) {
+                    initVideo();
+                } else if (!playing) {
+                    player.playVideo();
+                    $iframe.addClass('playing');
+                    playing = true;
+                }
+            } else if (player && playing) {
+                player.stopVideo();
+                $iframe.removeClass('playing');
+                playing = false;
+            }
+        }
+
+        function initVideo() {
+            player = new YT.Player('header-bg-video', {
+                // videoId: '668nUCeBHyY',
+                videoId: 'gJ0EGZAtqJo',
+                controls: 0,
+                rel: 0,
+                // showinfo: 0,
+                // disablekb: 1,
+                enablejsapi: 1,
+                // iv_load_policy: 3,
+                // loop: 1,
+                // modestbranding: 1,
+                // playlist: 'gJ0EGZAtqJo',
+                // loopPlaylists: 'gJ0EGZAtqJo',
+                // /**/showing: 0,
+                // autohide: 3,
+                events: {
+                    onReady: function onReady(event) {
+                        event.target.playVideo();
+                        player.mute();
+                        $iframe = $('#header-bg-video');
+                        playing = true;
+                    },
+                    onStateChange: function onStateChange(event) {
+                        if (event.data === YT.PlayerState.ENDED) {
+                            event.target.playVideo();
+                        }
+                    }
+                }
+            });
+
+            tryVideoWidth();
+        }
+    }
+
+    function getResolution() {
+        return $window.outerWidth();
+    }
+
+    function tryVideoWidth() {
+        var $iframe = $('#header-bg-video');
+        $iframe.css('height', $iframe.outerWidth() / 1.777777777 + 'px');
+    }
+}
+
+/***/ }),
+
+/***/ 2:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -261,7 +359,8 @@ function initCarousel(el) {
 window.initCarousel = initCarousel;
 
 /***/ }),
-/* 3 */
+
+/***/ 3:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -324,7 +423,8 @@ function initTabs(el) {
 }
 
 /***/ }),
-/* 4 */
+
+/***/ 4:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -417,11 +517,13 @@ function initTabs(el) {
 })();
 
 /***/ }),
-/* 5 */
+
+/***/ 5:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ })
-/******/ ]);
+
+/******/ });
 //# sourceMappingURL=app.js.map
