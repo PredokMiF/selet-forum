@@ -60,22 +60,40 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
-/******/ ({
+/******/ ([
+/* 0 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-/***/ 0:
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = debounce;
+function debounce(fn, ms) {
+    var t = void 0;
+    return function () {
+        if (t) {
+            return;
+        }
+        t = setTimeout(function () {
+            t = null;
+            fn();
+        }, ms);
+    };
+}
+
+/***/ }),
+/* 1 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (immutable) */ __webpack_exports__["initComponents"] = initComponents;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__debounce__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__video__ = __webpack_require__(131);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__carousel__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tabs__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__animate_show__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__debounce__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__video__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__carousel__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tabs__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__animate_show__ = __webpack_require__(5);
 
 
 
@@ -120,33 +138,12 @@ function initComponents(wrapper) {
 })();
 
 /***/ }),
-
-/***/ 1:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = debounce;
-function debounce(fn, ms) {
-    var t = void 0;
-    return function () {
-        if (t) {
-            return;
-        }
-        t = setTimeout(function () {
-            t = null;
-            fn();
-        }, ms);
-    };
-}
-
-/***/ }),
-
-/***/ 131:
+/* 2 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = initVideo;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__debounce__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__debounce__ = __webpack_require__(0);
 
 
 function initVideo() {
@@ -201,18 +198,12 @@ function initVideo() {
             player = new YT.Player('header-bg-video', {
                 // videoId: '668nUCeBHyY',
                 videoId: 'gJ0EGZAtqJo',
-                controls: 0,
-                rel: 0,
-                // showinfo: 0,
-                // disablekb: 1,
-                enablejsapi: 1,
-                // iv_load_policy: 3,
-                // loop: 1,
-                // modestbranding: 1,
-                // playlist: 'gJ0EGZAtqJo',
-                // loopPlaylists: 'gJ0EGZAtqJo',
-                // /**/showing: 0,
-                // autohide: 3,
+                playerVars: {
+                    controls: 0,
+                    rel: 0,
+                    showinfo: 0,
+                    disablekb: 1
+                },
                 events: {
                     onReady: function onReady(event) {
                         event.target.playVideo();
@@ -243,8 +234,7 @@ function initVideo() {
 }
 
 /***/ }),
-
-/***/ 2:
+/* 3 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -359,13 +349,12 @@ function initCarousel(el) {
 window.initCarousel = initCarousel;
 
 /***/ }),
-
-/***/ 3:
+/* 4 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = initTabs;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app__ = __webpack_require__(1);
 
 
 function initTabs(el) {
@@ -423,13 +412,12 @@ function initTabs(el) {
 }
 
 /***/ }),
-
-/***/ 4:
+/* 5 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__debounce__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__animate_show_less__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__debounce__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__animate_show_less__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__animate_show_less___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__animate_show_less__);
 
 
@@ -517,13 +505,11 @@ function initTabs(el) {
 })();
 
 /***/ }),
-
-/***/ 5:
+/* 6 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ })
-
-/******/ });
+/******/ ]);
 //# sourceMappingURL=app.js.map
