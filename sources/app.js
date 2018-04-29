@@ -92,8 +92,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__debounce__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__video__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__carousel__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tabs__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__animate_show__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__autoheight__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__tabs__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__animate_show__ = __webpack_require__(6);
+
 
 
 
@@ -106,13 +108,19 @@ function initComponents(wrapper) {
     // TAB
 
     $wrapper.find('.component-tab-wrapper').each(function (i, el) {
-        Object(__WEBPACK_IMPORTED_MODULE_3__tabs__["a" /* initTabs */])(el);
+        Object(__WEBPACK_IMPORTED_MODULE_4__tabs__["a" /* initTabs */])(el);
     });
 
     // CAROUSEL
 
     $wrapper.find('.carousel-wrapper').each(function (i, el) {
         Object(__WEBPACK_IMPORTED_MODULE_2__carousel__["a" /* initCarousel */])(el);
+    });
+
+    // AUTOHEIGHT
+
+    $wrapper.find('.autoheight').each(function (i, el) {
+        Object(__WEBPACK_IMPORTED_MODULE_3__autoheight__["a" /* initAutoheight */])(el);
     });
 }
 
@@ -125,7 +133,7 @@ function initComponents(wrapper) {
     //////////////////////////////
 
     $(initComponents);
-    $(window).on('resize', Object(__WEBPACK_IMPORTED_MODULE_0__debounce__["a" /* debounce */])(initComponents, 1000));
+    $(window).on('resize', Object(__WEBPACK_IMPORTED_MODULE_0__debounce__["a" /* debounce */])(initComponents, 50));
 
     //////////////////////////////
     // Галерея
@@ -356,6 +364,19 @@ window.initCarousel = initCarousel;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = initAutoheight;
+function initAutoheight(el) {
+    var $el = $(el);
+    var fn = new Function('resolution, width', $el.data('fn'));
+
+    $el.css('height', fn($(window).outerWidth(), $el.outerWidth()));
+}
+
+/***/ }),
+/* 5 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = initTabs;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app__ = __webpack_require__(1);
 
@@ -415,12 +436,12 @@ function initTabs(el) {
 }
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__debounce__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__animate_show_less__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__animate_show_less__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__animate_show_less___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__animate_show_less__);
 
 
@@ -439,7 +460,7 @@ function initTabs(el) {
         var $window = $(window);
         var wHeight = $window.height();
         var scrollTop = $window.scrollTop();
-        var wndBottom = scrollTop + wHeight - 0.3 * wHeight;
+        var wndBottom = scrollTop + wHeight - 0.25 * wHeight;
 
         el2ShowList.forEach(function (_ref) {
             var el = _ref.el,
@@ -499,16 +520,14 @@ function initTabs(el) {
     }).then(function () {
         init();
 
-        $(function () {
-            return init;
-        });
+        $(init);
         $(window).on('resize', init);
         $(window).on('scroll', scroll);
     });
 })();
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

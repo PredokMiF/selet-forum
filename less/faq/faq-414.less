@@ -1,0 +1,191 @@
+@media (max-width: 767px) {
+
+    #faq-block {
+        display: none;
+
+        h4 {
+            padding-top: 24px;
+            font-weight: 500;
+            line-height: 2;
+            text-align: center;
+        }
+
+        .who-link-wrapper {
+            text-align: center;
+
+            .who-link {
+                display: inline-block;
+                margin: 0 17px;
+                font-size: 30px;
+                font-weight: 900;
+                color: inherit;
+                text-decoration: none;
+                border-bottom: solid 1px rgba(255, 255, 255, 0.24);
+                transition: color ease 0.3s, border-bottom-color ease-out 0.3s;
+
+                &:hover {
+                    @color: darken(white, 10%);
+                    color: @color;
+                    border-bottom-color: rgba(red(@color), green(@color), blue(@color), 0.24);
+                }
+
+                &.active {
+                    color: #fbd33a;
+                    border-bottom-color: #fbd33a;
+
+                    &:hover {
+                        color: lighten(#fbd33a, 10%);
+                        border-bottom-color: lighten(#fbd33a, 10%);
+                    }
+                }
+            }
+        }
+
+        p {
+            padding: 49px 0 52px;
+            font-size: 20px;
+            line-height: 1.33;
+            width: 742px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .portfolio-selet-link-wrapper {
+            text-align: center;
+
+            .portfolio-selet-link {
+                display: inline-block;
+                width: 260px;
+                line-height: 48px;
+                font-size: 20px;
+                font-weight: 900;
+                text-align: center;
+                text-decoration: none;
+                color: #fbd33a;
+                border-radius: 5px;
+                border: solid 1px #fbd33a;
+                transition: color ease 0.3s, background-color ease-out 0.3s;
+
+                &:hover {
+                    color: #2e232d;
+                    background-color: #fbd33a;
+                }
+            }
+        }
+
+        h2 {
+            padding: 95px 0 36px;
+            font-size: 30px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .carousel-wrapper {
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            color: #2e232d;
+
+            @resolution: 768px;
+            @flipWidth: 50px;
+            @cardWidth: 322px;
+            @cardHeight: 288px;
+            @cardPadBotom: 20px;
+
+            .carousel-viewport {
+                position: relative;
+                overflow: hidden;
+                flex-grow: 0;
+                flex-shrink: 0;
+                flex-basis: @resolution - 2 * @flipWidth;
+                height: @cardHeight * 2 + @cardPadBotom;
+            }
+
+            .carousel-flip {
+                flex-grow: 0;
+                flex-shrink: 0;
+                flex-basis: @flipWidth;
+                cursor: pointer;
+
+                &[data-flip=prev] {
+                    background: url("flip-left.png") center center no-repeat;
+                }
+
+                &[data-flip=next] {
+                    background: url("flip-right.png") center center no-repeat;
+                }
+            }
+
+            .carousel-page {
+                position: absolute;
+                top: 0;
+                display: flex;
+                flex-wrap: wrap;
+                width: @resolution - 2 * @flipWidth;
+                transition: left 0.3s ease-in-out;
+            }
+
+            .carousel-card {
+                width: @cardWidth;
+                height: @cardHeight;
+                margin-right: @resolution - @flipWidth * 2 - @cardWidth * 2;
+                margin-bottom: @cardPadBotom;
+                border-radius: 5px;
+                padding: 16px 20px 0;
+                font-size: 20px;
+
+                &.last {
+                    margin-right: 0;
+                }
+
+                h5 {
+                    margin: 0;
+                    height: 137px;
+                    font-size: 20px;
+                    font-weight: 900;
+                    line-height: 1.5;
+                }
+
+                &.card-red {
+                    background-color: #fa4c5f;
+                }
+
+                &.card-aqua {
+                    background-color: #60d0dd;
+                }
+
+                &.card-yellow {
+                    background-color: #fbd33a;
+                }
+            }
+        }
+
+        .carousel-paging {
+            text-align: center;
+            padding: 30px 0 50px;
+
+            .carousel-paging-item {
+                display: inline-block;
+                cursor: pointer;
+                padding: 5px;
+
+                .carousel-paging-item-inner {
+                    display: inline-block;
+                    width: 14px;
+                    height: 14px;
+                    border-radius: 6px;
+                    background-color: #ffffff;
+                    border: solid 1px #707070;
+                }
+
+                &.active .carousel-paging-item-inner {
+                    background-color: #fbd33a;
+                    border: solid 1px #707070;
+                }
+            }
+
+        }
+
+    }
+
+}

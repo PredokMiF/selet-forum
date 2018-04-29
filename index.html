@@ -146,7 +146,7 @@
                     <div class="carousel-paging"></div>
 
                     <div class="video animate-show">
-                        <iframe src="https://www.youtube.com/embed/gJ0EGZAtqJo?rel=0&controls=0&showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        <iframe class="autoheight" data-fn="return resolution >= 768 ? '' : (width * 0.5 + 'px')" src="https://www.youtube.com/embed/gJ0EGZAtqJo?rel=0&controls=0&showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
@@ -502,7 +502,9 @@
 </div>
 
 <script>
-    document.getElementById('header-block').style.height = document.getElementById('header-block').clientWidth / 1.777777777 + 'px'
+    if (window.innerWidth > 767) {
+        document.getElementById('header-block').style.height = document.getElementById('header-block').clientWidth / 1.777777777 + 'px';
+    }
 </script>
 
 <script src="static/vendors/jquery-3.3.1.min.js"></script>

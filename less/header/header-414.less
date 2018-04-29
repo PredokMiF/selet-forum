@@ -3,21 +3,22 @@
     #header-block {
         position: relative;
         height: 589px;
-        background: url("header-bg-414.png") top center no-repeat;
+        background: url("header-bg.jpg") top center no-repeat;
+        background-size: auto 414px;
 
         #header-bg-video {
             display: none;
         }
 
         .video-overflow {
-            //position: absolute;
-            //display: block;
-            //content: '';
-            //left: 0;
-            //top: 0;
-            //right: 0;
-            //bottom: 0;
-            //background: rgba(0, 0, 0, 0.4);
+            position: absolute;
+            display: block;
+            content: '';
+            left: 0;
+            top: 0;
+            right: 0;
+            height: 414px;
+            background: rgba(0, 0, 0, 0.4);
         }
 
         .lang-sel {
@@ -53,7 +54,8 @@
         .contact-btn-wrapper {
             position: absolute;
             top: 445px;
-            right: 93px;
+            left: 50%;
+            margin-left: -257px / 2;
 
             .contact-btn {
                 display: block;

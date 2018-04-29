@@ -1,6 +1,7 @@
 import { debounce } from './debounce'
 import { initVideo } from './video'
 import { initCarousel } from './carousel'
+import { initAutoheight } from './autoheight'
 import { initTabs } from './tabs'
 import './animate-show'
 
@@ -19,6 +20,12 @@ export function initComponents(wrapper) {
         initCarousel(el)
     })
 
+    // AUTOHEIGHT
+
+    $wrapper.find('.autoheight').each((i, el) => {
+        initAutoheight(el)
+    })
+
 }
 
 
@@ -33,7 +40,7 @@ export function initComponents(wrapper) {
     //////////////////////////////
 
     $(initComponents);
-    $(window).on('resize', debounce(initComponents, 1000));
+    $(window).on('resize', debounce(initComponents, 50));
 
 
     //////////////////////////////

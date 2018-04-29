@@ -9,10 +9,6 @@
             text-align: center;
         }
 
-        .sel-forum-page {
-            padding-bottom: 20px;
-        }
-
         .component-tab-body[data-page-id="SOFT SKILS"] {
             background: url("forum-01.svg") 0 0 repeat;
             background-size: 100%;
@@ -45,6 +41,7 @@
 
         .carousel-wrapper {
             display: flex;
+            justify-content: center;
             @resolution: 414px;
             @flipWidth: 60px;
             @cardWidth: @resolution - 2 * @flipWidth;
@@ -66,11 +63,13 @@
                 cursor: pointer;
 
                 &[data-flip=prev] {
-                    background: url("flip-left.png") center center no-repeat;
+                    background: url("flip-black-left.svg") center center no-repeat;
+                    background-size: 16px 40px;
                 }
 
                 &[data-flip=next] {
-                    background: url("flip-right.png") center center no-repeat;
+                    background: url("flip-black-right.svg") center center no-repeat;
+                    background-size: 16px 40px;
                 }
             }
 
@@ -112,12 +111,12 @@
                     height: 14px;
                     border-radius: 6px;
                     background-color: #ffffff;
-                    border: solid 1px #707070;
+                    border: solid 1px #2e232d;
                 }
 
                 &.active .carousel-paging-item-inner {
-                    background-color: #707070;
-                    border: solid 1px #707070;
+                    background-color: #2e232d;
+                    border: solid 1px #2e232d;
                 }
             }
 
@@ -130,8 +129,7 @@
 
             iframe {
                 display: block;
-                width: 414px;
-                height: 232px;
+                width: 100%;
             }
         }
     }
