@@ -163,12 +163,30 @@ function initVideo() {
 
     var $window = $(window);
 
-    // Async add script
+    $(function () {
+        var resolution = getResolution();
+        if (resolution >= 768) {
+            addYoutube();
+        } else {
+            var cb = Object(__WEBPACK_IMPORTED_MODULE_0__debounce__["a" /* debounce */])(function () {
+                var resolution = getResolution();
+                console.log(1);
+                if (resolution >= 768) {
+                    console.log(2);
+                    addYoutube();
+                    $(window).off('resize', cb);
+                }
+            }, 50);
+            $(window).on('resize', cb);
+        }
+    });
 
-    var tag = document.createElement('script');
-    tag.src = "https://www.youtube.com/iframe_api";
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    function addYoutube() {
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    }
 
     // Ждем инициализацию видео
 
@@ -192,10 +210,11 @@ function initVideo() {
 
             tryVideoWidth();
 
+            // Пытаемся не грузить ютубовские либы раньше времени
             if (resolution >= 768) {
                 if (!player) {
                     initVideo();
-                } else if (!playing) {
+                } else if (!playing && player.playVideo) {
                     player.playVideo();
                     playing = true;
                 }

@@ -4,12 +4,30 @@ export function initVideo() {
 
     const $window = $(window)
 
-    // Async add script
+    $(() => {
+        const resolution = getResolution()
+        if (resolution >= 768) {
+            addYoutube()
+        } else {
+            const cb = debounce(() => {
+                const resolution = getResolution()
+                console.log(1)
+                if (resolution >= 768) {
+                    console.log(2)
+                    addYoutube()
+                    $(window).off('resize', cb);
+                }
+            }, 50)
+            $(window).on('resize', cb);
+        }
+    })
 
-    const tag = document.createElement('script');
-    tag.src = "https://www.youtube.com/iframe_api";
-    const firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    function addYoutube() {
+        const tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        const firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    }
 
     // Ждем инициализацию видео
 
@@ -31,10 +49,11 @@ export function initVideo() {
 
             tryVideoWidth()
 
+            // Пытаемся не грузить ютубовские либы раньше времени
             if (resolution >= 768) {
                 if (!player) {
                     initVideo()
-                } else if (!playing) {
+                } else if (!playing && player.playVideo) {
                     player.playVideo()
                     playing = true
                 }

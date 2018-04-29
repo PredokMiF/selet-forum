@@ -7,7 +7,17 @@
     <link rel="stylesheet" type="text/css" href="sources/app.css">
     <link rel="stylesheet" type="text/css" href="sources/style.css">
 </head>
-<body>
+<body style="overflow: hidden;">
+
+<div id="ajax-loader" style="position: fixed; left: 0; right: 0; top: 0; bottom: 0; background: url(./static/ajax-loader.gif) center center no-repeat white; z-index: 1;"></div>
+
+<script>
+    window.onload = function() {
+        $('#ajax-loader').fadeOut(500, () => {
+            $(document.body).css('overflow', '')
+        });
+    };
+</script>
 
 <!-- HEADER -->
 
@@ -71,7 +81,7 @@
     </div>
 </div>
 
-<!-- SELECT FORUM TODO: MOBILE -->
+<!-- SELECT FORUM -->
 
 <div id="sel-forum-block" class="white-block">
     <h3>Выбери свой форум!</h3>
@@ -230,13 +240,13 @@
 
 <div id="galery-block" class="black-block">
     <div class="galery galery-block-inner">
-        <a class="img-001 animate-show" href="static/gallery/001.png"><img src="static/gallery/001-thumb.png" /></a>
-        <a class="img-002 animate-show" href="static/gallery/002.png"><img src="static/gallery/002-thumb.png" /></a>
-        <a class="img-003 animate-show" href="static/gallery/003.png"><img src="static/gallery/003-thumb.png" /></a>
-        <a class="img-004 animate-show" href="static/gallery/004.png"><img src="static/gallery/004-thumb.png" /></a>
-        <a class="img-005 animate-show" href="static/gallery/005.png"><img src="static/gallery/005-thumb.png" /></a>
-        <a class="img-006 animate-show" href="static/gallery/006.png"><img src="static/gallery/006-thumb.png" /></a>
-        <a class="img-007 animate-show" href="static/gallery/007.png"><img src="static/gallery/007-thumb.png" /></a>
+        <a class="img-001 animate-show" href="static/gallery/001.jpg"><img src="static/gallery/001-thumb.jpg" /></a>
+        <a class="img-002 animate-show" href="static/gallery/002.jpg"><img src="static/gallery/002-thumb.jpg" /></a>
+        <a class="img-003 animate-show" href="static/gallery/003.jpg"><img src="static/gallery/003-thumb.jpg" /></a>
+        <a class="img-004 animate-show" href="static/gallery/004.jpg"><img src="static/gallery/004-thumb.jpg" /></a>
+        <a class="img-005 animate-show" href="static/gallery/005.jpg"><img src="static/gallery/005-thumb.jpg" /></a>
+        <a class="img-006 animate-show" href="static/gallery/006.jpg"><img src="static/gallery/006-thumb.jpg" /></a>
+        <a class="img-007 animate-show" href="static/gallery/007.jpg"><img src="static/gallery/007-thumb.jpg" /></a>
     </div>
 </div>
 
