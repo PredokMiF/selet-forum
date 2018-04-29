@@ -1224,10 +1224,12 @@ body h5 {
 }
 @media (min-width: 1280px) {
   #statistic-block {
-    position: relative;
     background: url(app-statistic-bg-1280.png) top center no-repeat;
-    height: 824px;
+  }
+  #statistic-block .statistic-block-inner {
+    position: relative;
     max-width: 1280px;
+    height: 824px;
     margin: 0 auto;
     padding-top: 137px;
   }
@@ -1338,7 +1340,7 @@ body h5 {
   }
   #statistic-block .text-wrapper {
     padding: 79px 20px 0;
-    background: url(app-statistic-bg-768.png) center top;
+    background: url(app-statistic-bg-768.png) center top no-repeat;
   }
   #statistic-block .text-wrapper p {
     width: 400px;
@@ -2108,11 +2110,14 @@ body h5 {
 }
 @media (min-width: 1280px) {
   #galery-block {
+    background: url(app-gallery-bg.png) 0 0 repeat;
+    background-size: cover;
+  }
+  #galery-block .galery-block-inner {
     position: relative;
     max-width: 1280px;
     margin: 0 auto;
     height: 1142px;
-    background: url(app-gallery-bg.png) 0 0 repeat;
   }
   #galery-block a {
     position: absolute;
@@ -2170,7 +2175,7 @@ body h5 {
   }
   #galery-block .galery-block-inner {
     position: relative;
-    width: 768px;
+    width: 708px;
     margin: 0 auto;
   }
   #galery-block a {
@@ -2194,49 +2199,49 @@ body h5 {
   }
   #galery-block .img-001 {
     top: 107px;
-    left: 32px;
+    left: 0;
   }
   #galery-block .img-001 img {
     width: 288px;
   }
   #galery-block .img-002 {
     top: 310px;
-    left: 32px;
+    left: 0;
   }
   #galery-block .img-002 img {
     width: 288px;
   }
   #galery-block .img-003 {
     top: 514px;
-    left: 152px;
+    left: 120px;
   }
   #galery-block .img-003 img {
     width: 168px;
   }
   #galery-block .img-004 {
     top: 43px;
-    left: 328px;
+    left: 296px;
   }
   #galery-block .img-004 img {
     width: 230px;
   }
   #galery-block .img-005 {
     top: 394px;
-    left: 328px;
+    left: 296px;
   }
   #galery-block .img-005 img {
     width: 348px;
   }
   #galery-block .img-006 {
     top: 97px;
-    left: 569px;
+    left: 537px;
   }
   #galery-block .img-006 img {
     width: 171px;
   }
   #galery-block .img-007 {
     top: 268px;
-    left: 569px;
+    left: 537px;
   }
   #galery-block .img-007 img {
     width: 171px;
@@ -2249,9 +2254,6 @@ body h5 {
   }
 }
 @media (min-width: 1280px) {
-  #faq-block {
-    padding-bottom: 20px;
-  }
   #faq-block h4 {
     padding-top: 10px;
     font-size: 20px;
@@ -2413,9 +2415,6 @@ body h5 {
   }
 }
 @media (max-width: 1279px) AND (min-width: 768px) {
-  #faq-block {
-    padding-bottom: 20px;
-  }
   #faq-block h4 {
     padding-top: 24px;
     font-weight: 500;
@@ -2486,6 +2485,7 @@ body h5 {
     display: flex;
     -ms-flex-pack: center;
         justify-content: center;
+    overflow: hidden;
     color: #2e232d;
   }
   #faq-block .carousel-wrapper .carousel-viewport {
@@ -2576,6 +2576,9 @@ body h5 {
 }
 @media (min-width: 1280px) {
   #map-block {
+    background-color: #4ea9a4;
+  }
+  #map-block .map-block-inner {
     position: relative;
     max-width: 1280px;
     margin: 0 auto;
@@ -2844,8 +2847,8 @@ body h5 {
   #footer-block .social-link-wrapper .social-link.selet {
     background: url(app-soc_selet_bg.svg) center center no-repeat;
   }
-  #footer-block .social-link-wrapper .social-link.tw {
-    background: url(app-soc_tw_bg.svg) center center no-repeat;
+  #footer-block .social-link-wrapper .social-link.inst {
+    background: url(app-soc_inst_bg.svg) center center no-repeat;
   }
   #footer-block .social-link-wrapper .social-link.vk {
     background: url(app-soc_vk_bg.svg) center center no-repeat;
@@ -2853,8 +2856,8 @@ body h5 {
   #footer-block .social-link-wrapper .social-link.yt {
     background: url(app-soc_yt_bg.svg) center center no-repeat;
   }
-  #footer-block .social-link-wrapper .social-link.f {
-    background: url(app-soc_f_bg.svg) center center no-repeat;
+  #footer-block .social-link-wrapper .social-link.fb {
+    background: url(app-soc_fb_bg.svg) center center no-repeat;
   }
   #footer-block .social-link-wrapper .social-link:after {
     position: absolute;
@@ -2930,8 +2933,8 @@ body h5 {
   #footer-block .social-link-wrapper .social-link.selet {
     background: url(app-soc_selet_bg.svg) center center no-repeat;
   }
-  #footer-block .social-link-wrapper .social-link.tw {
-    background: url(app-soc_tw_bg.svg) center center no-repeat;
+  #footer-block .social-link-wrapper .social-link.inst {
+    background: url(app-soc_inst_bg.svg) center center no-repeat;
   }
   #footer-block .social-link-wrapper .social-link.vk {
     background: url(app-soc_vk_bg.svg) center center no-repeat;
@@ -2939,8 +2942,8 @@ body h5 {
   #footer-block .social-link-wrapper .social-link.yt {
     background: url(app-soc_yt_bg.svg) center center no-repeat;
   }
-  #footer-block .social-link-wrapper .social-link.f {
-    background: url(app-soc_f_bg.svg) center center no-repeat;
+  #footer-block .social-link-wrapper .social-link.fb {
+    background: url(app-soc_fb_bg.svg) center center no-repeat;
   }
   #footer-block .social-link-wrapper .social-link:after {
     position: absolute;
@@ -3011,8 +3014,8 @@ body h5 {
   #footer-block .social-link-wrapper .social-link.selet {
     background: url(app-soc_selet_bg.svg) center center no-repeat;
   }
-  #footer-block .social-link-wrapper .social-link.tw {
-    background: url(app-soc_tw_bg.svg) center center no-repeat;
+  #footer-block .social-link-wrapper .social-link.inst {
+    background: url(app-soc_inst_bg.svg) center center no-repeat;
   }
   #footer-block .social-link-wrapper .social-link.vk {
     background: url(app-soc_vk_bg.svg) center center no-repeat;
@@ -3020,8 +3023,8 @@ body h5 {
   #footer-block .social-link-wrapper .social-link.yt {
     background: url(app-soc_yt_bg.svg) center center no-repeat;
   }
-  #footer-block .social-link-wrapper .social-link.f {
-    background: url(app-soc_f_bg.svg) center center no-repeat;
+  #footer-block .social-link-wrapper .social-link.fb {
+    background: url(app-soc_fb_bg.svg) center center no-repeat;
   }
   #footer-block .social-link-wrapper .social-link:after {
     position: absolute;

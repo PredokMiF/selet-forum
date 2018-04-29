@@ -15,7 +15,6 @@
 <div id="header-block" class="black-block">
     <div id="header-bg-video"></div>
     <div id="header-bg-video-thumb"></div>
-    <!--autoplay=1&showing=0&playlist=gJ0EGZAtqJo" frameborder="0" allow="autoplay; encrypted-media"></iframe>-->
 
     <div class="video-overflow">
         <div class="lang-sel"><span class="rus active">Рус</span><span class="tat">Тат</span></div>
@@ -54,19 +53,21 @@
 
 <!-- STATISTIC -->
 
-<div id="statistic-block" class="white-block animate-show">
-    <div class="text-wrapper">
-        <p>На форуме «Сэлэт» в Билярске мы создаем развивающую среду, которая объединяет молодежь – людей, увлеченных  интеллектуальным творчеством, духовным и культурным обогащением.</p>
-        <p>Форум – это территория реального татарско-русского двуязычия, платформа для обмена опытом и идеями в сфере образовательных и IT-технологий, для развития личностных и профессиональных качеств, для знакомства с наиболее актуальными мировыми научно-технологичными и социальными трендами.</p>
-    </div>
+<div id="statistic-block" class="white-block">
+    <div class="statistic-block-inner animate-show">
+        <div class="text-wrapper">
+            <p>На форуме «Сэлэт» в Билярске мы создаем развивающую среду, которая объединяет молодежь – людей, увлеченных  интеллектуальным творчеством, духовным и культурным обогащением.</p>
+            <p>Форум – это территория реального татарско-русского двуязычия, платформа для обмена опытом и идеями в сфере образовательных и IT-технологий, для развития личностных и профессиональных качеств, для знакомства с наиболее актуальными мировыми научно-технологичными и социальными трендами.</p>
+        </div>
 
-    <div class="statistic-wrapper">
-        <div class="statistic participant-count animate-shift"><div class="numbers">20</div><div class="text">тыс<br/>участников</div></div>
-        <div class="statistic summer-shifts animate-shift"><div class="numbers">24</div><div class="text">летние смены</div></div>
-        <div class="statistic rf-regions animate-shift"><div class="numbers">43</div><div class="text">региона<br/>России</div></div>
-        <div class="statistic summer-forums animate-shift"><div class="numbers">15</div><div class="text">летних<br/>форумов</div></div>
-        <div class="statistic tent-count animate-shift"><div class="numbers">200</div><div class="text">палаток</div></div>
-        <div class="statistic round-tent-count animate-shift"><div class="numbers">32</div><div class="text">шатра</div></div>
+        <div class="statistic-wrapper">
+            <div class="statistic participant-count animate-shift"><div class="numbers">20</div><div class="text">тыс<br/>участников</div></div>
+            <div class="statistic summer-shifts animate-shift"><div class="numbers">24</div><div class="text">летние смены</div></div>
+            <div class="statistic rf-regions animate-shift"><div class="numbers">43</div><div class="text">региона<br/>России</div></div>
+            <div class="statistic summer-forums animate-shift"><div class="numbers">15</div><div class="text">летних<br/>форумов</div></div>
+            <div class="statistic tent-count animate-shift"><div class="numbers">200</div><div class="text">палаток</div></div>
+            <div class="statistic round-tent-count animate-shift"><div class="numbers">32</div><div class="text">шатра</div></div>
+        </div>
     </div>
 </div>
 
@@ -417,9 +418,11 @@
 
 <!-- MAP -->
 
-<div id="map-block" class="black-block animate-show">
-    <h3>Карта форума</h3>
-    <img src="static/map.jpg">
+<div id="map-block" class="black-block">
+    <div class="map-block-inner animate-show">
+        <h3>Карта форума</h3>
+        <img src="static/map.jpg">
+    </div>
 </div>
 
 <!-- ORG AND PARTNERS -->
@@ -456,10 +459,10 @@
     <div class="footer-inner">
         <div class="social-link-wrapper">
             <a class="social-link selet" href="#"></a>
-            <a class="social-link tw" href="#"></a>
+            <a class="social-link inst" href="#"></a>
             <a class="social-link vk" href="#"></a>
             <a class="social-link yt" href="#"></a>
-            <a class="social-link f" href="#"></a>
+            <a class="social-link fb" href="#"></a>
         </div>
 
         <div class="callback-text">
@@ -497,6 +500,10 @@
         <div class="master">Сделано в <a href="http://teorius.ru/">Теории</a></div>
     </div>
 </div>
+
+<script>
+    document.getElementById('header-block').style.height = document.getElementById('header-block').clientWidth / 1.777777777 + 'px'
+</script>
 
 <script src="static/vendors/jquery-3.3.1.min.js"></script>
 <script src="static/vendors/lightgallery.js-1.0.2/js/lightgallery.min.js"></script>

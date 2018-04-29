@@ -47,7 +47,7 @@ export function initVideo() {
 
         function initVideo() {
             player = new YT.Player('header-bg-video', {
-                // videoId: '668nUCeBHyY', // Коротышка, для проигрывания
+                // videoId: '668nUCeBHyY', // Короткое видео, для тестирования
                 videoId: 'gJ0EGZAtqJo',
                 playerVars: {
                     controls: 0,
@@ -60,6 +60,7 @@ export function initVideo() {
                         event.target.playVideo();
                         player.mute()
                         $iframe = $('#header-bg-video')
+                        $('#header-block').css('height', '')
                         playing = true
                     },
                     onStateChange: event => {
