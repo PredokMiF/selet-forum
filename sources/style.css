@@ -677,6 +677,8 @@ body h5 {
     margin: 50px auto 0;
     padding-left: 50px;
     background-color: white;
+    -ms-flex-pack: center;
+        justify-content: center;
   }
   .forum-select .forum {
     position: relative;
@@ -729,6 +731,8 @@ body h5 {
     margin-top: 31px;
     padding-left: 30px;
     background-color: white;
+    -ms-flex-pack: center;
+        justify-content: center;
   }
   .forum-select .forum {
     position: relative;
@@ -955,6 +959,20 @@ body h5 {
     display: block;
     width: 100%;
   }
+  #header-block #header-bg-video-thumb {
+    position: absolute;
+    display: block;
+    content: '';
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: url(app-forum_photo.jpg) center center no-repeat;
+    background-size: cover;
+  }
+  #header-block #header-bg-video.playing + #header-bg-video-thumb {
+    display: none;
+  }
   #header-block .video-overflow {
     position: absolute;
     display: block;
@@ -1041,6 +1059,20 @@ body h5 {
   #header-block #header-bg-video {
     display: block;
     width: 100%;
+  }
+  #header-block #header-bg-video-thumb {
+    position: absolute;
+    display: block;
+    content: '';
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: url(app-forum_photo.jpg) center center no-repeat;
+    background-size: cover;
+  }
+  #header-block #header-bg-video.playing + #header-bg-video-thumb {
+    display: none;
   }
   #header-block .video-overflow {
     position: absolute;

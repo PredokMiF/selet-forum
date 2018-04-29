@@ -184,7 +184,6 @@ function initVideo() {
                     initVideo();
                 } else if (!playing) {
                     player.playVideo();
-                    $iframe.addClass('playing');
                     playing = true;
                 }
             } else if (player && playing) {
@@ -196,7 +195,7 @@ function initVideo() {
 
         function initVideo() {
             player = new YT.Player('header-bg-video', {
-                // videoId: '668nUCeBHyY',
+                // videoId: '668nUCeBHyY', // Коротышка, для проигрывания
                 videoId: 'gJ0EGZAtqJo',
                 playerVars: {
                     controls: 0,
@@ -212,6 +211,9 @@ function initVideo() {
                         playing = true;
                     },
                     onStateChange: function onStateChange(event) {
+                        if (event.data === YT.PlayerState.PLAYING) {
+                            $iframe.addClass('playing');
+                        }
                         if (event.data === YT.PlayerState.ENDED) {
                             event.target.playVideo();
                         }

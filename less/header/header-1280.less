@@ -8,6 +8,22 @@
             width: 100%;
         }
 
+        #header-bg-video-thumb {
+            position: absolute;
+            display: block;
+            content: '';
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background: url("forum_photo.jpg") center center no-repeat;
+            background-size: cover;
+        }
+
+        #header-bg-video.playing + #header-bg-video-thumb {
+            display: none;
+        }
+
         .video-overflow {
             position: absolute;
             display: block;
