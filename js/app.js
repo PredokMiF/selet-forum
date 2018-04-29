@@ -5,6 +5,8 @@ import { initAutoheight } from './autoheight'
 import { initTabs } from './tabs'
 import './animate-show'
 
+import { runCustomPreGallery } from './custom-gallery'
+
 export function initComponents(wrapper) {
     const $wrapper = $(wrapper || document.body)
 
@@ -32,8 +34,9 @@ export function initComponents(wrapper) {
 
 (function () {
 
-    initVideo();
+    runCustomPreGallery();
 
+    initVideo();
 
     //////////////////////////////
     // CMN CMP

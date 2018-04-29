@@ -95,6 +95,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__autoheight__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__tabs__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__animate_show__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__custom_gallery__ = __webpack_require__(8);
+
+
 
 
 
@@ -125,6 +128,8 @@ function initComponents(wrapper) {
 }
 
 (function () {
+
+    Object(__WEBPACK_IMPORTED_MODULE_6__custom_gallery__["a" /* runCustomPreGallery */])();
 
     Object(__WEBPACK_IMPORTED_MODULE_1__video__["a" /* initVideo */])();
 
@@ -531,6 +536,20 @@ function initTabs(el) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 8 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = runCustomPreGallery;
+function runCustomPreGallery() {
+    var $galeryParent = $('#galery-block');
+
+    $galeryParent.append('<div class="galery-carousel carousel-wrapper" data-cout-foo="return 1">\n        <div class="carousel-flip" data-flip="prev"></div>\n\n        <div class="carousel-viewport"></div>\n\n        <div class="carousel-flip" data-flip="next"></div>\n    </div>');
+
+    $galeryParent.append('<div class="carousel-paging"></div>');
+}
 
 /***/ })
 /******/ ]);
