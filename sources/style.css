@@ -1719,6 +1719,7 @@ body h5 {
     display: flex;
     -ms-flex-pack: center;
         justify-content: center;
+    overflow: hidden;
   }
   #sel-forum-block .carousel-wrapper .carousel-viewport {
     position: relative;
@@ -2262,6 +2263,9 @@ body h5 {
   }
 }
 @media (max-width: 767px) {
+  #galery-block .galery-block-inner {
+    display: none;
+  }
   #galery-block img {
     max-width: 414px;
     height: 414px;
