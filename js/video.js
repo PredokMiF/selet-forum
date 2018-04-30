@@ -11,9 +11,7 @@ export function initVideo() {
         } else {
             const cb = debounce(() => {
                 const resolution = getResolution()
-                console.log(1)
                 if (resolution >= 768) {
-                    console.log(2)
                     addYoutube()
                     $(window).off('resize', cb);
                 }
