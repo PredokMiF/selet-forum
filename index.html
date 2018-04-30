@@ -11,13 +11,6 @@
 
 <div id="ajax-loader" style="position: fixed; left: 0; right: 0; top: 0; bottom: 0; background: url(./static/ajax-loader.gif) center center no-repeat white; z-index: 1;"></div>
 
-<script>
-    window.onload = function() {
-        $(document.body).css('overflow', '')
-        $('#ajax-loader').fadeOut(500);
-    };
-</script>
-
 <!-- HEADER -->
 
 <!-- https://codepen.io/mattgrosswork/pen/jrdwK -->
@@ -155,7 +148,7 @@
                     <div class="carousel-paging"></div>
 
                     <div class="video animate-show">
-                        <iframe class="autoheight" data-fn="return resolution >= 768 ? '' : (width * 0.5 + 'px')" src="https://www.youtube.com/embed/gJ0EGZAtqJo?rel=0&controls=0&showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        <iframe class="autoheight" data-fn="return resolution >= 768 ? '' : (width / 1.777777777 + 'px')" src="https://www.youtube.com/embed/gJ0EGZAtqJo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
@@ -492,12 +485,6 @@
         <div class="master">Сделано в <a href="http://teorius.ru/">Теории</a></div>
     </div>
 </div>
-
-<script>
-    if (window.innerWidth > 767) {
-        document.getElementById('header-block').style.height = document.getElementById('header-block').clientWidth / 1.777777777 + 'px';
-    }
-</script>
 
 <script src="static/vendors/jquery-3.3.1.min.js"></script>
 <script src="static/vendors/lightgallery.js-1.0.2/js/lightgallery.min.js"></script>

@@ -34,6 +34,30 @@ export function initComponents(wrapper) {
 
 (function () {
 
+    (function(){
+        let arr = []
+
+        window._onload = function (fn) {
+            if (arr) {
+                arr.push(fn)
+            } else {
+                fn()
+            }
+        }
+
+        window.onload = () => {
+            arr.forEach(fn => fn())
+            arr = null
+        }
+    })();
+
+    // AJAX LOADER
+
+    window._onload(() => {
+        $(document.body).css('overflow', '')
+        $('#ajax-loader').fadeOut(500);
+    });
+
     runCustomPreGallery();
 
     initVideo();
@@ -43,6 +67,7 @@ export function initComponents(wrapper) {
     //////////////////////////////
 
     $(initComponents);
+    window._onload(initComponents);
     $(window).on('resize', debounce(initComponents, 50));
 
 

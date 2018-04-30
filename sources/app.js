@@ -129,6 +129,32 @@ function initComponents(wrapper) {
 
 (function () {
 
+    (function () {
+        var arr = [];
+
+        window._onload = function (fn) {
+            if (arr) {
+                arr.push(fn);
+            } else {
+                fn();
+            }
+        };
+
+        window.onload = function () {
+            arr.forEach(function (fn) {
+                return fn();
+            });
+            arr = null;
+        };
+    })();
+
+    // AJAX LOADER
+
+    window._onload(function () {
+        $(document.body).css('overflow', '');
+        $('#ajax-loader').fadeOut(500);
+    });
+
     Object(__WEBPACK_IMPORTED_MODULE_6__custom_gallery__["a" /* runCustomPreGallery */])();
 
     Object(__WEBPACK_IMPORTED_MODULE_1__video__["a" /* initVideo */])();
@@ -138,6 +164,7 @@ function initComponents(wrapper) {
     //////////////////////////////
 
     $(initComponents);
+    window._onload(initComponents);
     $(window).on('resize', Object(__WEBPACK_IMPORTED_MODULE_0__debounce__["a" /* debounce */])(initComponents, 50));
 
     //////////////////////////////
@@ -202,6 +229,7 @@ function initVideo() {
         startVideo();
 
         $(window).on('resize', Object(__WEBPACK_IMPORTED_MODULE_0__debounce__["a" /* debounce */])(startVideo, 50));
+        window._onload(startVideo);
 
         function startVideo() {
             var resolution = getResolution();

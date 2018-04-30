@@ -41,6 +41,7 @@ export function initVideo() {
         startVideo();
 
         $(window).on('resize', debounce(startVideo, 50));
+        window._onload(startVideo);
 
         function startVideo() {
             const resolution = getResolution()
