@@ -1,10 +1,10 @@
 @media (max-width: 767px) {
 
     #faq-block {
-        display: none;
 
         h4 {
-            padding-top: 24px;
+            margin-bottom: 0;
+            padding-top: 16px;
             font-weight: 500;
             line-height: 2;
             text-align: center;
@@ -16,6 +16,7 @@
             .who-link {
                 display: inline-block;
                 margin: 0 17px;
+                line-height: 2;
                 font-size: 30px;
                 font-weight: 900;
                 color: inherit;
@@ -42,11 +43,9 @@
         }
 
         p {
-            padding: 49px 0 52px;
+            padding: 49px 0 46px;
             font-size: 20px;
-            line-height: 1.33;
-            width: 742px;
-            margin: 0 auto;
+            line-height: 1.2;
             text-align: center;
         }
 
@@ -55,9 +54,9 @@
 
             .portfolio-selet-link {
                 display: inline-block;
-                width: 260px;
-                line-height: 48px;
-                font-size: 20px;
+                width: 320px;
+                line-height: 73px;
+                font-size: 30px;
                 font-weight: 900;
                 text-align: center;
                 text-decoration: none;
@@ -74,10 +73,12 @@
         }
 
         h2 {
-            padding: 95px 0 36px;
+            margin-bottom: 0;
+            padding: 103px 0 16px;
             font-size: 30px;
             font-weight: 500;
             text-align: center;
+            line-height: 1.0;
         }
 
         .carousel-wrapper {
@@ -86,11 +87,10 @@
             overflow: hidden;
             color: #2e232d;
 
-            @resolution: 768px;
-            @flipWidth: 50px;
-            @cardWidth: 322px;
+            @resolution: 414px;
+            @flipWidth: 37px;
+            @cardWidth: 338px;
             @cardHeight: 288px;
-            @cardPadBotom: 20px;
 
             .carousel-viewport {
                 position: relative;
@@ -98,7 +98,7 @@
                 flex-grow: 0;
                 flex-shrink: 0;
                 flex-basis: @resolution - 2 * @flipWidth;
-                height: @cardHeight * 2 + @cardPadBotom;
+                height: @cardHeight;
             }
 
             .carousel-flip {
@@ -128,8 +128,6 @@
             .carousel-card {
                 width: @cardWidth;
                 height: @cardHeight;
-                margin-right: @resolution - @flipWidth * 2 - @cardWidth * 2;
-                margin-bottom: @cardPadBotom;
                 border-radius: 5px;
                 padding: 16px 20px 0;
                 font-size: 20px;
@@ -162,7 +160,7 @@
 
         .carousel-paging {
             text-align: center;
-            padding: 30px 0 50px;
+            padding: 10px 0 38px;
 
             .carousel-paging-item {
                 display: inline-block;
