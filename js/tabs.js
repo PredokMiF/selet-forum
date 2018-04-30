@@ -24,10 +24,18 @@ export function initTabs(el) {
     // ACTIONS
 
     $tHeader.on('click', '.component-tab-header[data-page-id]', e => {
-        const $tab = $(e.currentTarget)
+        const tab = e.currentTarget
+        const $tab = $(tab)
         const tabId = $tab.data('pageId')
 
+        if (activeTab === tabId) {
+            return
+        }
+
         selectTab(tabId)
+
+        const tabs = $(`.component-tab-header[data-page-id="${tabId}"]`).toArray().filter(el => el !== tab)
+        tabs.forEach(el => $(el).click())
     })
 
     // HELPERS

@@ -462,10 +462,22 @@ function initTabs(el) {
     // ACTIONS
 
     $tHeader.on('click', '.component-tab-header[data-page-id]', function (e) {
-        var $tab = $(e.currentTarget);
+        var tab = e.currentTarget;
+        var $tab = $(tab);
         var tabId = $tab.data('pageId');
 
+        if (activeTab === tabId) {
+            return;
+        }
+
         selectTab(tabId);
+
+        var tabs = $('.component-tab-header[data-page-id="' + tabId + '"]').toArray().filter(function (el) {
+            return el !== tab;
+        });
+        tabs.forEach(function (el) {
+            return $(el).click();
+        });
     });
 
     // HELPERS
