@@ -591,7 +591,14 @@ function initTabs(el) {
 function runCustomPreGallery() {
     var $galeryParent = $('#galery-block');
 
-    $galeryParent.append('<div class="galery-carousel carousel-wrapper" data-cout-foo="return 1">\n        <div class="carousel-flip" data-flip="prev"></div>\n\n        <div class="carousel-viewport"></div>\n\n        <div class="carousel-flip" data-flip="next"></div>\n    </div>');
+    var srcList = $galeryParent.find('.galery img').toArray().map(function (el) {
+        return $(el).attr('src');
+    });
+    var cards = srcList.map(function (src) {
+        return '\n        <div class="carousel-card" style="background-image: url(\'' + src + '\');"></div>\n    ';
+    }).join('');
+
+    $galeryParent.append('\n        <div class="galery-carousel carousel-wrapper" data-cout-foo="return 1">\n            <div class="carousel-flip" data-flip="prev"></div>\n    \n            <div class="carousel-viewport">\n                <div class="hidden">\n                    ' + cards + '\n                </div>        \n            </div>\n    \n            <div class="carousel-flip" data-flip="next"><div class="carousel-flip-inner"></div></div>\n        </div>\n    ');
 
     $galeryParent.append('<div class="carousel-paging"></div>');
 }

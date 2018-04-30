@@ -2269,15 +2269,80 @@ body h5 {
   }
 }
 @media (max-width: 767px) {
+  #galery-block {
+    position: relative;
+  }
   #galery-block .galery {
     display: none;
   }
   #galery-block .galery-carousel {
     display: block;
   }
-  #galery-block .galery-carousel img {
-    max-width: 390px;
-    max-height: 400px;
+  #galery-block .galery-carousel .carousel-flip {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 400px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  #galery-block .galery-carousel .carousel-flip[data-flip="prev"] {
+    left: 0;
+    background: url(app-flip-left.png) 20.5px center no-repeat;
+  }
+  #galery-block .galery-carousel .carousel-flip[data-flip="next"] {
+    right: 0;
+  }
+  #galery-block .galery-carousel .carousel-flip[data-flip="next"] .carousel-flip-inner {
+    position: absolute;
+    height: 400px;
+    width: 36px;
+    top: 0;
+    right: 0;
+    background: url(app-flip-right.png) left center no-repeat;
+  }
+  #galery-block .galery-carousel .carousel-viewport {
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    height: 400px;
+  }
+  #galery-block .galery-carousel .carousel-viewport .carousel-page {
+    position: absolute;
+    width: 100%;
+    transition: left 0.3s ease-in-out;
+  }
+  #galery-block .galery-carousel .carousel-viewport .carousel-page .carousel-card {
+    height: 400px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  #galery-block .carousel-paging {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+  }
+  #galery-block .carousel-paging .carousel-paging-item {
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px 5px;
+  }
+  #galery-block .carousel-paging .carousel-paging-item .carousel-paging-item-inner {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 6px;
+    background-color: #ffffff;
+    border: solid 1px #707070;
+  }
+  #galery-block .carousel-paging .carousel-paging-item.active .carousel-paging-item-inner {
+    background-color: #fbd33a;
+    border: solid 1px #707070;
   }
 }
 @media (min-width: 1280px) {

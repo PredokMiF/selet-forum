@@ -1,6 +1,7 @@
 @media (max-width: 767px) {
 
     #galery-block {
+        position: relative;
 
         .galery {
             display: none;
@@ -9,10 +10,82 @@
         .galery-carousel {
             display: block;
 
-            img {
-                max-width: 390px;
-                max-height: 400px;
+            .carousel-flip {
+                position: absolute;
+                top: 0;
+                width: 50%;
+                height: 400px;
+                cursor: pointer;
+                z-index: 1;
+
+                &[data-flip="prev"] {
+                    left: 0;
+                    background: url("flip-left.png") 20.5px center no-repeat;
+                }
+
+                &[data-flip="next"] {
+                    right: 0;
+
+                    .carousel-flip-inner {
+                        position: absolute;
+                        height: 400px;
+                        width: 36px;
+                        top: 0;
+                        right: 0;
+                        background: url("flip-right.png") left center no-repeat;
+                    }
+                }
             }
+
+            .carousel-viewport {
+                display: flex;
+                overflow: hidden;
+                position: relative;
+                height: 400px;
+
+                .carousel-page {
+                    position: absolute;
+                    width: 100%;
+                    transition: left 0.3s ease-in-out;
+
+                    .carousel-card {
+                        height: 400px;
+                        background-position: center center;
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                    }
+                }
+            }
+        }
+
+        .carousel-paging {
+            position: absolute;
+            z-index: 1;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            text-align: center;
+
+            .carousel-paging-item {
+                display: inline-block;
+                cursor: pointer;
+                padding: 10px 5px;
+
+                .carousel-paging-item-inner {
+                    display: inline-block;
+                    width: 14px;
+                    height: 14px;
+                    border-radius: 6px;
+                    background-color: #ffffff;
+                    border: solid 1px #707070;
+                }
+
+                &.active .carousel-paging-item-inner {
+                    background-color: #fbd33a;
+                    border: solid 1px #707070;
+                }
+            }
+
         }
 
     }
