@@ -1777,13 +1777,13 @@ body h5 {
   #sel-forum-block .carousel-paging .carousel-paging-item {
     display: inline-block;
     cursor: pointer;
-    padding: 5px;
+    padding: 2.5px;
   }
   #sel-forum-block .carousel-paging .carousel-paging-item .carousel-paging-item-inner {
     display: inline-block;
-    width: 14px;
-    height: 14px;
-    border-radius: 6px;
+    width: 7px;
+    height: 7px;
+    border-radius: 3px;
     background-color: #ffffff;
     border: solid 1px #2e232d;
   }
@@ -2288,7 +2288,8 @@ body h5 {
   }
   #galery-block .galery-carousel .carousel-flip[data-flip="prev"] {
     left: 0;
-    background: url(app-flip-left.png) 20.5px center no-repeat;
+    background: url(app-flip-left.svg) 20.5px center no-repeat;
+    background-size: 16px 40px;
   }
   #galery-block .galery-carousel .carousel-flip[data-flip="next"] {
     right: 0;
@@ -2299,7 +2300,8 @@ body h5 {
     width: 36px;
     top: 0;
     right: 0;
-    background: url(app-flip-right.png) left center no-repeat;
+    background: url(app-flip-right.svg) left center no-repeat;
+    background-size: 16px 40px;
   }
   #galery-block .galery-carousel .carousel-viewport {
     display: -ms-flexbox;
@@ -2330,13 +2332,13 @@ body h5 {
   #galery-block .carousel-paging .carousel-paging-item {
     display: inline-block;
     cursor: pointer;
-    padding: 10px 5px;
+    padding: 10px 2.5px;
   }
   #galery-block .carousel-paging .carousel-paging-item .carousel-paging-item-inner {
     display: inline-block;
-    width: 14px;
-    height: 14px;
-    border-radius: 6px;
+    width: 7px;
+    height: 7px;
+    border-radius: 3px;
     background-color: #ffffff;
     border: solid 1px #707070;
   }
@@ -2442,10 +2444,12 @@ body h5 {
     cursor: pointer;
   }
   #faq-block .carousel-wrapper .carousel-flip[data-flip=prev] {
-    background: url(app-flip-left.png) center center no-repeat;
+    background: url(app-flip-left.svg) center center no-repeat;
+    background-size: 22px 54px;
   }
   #faq-block .carousel-wrapper .carousel-flip[data-flip=next] {
-    background: url(app-flip-right.png) center center no-repeat;
+    background: url(app-flip-right.svg) center center no-repeat;
+    background-size: 22px 54px;
   }
   #faq-block .carousel-wrapper .carousel-page {
     position: absolute;
@@ -2601,10 +2605,12 @@ body h5 {
     cursor: pointer;
   }
   #faq-block .carousel-wrapper .carousel-flip[data-flip=prev] {
-    background: url(app-flip-left.png) center center no-repeat;
+    background: url(app-flip-left.svg) center center no-repeat;
+    background-size: 16px 40px;
   }
   #faq-block .carousel-wrapper .carousel-flip[data-flip=next] {
-    background: url(app-flip-right.png) center center no-repeat;
+    background: url(app-flip-right.svg) center center no-repeat;
+    background-size: 16px 40px;
   }
   #faq-block .carousel-wrapper .carousel-page {
     position: absolute;
@@ -2763,10 +2769,12 @@ body h5 {
     cursor: pointer;
   }
   #faq-block .carousel-wrapper .carousel-flip[data-flip=prev] {
-    background: url(app-flip-left.png) center center no-repeat;
+    background: url(app-flip-left.svg) center center no-repeat;
+    background-size: 16px 40px;
   }
   #faq-block .carousel-wrapper .carousel-flip[data-flip=next] {
-    background: url(app-flip-right.png) center center no-repeat;
+    background: url(app-flip-right.svg) center center no-repeat;
+    background-size: 16px 40px;
   }
   #faq-block .carousel-wrapper .carousel-page {
     position: absolute;
@@ -2811,13 +2819,13 @@ body h5 {
   #faq-block .carousel-paging .carousel-paging-item {
     display: inline-block;
     cursor: pointer;
-    padding: 5px;
+    padding: 2.5px;
   }
   #faq-block .carousel-paging .carousel-paging-item .carousel-paging-item-inner {
     display: inline-block;
-    width: 14px;
-    height: 14px;
-    border-radius: 6px;
+    width: 7px;
+    height: 7px;
+    border-radius: 3px;
     background-color: #ffffff;
     border: solid 1px #707070;
   }

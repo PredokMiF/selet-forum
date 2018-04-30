@@ -108,11 +108,13 @@
                 cursor: pointer;
 
                 &[data-flip=prev] {
-                    background: url("flip-left.png") center center no-repeat;
+                    background: url("flip-left.svg") center center no-repeat;
+                    background-size: 16px 40px;
                 }
 
                 &[data-flip=next] {
-                    background: url("flip-right.png") center center no-repeat;
+                    background: url("flip-right.svg") center center no-repeat;
+                    background-size: 16px 40px;
                 }
             }
 
@@ -165,13 +167,13 @@
             .carousel-paging-item {
                 display: inline-block;
                 cursor: pointer;
-                padding: 5px;
+                padding: 2.5px;
 
                 .carousel-paging-item-inner {
                     display: inline-block;
-                    width: 14px;
-                    height: 14px;
-                    border-radius: 6px;
+                    width: 7px;
+                    height: 7px;
+                    border-radius: 3px;
                     background-color: #ffffff;
                     border: solid 1px #707070;
                 }
