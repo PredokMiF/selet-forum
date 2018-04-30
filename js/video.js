@@ -34,6 +34,7 @@ export function initVideo() {
     }).then(ytInitialized, e => console.error(e) )
 
     function ytInitialized() {
+        let ready
         let player
         let playing
         let $iframe
@@ -41,12 +42,19 @@ export function initVideo() {
         startVideo();
 
         $(window).on('resize', debounce(startVideo, 50));
+        window._onload(() => {
+            ready = true
+        });
         window._onload(startVideo);
 
         function startVideo() {
             const resolution = getResolution()
 
             tryVideoWidth()
+
+            if (!ready) {
+                return
+            }
 
             // Пытаемся не грузить ютубовские либы раньше времени
             if (resolution >= 768) {

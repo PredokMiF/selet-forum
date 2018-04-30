@@ -222,6 +222,7 @@ function initVideo() {
     });
 
     function ytInitialized() {
+        var ready = void 0;
         var player = void 0;
         var playing = void 0;
         var $iframe = void 0;
@@ -229,12 +230,19 @@ function initVideo() {
         startVideo();
 
         $(window).on('resize', Object(__WEBPACK_IMPORTED_MODULE_0__debounce__["a" /* debounce */])(startVideo, 50));
+        window._onload(function () {
+            ready = true;
+        });
         window._onload(startVideo);
 
         function startVideo() {
             var resolution = getResolution();
 
             tryVideoWidth();
+
+            if (!ready) {
+                return;
+            }
 
             // Пытаемся не грузить ютубовские либы раньше времени
             if (resolution >= 768) {
