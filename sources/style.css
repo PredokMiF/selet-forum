@@ -3393,6 +3393,7 @@ body.msg-registred {
 @media (max-width: 599px) {
   #msg-registred .msg-registred-body {
     width: 400px;
+    padding-bottom: 40px;
   }
   #msg-registred .close-icon {
     right: 18px;
@@ -3556,6 +3557,75 @@ body.msg-create {
   #msg-create .input-block input,
   #msg-create .input-block textarea {
     width: 360px;
+  }
+}
+#form-header {
+  position: relative;
+  line-height: 1.2;
+}
+#form-header .emblem {
+  position: absolute;
+  top: 37px;
+  left: 50px;
+  width: 61px;
+  height: 120px;
+  background: url(app-header-salet.svg) 0 0 no-repeat;
+}
+#form-header .contact-btn-wrapper {
+  position: absolute;
+  top: 37px;
+  right: 50px;
+}
+#form-header .contact-btn-wrapper .contact-btn {
+  display: block;
+  margin-bottom: 10px;
+}
+#form-header .lang-sel {
+  position: absolute;
+  left: 50%;
+  margin-left: -76px;
+  top: 153px;
+  font-size: 18px;
+  font-weight: 900;
+}
+#form-header .lang-sel .rus {
+  padding: 0 20px 0 24px;
+  border-radius: 26px 0 0 26px;
+}
+#form-header .lang-sel .tat {
+  margin-left: -1px;
+  padding: 0 24px 0 20px;
+  border-radius: 0 26px 26px 0;
+}
+#form-header .lang-sel .rus,
+#form-header .lang-sel .tat {
+  display: inline-block;
+  line-height: 51px;
+  cursor: pointer;
+  border: solid 1px;
+  background: transparent;
+  transition: background-color ease 0.3s;
+}
+#form-header .lang-sel .rus.active,
+#form-header .lang-sel .tat.active {
+  background: rgba(255, 255, 255, 0.3);
+}
+#form-header h1 {
+  margin: 0;
+  padding-top: 66px;
+  padding-bottom: 140px;
+  font-size: 50px;
+  font-weight: 900;
+  text-align: center;
+  color: #fbd33a;
+}
+#form-header + * {
+  border-bottom: 10px solid #fbd33a;
+}
+@media (max-width: 1279px) {
+  #form-header .emblem,
+  #form-header .contact-btn-wrapper {
+    display: none;
   }
 }
 
