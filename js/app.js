@@ -4,6 +4,7 @@ import { initCarousel } from './carousel'
 import { initAutoheight } from './autoheight'
 import { initTabs } from './tabs'
 import './animate-show'
+import './modal'
 
 import { runCustomPreGallery } from './custom-gallery'
 

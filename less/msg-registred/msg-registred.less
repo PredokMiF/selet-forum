@@ -1,0 +1,98 @@
+body.msg-registred {
+    overflow: hidden;
+}
+
+#msg-registred {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 100;
+    overflow: auto;
+
+    .msg-registred-body {
+        position: relative;
+        width: 600px;
+        margin: 0 auto;
+    }
+
+    .close-action {
+        cursor: pointer;
+    }
+
+    .close-icon {
+        position: absolute;
+        top: 20px;
+        right: 44px;
+        width: 37px;
+        height: 37px;
+        background: url("cancel.svg") center center no-repeat;
+        background-size: 37px 37px;
+    }
+
+    .msg {
+        margin-top: 57px;
+        font-size: 50px;
+        font-weight: 900;
+        text-align: center;
+        color: #fbd33a;
+    }
+
+    h2 {
+        margin: 144px 0 5px;
+        font-size: 113px;
+        font-weight: 900;
+        text-align: center;
+        color: #fa4c5f;
+    }
+
+    .desc {
+        margin-bottom: 60px;
+        font-size: 30px;
+        text-align: center;
+        color: #ffffff;
+    }
+
+    .back {
+        font-size: 30px;
+        font-weight: 900;
+        text-align: center;
+        color: #fbd33a;
+        text-decoration: underline;
+    }
+}
+
+@media (max-width: 599px) {
+    #msg-registred {
+        .msg-registred-body {
+            width: 400px;
+        }
+
+        .close-icon {
+            right: 18px;
+            top: 8px;
+        }
+
+        .msg {
+            margin-top: 57px;
+            font-size: 36px;
+        }
+
+        h2 {
+            margin: 64px 0 5px;
+            font-size: 78px;
+        }
+
+        .desc {
+            margin-bottom: 60px;
+            font-size: 30px;
+        }
+
+        .back {
+            font-size: 24px;
+        }
+    }
+}

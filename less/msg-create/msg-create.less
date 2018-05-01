@@ -1,0 +1,172 @@
+body.msg-create {
+    overflow: hidden;
+}
+
+#msg-create {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 100;
+    overflow: auto;
+
+    .msg-create-body {
+        position: relative;
+        width: 600px;
+        margin: 0 auto;
+    }
+
+    .close-action {
+        cursor: pointer;
+    }
+
+    .close-icon {
+        position: absolute;
+        top: 20px;
+        right: 44px;
+        width: 37px;
+        height: 37px;
+        background: url("cancel.svg") center center no-repeat;
+        background-size: 37px 37px;
+    }
+
+    .msg {
+        margin-top: 57px;
+        margin-bottom: 17px;
+        font-size: 50px;
+        font-weight: 900;
+        text-align: center;
+        color: #fbd33a;
+    }
+
+    .input-block {
+        margin-bottom: 42px;
+
+        label {
+            font-size: 20px;
+            font-weight: 900;
+            line-height: 2;
+            cursor: pointer;
+        }
+
+        input {
+            width: 560px;
+            height: 50px;
+            line-height: 50px;
+            margin: 0;
+            padding: 0 20px;
+            border: none;
+            border-radius: 5px;
+            color: #2e232d;
+            font-size: 20px;
+        }
+
+        textarea {
+            width: 560px;
+            height: 100px;
+            line-height: 2;
+            margin: 0;
+            padding: 5px 20px;
+            border: none;
+            border-radius: 5px;
+            color: #2e232d;
+            font-size: 20px;
+        }
+    }
+
+    .contract {
+        margin-top: 50px;
+        font-size: 14px;
+        line-height: 1;
+    }
+
+    .accept {
+        position: relative;
+
+        label {
+            display: block;
+            position: relative;
+            padding-left: 30px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .checkbox {
+            position: absolute;
+            display: block;
+            left: 0;
+            top: 4px;
+            width: 20px;
+            height: 20px;
+            background: url("checkbox.png") center center no-repeat;
+            cursor: pointer;
+        }
+
+        input[type=checkbox] {
+            display: block;
+            opacity: 0;
+            width: 0;
+            height: 0;
+            background-image: url("checkbox-checked.png");
+
+            &:checked + .checkbox {
+                background-image: url("checkbox-checked.png");
+            }
+        }
+    }
+
+    .submit-msg-wrapper {
+        margin-top: 45px;
+        padding-bottom: 45px;
+        text-align: center;
+
+        .submit-msg{
+            display: inline-block;
+            width: 320px;
+            line-height: 75px;
+            border-radius: 5px;
+            border: none;
+            background-color: #fbd33a;
+            font-size: 30px;
+            font-weight: 900;
+            text-align: center;
+            color: #2e232d;
+            cursor: pointer;
+            transition: background-color ease 0.3s;
+
+            &:hover {
+                background-color: lighten(#fbd33a, 10%);
+            }
+        }
+    }
+
+}
+
+@media (max-width: 599px) {
+    #msg-create {
+        .msg-create-body {
+            width: 400px;
+        }
+
+        .close-icon {
+            right: 18px;
+            top: 8px;
+        }
+
+        .msg {
+            margin-top: 57px;
+            font-size: 36px;
+        }
+
+        .input-block {
+
+            input, textarea {
+                width: 360px;
+            }
+
+        }
+    }
+}

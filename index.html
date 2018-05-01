@@ -46,7 +46,7 @@
                     (843) 567-45-78
                 </span>
             </a>
-            <a href="#" class="contact-btn">Оставить сообщение</a>
+            <a href="#" class="contact-btn" onclick="showModal('msg-create')">Оставить сообщение</a>
         </div>
 
         <div class="emblem animate-show"></div>
@@ -1059,12 +1059,62 @@
                     (843) 567-45-78
                 </span>
             </a>
-            <a href="#" class="contact-btn">Оставить сообщение</a>
+            <a href="#" class="contact-btn" onclick="showModal('msg-create')">Оставить сообщение</a>
             <a href="#" class="contact-btn">selet.biz</a>
         </div>
 
         <div class="copyright">© Selet, Официальный сайт Форума 2018</div>
         <div class="master">Сделано в <a href="http://teorius.ru/">Теории</a></div>
+    </div>
+</div>
+
+<div id="msg-create" class="modal">
+    <form class="msg-create-body">
+        <div class="close-icon close-action"></div>
+        <div class="msg">Сообщение</div>
+
+        <div class="input-block">
+            <label for="fio">Фамилия, имя, отчество</label>
+            <input type="text" id="fio" name="fio">
+        </div>
+
+        <div class="input-block">
+            <label for="phone">Мобильный телефон</label>
+            <input type="text" id="phone" name="phone">
+        </div>
+
+        <div class="input-block">
+            <label for="msg">Сообщение</label>
+            <textarea id="msg" name="msg"></textarea>
+        </div>
+
+        <div class="input-block">
+            <label for="capcha">Введите числа</label>
+            <input type="text" id="capcha" name="capcha">
+        </div>
+
+        <p class="contract">
+            Обработка личных данных.Настоящим в соответствии с Федеральным законом №152-ФЗ «О персональных данных» от 27.07.2006 Вы подтверждаете, что, действуя свободно, своей волей и в своем интересе, а также являясь законным представителем несовершеннолетнего ребенка, и в его интересах, даете согласие на обработку (сбор, систематизацию, накопление, хранение, уточнение (обновление, изменение), использование, блокирование, обезличивание, уничтожение) Ваших персональных данных и персональных данных ребенка. Мы, ТРМОФ «Сэлэт» и аффилированные к нему лица, гарантируем конфиденциальность получаемой нами информации. Обработка персональных данных осуществляется в целях эффективной организации летнего отдыха, эффективной организации работы с одаренными детьми) и пр. Срок действия Вашего согласия является неограниченным».
+        </p>
+
+        <div class="accept">
+            <label for="accept"><input type="checkbox" id="accept" name="accept"><span class="checkbox"></span>Да, я согласен на обработку личных данных.</label>
+        </div>
+
+        <div class="submit-msg-wrapper">
+            <button class="submit-msg" type="button">Отправить</button>
+        </div>
+
+    </form>
+</div>
+
+<div id="msg-registred" class="modal">
+    <div class="msg-registred-body">
+        <div class="close-icon close-action"></div>
+        <div class="msg">Сообщение</div>
+        <h2>Спасибо!</h2>
+        <div class="desc">Ваше сообщение отправлено.</div>
+        <div class="back close-action">На главную</div>
     </div>
 </div>
 
