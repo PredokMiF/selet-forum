@@ -3748,13 +3748,15 @@ body.msg-create {
   border-radius: 3px;
   color: white;
 }
+#form .input-block .input-wrapper.input-wrapper-textarea {
+  background: #2e232d;
+}
 #form .input-block .input-wrapper.input-wrapper-textarea textarea {
   display: block;
   width: 498px;
   height: 98px;
-  line-height: 0;
   margin: 0;
-  padding: 0 20px;
+  padding: 6px 20px;
   border: none;
   background: #2e232d;
   font-size: 20px;
