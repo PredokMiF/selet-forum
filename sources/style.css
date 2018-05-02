@@ -3657,7 +3657,7 @@ body.msg-create {
   }
 }
 #form {
-  background: url(app-group-464.svg) top center repeat-y #2e232d;
+  background: url(app-form-bg.svg) top center repeat-y #2e232d;
   background-size: 100%;
 }
 #form .form-body {
@@ -3802,6 +3802,48 @@ body.msg-create {
   #form .input-block .input-wrapper.input-wrapper-textarea textarea,
   #form .input-block .input-wrapper.input-wrapper-text input {
     width: 378px;
+  }
+}
+#form-success {
+  background: url(app-form-bg.svg) top center repeat-y #2e232d;
+  background-size: 100%;
+}
+#form-success .form-success-body {
+  width: 500px;
+  margin: 0 auto;
+}
+#form-success h1 {
+  padding-top: 30px;
+  padding-bottom: 17px;
+  font-size: 113px;
+  font-weight: 900;
+  text-align: center;
+  color: #fa4c5f;
+}
+#form-success .desc {
+  font-size: 30px;
+  line-height: 1.33;
+  text-align: center;
+}
+#form-success .links-wrapper {
+  padding-top: 48px;
+  padding-bottom: 220px;
+}
+#form-success .links-wrapper a {
+  display: block;
+  padding-bottom: 28px;
+  font-size: 30px;
+  font-weight: 900;
+  text-align: center;
+  color: #fbd33a;
+  text-decoration: underline;
+}
+@media (max-width: 599px) {
+  #form-success .form-success-body {
+    width: 380px;
+  }
+  #form-success h1 {
+    font-size: 86px;
   }
 }
 
