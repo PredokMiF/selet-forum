@@ -70,13 +70,47 @@
     }
 }
 
-@media (max-width: 1279px) {
-
+@media (max-width: 1279px) AND (min-width: 768px) {
     #form-header {
-        .emblem,
+
+        .contact-btn-wrapper {
+            top: 51px;
+            right: 30px;
+        }
+
+        .lang-sel {
+            top: 70px;
+        }
+
+        h1 {
+            font-size: 40px;
+            padding-top: 192px;
+            padding-bottom: 28px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    #form-header {
         .contact-btn-wrapper {
             display: none;
         }
-    }
 
+        .lang-sel {
+            top: 20px;
+        }
+
+        .emblem {
+            top: 141px;
+            left: 50%;
+            width: 100px;
+            margin-left: -50px;
+            height: 190px;
+        }
+
+        h1 {
+            padding-top: 382px;
+            padding-bottom: 48px;
+        }
+    }
 }
