@@ -663,6 +663,9 @@ body h5 {
     width: 414px;
   }
 }
+.lg-backdrop.in {
+  background: rgba(46, 35, 45, 0.7);
+}
 .component-tab-wrapper .component-tab-body-wrapper .component-tab-body {
   display: none;
 }
