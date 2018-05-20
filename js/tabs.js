@@ -44,6 +44,13 @@ export function initTabs(el) {
         if (activeTab === tabName) {
             return
         }
+
+        const isFirstTime = isFirstTimeCall();
+        let wrapperWindowShift
+        if (isFirstTime) {
+            wrapperWindowShift = $tHeader.offset().top - $(window).scrollTop()
+        }
+
         activeTab = tabName
 
         // HEADER
@@ -60,5 +67,31 @@ export function initTabs(el) {
 
         $nextActiveTab.addClass('active')
         initComponents($nextActiveTab)
+
+        if (isFirstTime) {
+            $(window).scrollTop($tHeader.offset().top - wrapperWindowShift);
+            setTimeout(function () {
+                $(window).scrollTop($tHeader.offset().top - wrapperWindowShift);
+            }, 0);
+            setTimeout(function () {
+                $(window).scrollTop($tHeader.offset().top - wrapperWindowShift);
+            }, 50);
+            setTimeout(function () {
+                $(window).scrollTop($tHeader.offset().top - wrapperWindowShift);
+            }, 100);
+            setTimeout(function () {
+                $(window).scrollTop($tHeader.offset().top - wrapperWindowShift);
+            }, 300);
+        }
     }
+}
+
+let t;
+function isFirstTimeCall() {
+    if (!t) {
+        t = setTimeout(function(){ t = null; }, 50);
+        return true
+    }
+
+    return false
 }
