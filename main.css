@@ -1,0 +1,295 @@
+.f-filterCar-summary {
+    margin: 20px 0 15px;
+}
+
+.main {
+    display: flex;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 10px;
+}
+
+.cards-item {
+    width: 195px;
+    height: 240px;
+    margin: 0 12px 20px;
+    text-decoration: none;
+    color: #0861a9;
+    font-size: 14px;
+}
+
+.cards-item p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.cards-item-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px;
+    width: 100%;
+    height: 195px;
+    border: 2px solid #dcdcdc;
+    box-sizing: border-box;
+}
+
+.cards-item-img img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.part-group .part-group-list {
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: 0.2s;
+    height: 0;
+    padding: 0;
+    opacity: 0;
+}
+
+.part-group.active .part-group-list {
+    transform: scaleY(1);
+    height: auto;
+    padding: 6px 0;
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+.part-group .header-dropable {
+    transition: 0.2s;
+}
+
+.part-group.active .header-dropable {
+    transform: rotate(90deg);
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.category-select {
+    color: #333333;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 50px;
+}
+
+.category-select span {
+    color: #cccccc;
+}
+
+.category-select-current {
+    display: inline;
+    color: #006699;
+    text-decoration: underline;
+}
+
+::-webkit-scrollbar-button {
+    background-image: url('');
+    background-repeat: no-repeat;
+    width: 5px;
+    height: 0px
+}
+
+::-webkit-scrollbar-track {
+    background-color: #ecedee
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    background-color: #c9c9c9;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #c9c9c9;
+}
+
+::-webkit-resizer {
+    background-image: url('');
+    background-repeat: no-repeat;
+    width: 8px;
+    height: 0px
+}
+
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+@media screen and (max-width: 1200px) {
+    .f-filterCar-block {
+        min-width: 200px;
+    }
+    .f-filterCar-block:last-child {
+        width: auto;
+    }
+    .f-app {
+        padding: 20px;
+    }
+    .f-filterCar-summary span {
+        display: block;
+        font-weight: bold;
+    }
+}
+
+@media screen and (max-width: 568px) {
+    .f-filterCar-summary {
+        margin-top: 15px;
+    }
+    .category-select {
+        padding-left: 20px;
+        background-color: #ee2025;
+        color: #ffffff;
+        font-size: 32px;
+        padding: 10px 20px;
+    }
+    .category-select>span {
+        display: block;
+    }
+    .category-select-current {
+        color: #f0bdc0;
+    }
+    .f-filterCar-block {
+        max-width: 100%;
+        width: 100%;
+        margin: 10px 20px;
+        border: 2px solid #dcdcdc;
+    }
+    .f-filterCar-block label {
+        color: #666666;
+        font-size: 28px;
+        line-height: 38.23px;
+        margin-left: 15px;
+    }
+    .f-filterCar-block .f-filterCar-block-item {
+        font-size: 24px;
+        background: url('img/circle.png') 15px 6px no-repeat white;
+        padding: 5px 5px 5px 50px;
+    }
+    .f-filterCar-block .f-filterCar-block-item.selected {
+        background-image: url('img/circle-active.png');
+    }
+    .f-filterCar-block .f-filterCar-block-list-wrapper {
+        border: none;
+    }
+    .f-filterCar-block:last-child {
+        width: 100%;
+    }
+    .part-group .part-group-list .part-group-list-item {
+        padding: 4px 0 4px 90px;
+        line-height: 24px;
+        font-size: 22px;
+        background: url('img/circle.png') 50px 4px no-repeat transparent;
+    }
+    .part-group .part-group-list .part-group-list-item.selected {
+        background-image: url('img/circle-active.png');
+    }
+    .part-group .part-group-header {
+        position: relative;
+        padding: 8px 60px 8px 60px;
+        background-color: #eeeeee;
+        line-height: 40px;
+        font-size: 24px;
+    }
+    .part-group .part-group-header .header-selectable {
+        position: absolute;
+        left: 17px;
+        top: 12px;
+        width: 28px;
+        height: 33px;
+        background: url(img/circle.png) center center no-repeat transparent;
+    }
+    .part-group .part-group-header .header-selectable.selected {
+        background-image: url('img/circle-active.png');
+    }
+    .part-group .part-group-header .header-dropable {
+        position: absolute;
+        right: 20px;
+        top: 10px;
+        width: 33px;
+        height: 33px;
+    }
+    .part-group .part-group-header .header-dropable.droped {
+        background: url('img/angle.png') 5px center no-repeat;
+    }
+    .main {
+        flex-direction: column;
+    }
+    .part-group-lits {
+        width: 100%;
+    }
+    .cards {
+		justify-content: space-between;
+		width: 370px;
+		margin: 30px auto;
+	}
+    .cards-item {
+        width: 175px;
+        height: 257px;
+        margin: 0 5px 20px;
+    }
+    .cards-item p {
+        font-size: 20px;
+        padding: 0 11px;
+        margin: 5px 0;
+    }
+    .cards-item-img {
+        width: 100%;
+        height: 175px;
+    }
+    #root {
+        margin: 0;
+    }
+    .f-app {
+        padding: 20px 0;
+    }
+    .f-filterCar-summary {
+        padding: 0 20px;
+        font-size: 20px;
+    }
+    .f-finder {
+        margin: 0 20px 13px;
+    }
+    .f-finder .f-finder-inner {
+        max-width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .f-finder h3 {
+        text-align: center;
+        width: 100%;
+    }
+    .f-finder input {
+        width: 230px;
+        min-width: auto;
+    }
+    .part-group-header {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .f-finder input {
+        width: 185px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .f-finder input {
+        width: 150px;
+	}
+	.cards {
+		justify-content: center;
+		width: 310px;
+		margin: 30px auto;
+	}
+}
+
+@media screen and (max-width: 360px) {
+    .f-finder input {
+        width: 135px;
+    }
+}

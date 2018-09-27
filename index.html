@@ -1,1131 +1,472 @@
 <!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:3000/ -->
 <html lang="en">
+
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="shortcut icon" href="static/favicon.ico" type="image/x-icon">
-    <title>Title</title>
-    <link rel="stylesheet" href="static/vendors/lightgallery.js-1.0.2/css/lightgallery.css">
-    <link rel="stylesheet" type="text/css" href="sources/app.css">
-    <link rel="stylesheet" type="text/css" href="sources/style.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="theme-color" content="#000000">
+	<!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+	<link rel="manifest" href="http://localhost:3000/manifest.json">
+	<link rel="shortcut icon" href="http://localhost:3000/favicon.ico">
+	<!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+	<title>ACDeco</title>
+	<style type="text/css">
+		@font-face {
+			font-family: 'OpenSans';
+			src: url(/static/media/OpenSans-Regular.38520c92.svg);
+			src: url(/static/media/OpenSans-Regular.c6543ebb.eot?#iefix) format('embedded-opentype'),
+				url(/static/media/OpenSans-Regular.d8c18926.woff) format('woff'),
+				url(/static/media/OpenSans-Regular.d7d5d458.ttf) format('truetype'),
+				url(/static/media/OpenSans-Regular.38520c92.svg#OpenSans-Regular) format('svg');
+			font-weight: normal;
+			font-style: normal;
+		}
+
+		@font-face {
+			font-family: 'OpenSans';
+			src: url(/static/media/OpenSans-Italic.32234d1e.eot);
+			src: url(/static/media/OpenSans-Italic.32234d1e.eot?#iefix) format('embedded-opentype'),
+				url(/static/media/OpenSans-Italic.e1cd55b2.woff) format('woff'),
+				url(/static/media/OpenSans-Italic.bf243bcb.ttf) format('truetype'),
+				url(/static/media/OpenSans-Italic.4e7a5a83.svg#OpenSans-Italic) format('svg');
+			font-weight: normal;
+			font-style: italic;
+		}
+
+		@font-face {
+			font-family: 'OpenSans';
+			src: url(/static/media/OpenSans-Bold.6f03cc3e.eot);
+			src: url(/static/media/OpenSans-Bold.6f03cc3e.eot?#iefix) format('embedded-opentype'),
+				url(/static/media/OpenSans-Bold.a1217887.woff) format('woff'),
+				url(/static/media/OpenSans-Bold.f5331cb6.ttf) format('truetype'),
+				url(/static/media/OpenSans-Bold.588d6231.svg#OpenSans-Bold) format('svg');
+			font-weight: bold;
+			font-style: normal;
+		}
+
+		@font-face {
+			font-family: 'OpenSans';
+			src: url(/static/media/OpenSans-BoldItalic.4160ba27.eot);
+			src: url(/static/media/OpenSans-BoldItalic.4160ba27.eot?#iefix) format('embedded-opentype'),
+				url(/static/media/OpenSans-BoldItalic.75bb2bca.woff) format('woff'),
+				url(/static/media/OpenSans-BoldItalic.f40598dd.ttf) format('truetype'),
+				url(/static/media/OpenSans-BoldItalic.73d28532.svg#OpenSans-BoldItalic) format('svg');
+			font-weight: bold;
+			font-style: italic;
+		}
+
+		@font-face {
+			font-family: 'OpenSans';
+			src: url(/static/media/OpenSans-Light.2c7d99f0.eot);
+			src: url(/static/media/OpenSans-Light.2c7d99f0.eot?#iefix) format('embedded-opentype'),
+				url(/static/media/OpenSans-Light.18dbb30e.woff) format('woff'),
+				url(/static/media/OpenSans-Light.9ff12f69.ttf) format('truetype'),
+				url(/static/media/OpenSans-Light.8987ffed.svg#OpenSans-Light) format('svg');
+			font-weight: 100;
+			font-style: normal;
+		}
+
+		@font-face {
+			font-family: 'OpenSans';
+			src: url(/static/media/OpenSans-LightItalic.360f99a2.eot);
+			src: url(/static/media/OpenSans-LightItalic.360f99a2.eot?#iefix) format('embedded-opentype'),
+				url(/static/media/OpenSans-LightItalic.88aa06d3.woff) format('woff'),
+				url(/static/media/OpenSans-LightItalic.54b44434.ttf) format('truetype'),
+				url(/static/media/OpenSans-LightItalic.8d1de33b.svg#OpenSans-LightItalic) format('svg');
+			font-weight: 100;
+			font-style: italic;
+		}
+	</style>
+	<style type="text/css">
+		.clearfix:after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+
+		html,
+		body {
+			height: 100%;
+			width: 100%;
+			margin: 0;
+		}
+
+		#root {
+			margin: 20px;
+			background-color: white;
+			color: #000;
+			font-size: 14px;
+			font-family: OpenSans, Tahoma, sans-serif;
+		}
+	</style>
+	<style type="text/css">
+		.f-finder {
+			margin-left: -20px;
+			margin-bottom: 39px;
+		}
+
+		.f-finder .f-finder-inner {
+			padding: 6px 20px 26px;
+			background-color: #cc2529;
+			max-width: 376px;
+		}
+
+		.f-finder h3 {
+			text-transform: uppercase;
+			line-height: 40px;
+			margin: 0;
+			font-size: 16px;
+			color: white;
+			font-weight: bold;
+		}
+
+		.f-finder input {
+			line-height: 36px;
+			padding: 0 10px;
+			margin-right: 16px;
+			width: 230px;
+			border: none;
+		}
+
+		.f-finder button {
+			display: inline-block;
+			padding: 0 10px;
+			height: 36px;
+			line-height: 36px;
+			background-color: #3761a7;
+			border: none;
+			color: white;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+	</style>
+	<style type="text/css">
+		.f-filterCar {
+			display: -ms-flexbox;
+			display: flex;
+			-ms-flex-wrap: wrap;
+			flex-wrap: wrap;
+		}
+
+		.f-filterCar-block {
+			margin-right: 10px;
+			padding-bottom: 2px;
+			max-width: 271px;
+		}
+
+		.f-filterCar-block:last-child {
+			width: 271px;
+		}
+
+		.f-filterCar-block label {
+			display: inline-block;
+			padding-bottom: 5px;
+			color: #666666;
+			text-transform: uppercase;
+		}
+
+		.f-filterCar-block .f-filterCar-block-list-wrapper {
+			padding: 2px;
+			border: 2px solid #dcdcdc;
+		}
+
+		.f-filterCar-block .f-filterCar-block-list {
+			display: block;
+			padding: 0;
+			height: 146px;
+			overflow: auto;
+			margin: 0;
+			list-style: none;
+		}
+
+		.f-filterCar-block .f-filterCar-block-list.need-scroll {
+			padding-right: 15px;
+		}
+
+		.f-filterCar-block .f-filterCar-block-item {
+			padding: 5px 5px 5px 28px;
+			line-height: 1.2;
+			font-size: 12px;
+			text-transform: uppercase;
+			cursor: pointer;
+			background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6+R8AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MUY1QkZBNzY5MkI3MTFFOEE2QTRCMUQ2NTI3OTkzQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MUY1QkZBNzc5MkI3MTFFOEE2QTRCMUQ2NTI3OTkzQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoxRjVCRkE3NDkyQjcxMUU4QTZBNEIxRDY1Mjc5OTNBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoxRjVCRkE3NTkyQjcxMUU4QTZBNEIxRDY1Mjc5OTNBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pk8/CbgAAAE5SURBVHjajFI7TsNAEJ1d/FliKQkGnDtwAKhCA/dAcpUi3ABRgaAmFBSIY7hCSpGChlByhxgIcWRH/snmTWQjGsBPGs9o973Z9ZsVnudtUAWn1+sLIQYo+4gdxDtiUpblnT+bTWqeYFGn2zWUUre6rrvKNAmZpJRUFAVlWUZxknB+iON4GCwWqcZKCG42lXIty6KfYKGJJhxRFLlYKgKigXieTo8Mw3jstNv0H4LlktI0PZb4h1OcRE3APOZL1Ae6pjUSVbx9Ftl89yaoeNv89dmlJqh4PovGKWxtgoo3lhjcKAxDpPJPAe9XvJHEpF+wdh2tVvTbNXmd94Er5q/t+JzPz7dsO8HEz6xWS+MXAWvX3bM858HmoF2Ad/n9jOqOu46zB4dOUB6yS4gPxBNOun/z/dea9yXAAEcGj4d30YDfAAAAAElFTkSuQmCC) 8px 4px no-repeat white;
+		}
+
+		.f-filterCar-block .f-filterCar-block-item.selected,
+		.f-filterCar-block .f-filterCar-block-item:hover {
+			background-color: #eeeeee;
+		}
+
+		.f-filterCar-block .f-filterCar-block-item.selected {
+			background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6+R8AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NzQ2M0VGNkM5MkI3MTFFODkwRTBBRUI1ODg5QzBENzMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NzQ2M0VGNkQ5MkI3MTFFODkwRTBBRUI1ODg5QzBENzMiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo3NDYzRUY2QTkyQjcxMUU4OTBFMEFFQjU4ODlDMEQ3MyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo3NDYzRUY2QjkyQjcxMUU4OTBFMEFFQjU4ODlDMEQ3MyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pk0HGKoAAAE+SURBVHjaYty2bRszAxSY5RdbM/75m8Xw/78tkCsCxG8YGBkP/2dhnnZqYu9RmDpGkCaNpStY+Y+d6AMqzmTABRgZp3+0sii6ER3xmwnEJ6gBBIDyQHW9YP1vVDXtGX//OYAk/QVo6iwGJqZbDP/+qQMVpwLFeOB6WVnsWcB+QNLwn53V7lR/zyW4PwtLFjP+/H0YyOQG2wJUzwQ0yQbJ3fORNYAAmM/IuBDJmbZM0FCCACamm1j9w8R0HYknwgQOVhj4908XqyZU8TdMQKuPIFmdZJZfYoGsHhh3ViBxJC8cxhZ634ESq4D4BlCxFhCHAsU4kEOPCRjTR0ARh6SJE6gwHuikdiAdi6wBqA6cMsCRC4ppoMBMvJELlAeqK4YnIyT32wDjIRtogzWQKwbEr4CKjwLT3lSwi6AAIMAAWAyIrbmI01IAAAAASUVORK5CYII=);
+		}
+
+		.f-filterCar-summary {
+			font-size: 12px;
+		}
+	</style>
+	<style type="text/css">
+		.part-group-lits {
+			width: 235px;
+		}
+
+		.part-group {
+			margin-bottom: 2px;
+		}
+
+		.part-group .part-group-header {
+			position: relative;
+			padding: 8px 40px 8px 28px;
+			background-color: #eeeeee;
+			line-height: 17px;
+			color: #3761a7;
+			cursor: pointer;
+		}
+
+		.part-group .part-group-header .header-selectable {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 28px;
+			height: 33px;
+			background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6+R8AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MUY1QkZBNzY5MkI3MTFFOEE2QTRCMUQ2NTI3OTkzQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MUY1QkZBNzc5MkI3MTFFOEE2QTRCMUQ2NTI3OTkzQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoxRjVCRkE3NDkyQjcxMUU4QTZBNEIxRDY1Mjc5OTNBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoxRjVCRkE3NTkyQjcxMUU4QTZBNEIxRDY1Mjc5OTNBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pk8/CbgAAAE5SURBVHjajFI7TsNAEJ1d/FliKQkGnDtwAKhCA/dAcpUi3ABRgaAmFBSIY7hCSpGChlByhxgIcWRH/snmTWQjGsBPGs9o973Z9ZsVnudtUAWn1+sLIQYo+4gdxDtiUpblnT+bTWqeYFGn2zWUUre6rrvKNAmZpJRUFAVlWUZxknB+iON4GCwWqcZKCG42lXIty6KfYKGJJhxRFLlYKgKigXieTo8Mw3jstNv0H4LlktI0PZb4h1OcRE3APOZL1Ae6pjUSVbx9Ftl89yaoeNv89dmlJqh4PovGKWxtgoo3lhjcKAxDpPJPAe9XvJHEpF+wdh2tVvTbNXmd94Er5q/t+JzPz7dsO8HEz6xWS+MXAWvX3bM858HmoF2Ad/n9jOqOu46zB4dOUB6yS4gPxBNOun/z/dea9yXAAEcGj4d30YDfAAAAAElFTkSuQmCC) center center no-repeat transparent;
+		}
+
+		.part-group .part-group-header .header-selectable.selected {
+			background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6+R8AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NzQ2M0VGNkM5MkI3MTFFODkwRTBBRUI1ODg5QzBENzMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NzQ2M0VGNkQ5MkI3MTFFODkwRTBBRUI1ODg5QzBENzMiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo3NDYzRUY2QTkyQjcxMUU4OTBFMEFFQjU4ODlDMEQ3MyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo3NDYzRUY2QjkyQjcxMUU4OTBFMEFFQjU4ODlDMEQ3MyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pk0HGKoAAAE+SURBVHjaYty2bRszAxSY5RdbM/75m8Xw/78tkCsCxG8YGBkP/2dhnnZqYu9RmDpGkCaNpStY+Y+d6AMqzmTABRgZp3+0sii6ER3xmwnEJ6gBBIDyQHW9YP1vVDXtGX//OYAk/QVo6iwGJqZbDP/+qQMVpwLFeOB6WVnsWcB+QNLwn53V7lR/zyW4PwtLFjP+/H0YyOQG2wJUzwQ0yQbJ3fORNYAAmM/IuBDJmbZM0FCCACamm1j9w8R0HYknwgQOVhj4908XqyZU8TdMQKuPIFmdZJZfYoGsHhh3ViBxJC8cxhZ634ESq4D4BlCxFhCHAsU4kEOPCRjTR0ARh6SJE6gwHuikdiAdi6wBqA6cMsCRC4ppoMBMvJELlAeqK4YnIyT32wDjIRtogzWQKwbEr4CKjwLT3lSwi6AAIMAAWAyIrbmI01IAAAAASUVORK5CYII=);
+		}
+
+		.part-group .part-group-header .header-dropable {
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 33px;
+			height: 33px;
+			background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAKCAYAAABSfLWiAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NzY1NjFFNjBCOTRDMTFFODhCRURCQzNDREU3NkRFM0YiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NzY1NjFFNjFCOTRDMTFFODhCRURCQzNDREU3NkRFM0YiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo3NjU2MUU1RUI5NEMxMUU4OEJFREJDM0NERTc2REUzRiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo3NjU2MUU1RkI5NEMxMUU4OEJFREJDM0NERTc2REUzRiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PiG9nGEAAADxSURBVHjajNExa8JAGMbx65G5UFqUCnUqpYIICqGzW/eWBqFLpw6lurn4BdydxEknu3QSxIK23fNhpEtRktp/4AlIMJqDX47k3vdJcnfk+37dGNOGhx+TfRzjDV2Hyytu8aF5mSHgBDO4+LVcGpjgBnOcHgg4U52rvkYUssId3lHDArmUgDw+UVV91LeyWlxrT8ao4AvniYCCnpdV56nP2K2iAI8YoaSGC60V8Y1rDFUXxI028bYQTxjgSo11zZfoaz3cbnJ2/PcfnvWpL9qjaPTQwibZYFM2cKOjn+o+OoXmroB9IXHQPTp42Hfm/wIMAMNiMm3j1IO6AAAAAElFTkSuQmCC) 0 center no-repeat transparent;
+		}
+
+		.part-group .part-group-header .header-dropable.droped {
+			background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAARCAYAAAAL4VbbAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OTM2RDIwQTlCOTRDMTFFODlEQTRDRjBGNDIyQTlFMDYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OTM2RDIwQUFCOTRDMTFFODlEQTRDRjBGNDIyQTlFMDYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5MzZEMjBBN0I5NEMxMUU4OURBNENGMEY0MjJBOUUwNiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5MzZEMjBBOEI5NEMxMUU4OURBNENGMEY0MjJBOUUwNiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PrDir1IAAADoSURBVHjahNJPi0FRGMfxO0ialJR3YGVpYTVTU4okkRBZSHlfMzWLSZGpafL/JrK8L2JewqQQG75PPQvhHL/61Fn87umc554nz/McksYaR8cSH0qY4huhR+UlZPs8fvBsK/8jq8fIYIiwqSzZIIcF3jBGxFSWbFHABC+YIWoqS3Z64V+k4CJmKksOqGCAJFb64d2yo/Ou60gTmCPus4xVLvqq6x7+AoZiTo8RRAcfON0rF3UnP1r4Ml2wqkVJ47J4XW6iq+sa+qaf0sanTqGkb+QmcuYy3rHX87q2hyQzHOkEXNsTPQswABPiLn1f8DMaAAAAAElFTkSuQmCC) 5px center no-repeat;
+		}
+
+		.part-group .part-group-list {
+			margin: 0;
+			padding: 6px 0;
+			list-style: none;
+			color: #666666;
+			font-size: 12px;
+		}
+
+		.part-group .part-group-list .part-group-list-item {
+			margin: 0;
+			padding: 4px 0 4px 45px;
+			cursor: pointer;
+			line-height: 16px;
+			background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6+R8AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MUY1QkZBNzY5MkI3MTFFOEE2QTRCMUQ2NTI3OTkzQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MUY1QkZBNzc5MkI3MTFFOEE2QTRCMUQ2NTI3OTkzQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoxRjVCRkE3NDkyQjcxMUU4QTZBNEIxRDY1Mjc5OTNBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoxRjVCRkE3NTkyQjcxMUU4QTZBNEIxRDY1Mjc5OTNBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pk8/CbgAAAE5SURBVHjajFI7TsNAEJ1d/FliKQkGnDtwAKhCA/dAcpUi3ABRgaAmFBSIY7hCSpGChlByhxgIcWRH/snmTWQjGsBPGs9o973Z9ZsVnudtUAWn1+sLIQYo+4gdxDtiUpblnT+bTWqeYFGn2zWUUre6rrvKNAmZpJRUFAVlWUZxknB+iON4GCwWqcZKCG42lXIty6KfYKGJJhxRFLlYKgKigXieTo8Mw3jstNv0H4LlktI0PZb4h1OcRE3APOZL1Ae6pjUSVbx9Ftl89yaoeNv89dmlJqh4PovGKWxtgoo3lhjcKAxDpPJPAe9XvJHEpF+wdh2tVvTbNXmd94Er5q/t+JzPz7dsO8HEz6xWS+MXAWvX3bM858HmoF2Ad/n9jOqOu46zB4dOUB6yS4gPxBNOun/z/dea9yXAAEcGj4d30YDfAAAAAElFTkSuQmCC) 25px 5px no-repeat transparent;
+		}
+
+		.part-group .part-group-list .part-group-list-item.selected,
+		.part-group .part-group-list .part-group-list-item:hover {
+			color: #989898;
+		}
+
+		.part-group .part-group-list .part-group-list-item.selected {
+			background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6+R8AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NzQ2M0VGNkM5MkI3MTFFODkwRTBBRUI1ODg5QzBENzMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NzQ2M0VGNkQ5MkI3MTFFODkwRTBBRUI1ODg5QzBENzMiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo3NDYzRUY2QTkyQjcxMUU4OTBFMEFFQjU4ODlDMEQ3MyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo3NDYzRUY2QjkyQjcxMUU4OTBFMEFFQjU4ODlDMEQ3MyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pk0HGKoAAAE+SURBVHjaYty2bRszAxSY5RdbM/75m8Xw/78tkCsCxG8YGBkP/2dhnnZqYu9RmDpGkCaNpStY+Y+d6AMqzmTABRgZp3+0sii6ER3xmwnEJ6gBBIDyQHW9YP1vVDXtGX//OYAk/QVo6iwGJqZbDP/+qQMVpwLFeOB6WVnsWcB+QNLwn53V7lR/zyW4PwtLFjP+/H0YyOQG2wJUzwQ0yQbJ3fORNYAAmM/IuBDJmbZM0FCCACamm1j9w8R0HYknwgQOVhj4908XqyZU8TdMQKuPIFmdZJZfYoGsHhh3ViBxJC8cxhZ634ESq4D4BlCxFhCHAsU4kEOPCRjTR0ARh6SJE6gwHuikdiAdi6wBqA6cMsCRC4ppoMBMvJELlAeqK4YnIyT32wDjIRtogzWQKwbEr4CKjwLT3lSwi6AAIMAAWAyIrbmI01IAAAAASUVORK5CYII=);
+		}
+	</style>
+	<style type="text/css"></style>
+	<style type="text/css">
+		.f-app {
+			padding: 0 20px;
+		}
+	</style>
+	<link rel="stylesheet" href="main.css">
 </head>
-<body style="overflow: hidden;">
 
-<div id="ajax-loader" style="position: fixed; left: 0; right: 0; top: 0; bottom: 0; background: url(./static/ajax-loader.gif) center center no-repeat white; z-index: 100;"></div>
+<body>
+	<noscript>
+		You need to enable JavaScript to run this app.
+	</noscript>
+	<div id="root">
+		<div class="f-app">
+			<div class="f-finder">
+				<div class="f-finder-inner">
+					<h3>Поиск по номеру запчасти</h3><input type="text"><button>Искать</button>
+				</div>
+			</div>
+			<div class="f-filterCar">
+				<div class="f-filterCar-block"><label>Бренд</label>
+					<div class="f-filterCar-block-list-wrapper">
+						<ul class="f-filterCar-block-list ">
+							<li class="f-filterCar-block-item " data-value="CADILLAC">CADILLAC</li>
+							<li class="f-filterCar-block-item " data-value="OPEL">OPEL</li>
+							<li class="f-filterCar-block-item selected" data-value="CHEVROLET">CHEVROLET</li>
+						</ul>
+					</div>
+				</div>
+				<div class="f-filterCar-block"><label>Модель</label>
+					<div class="f-filterCar-block-list-wrapper">
+						<ul class="f-filterCar-block-list ">
+							<li class="f-filterCar-block-item selected" data-value="TRACKER">TRACKER</li>
+							<li class="f-filterCar-block-item " data-value="Aveo T300">Aveo T300</li>
+							<li class="f-filterCar-block-item " data-value="COBALT">COBALT</li>
+						</ul>
+					</div>
+				</div>
+				<div class="f-filterCar-block"><label>Год</label>
+					<div class="f-filterCar-block-list-wrapper">
+						<ul class="f-filterCar-block-list ">
+							<li class="f-filterCar-block-item selected" data-value="2012-н.в.">2012-н.в.</li>
+							<li class="f-filterCar-block-item " data-value="2013-н.в.">2013-н.в.</li>
+						</ul>
+					</div>
+				</div>
+				<div class="f-filterCar-block"><label>Серия</label>
+					<div class="f-filterCar-block-list-wrapper">
+						<ul class="f-filterCar-block-list ">
+							<li class="f-filterCar-block-item " data-value="1.4">1.4</li>
+							<li class="f-filterCar-block-item " data-value="1.4 AWD">1.4 AWD</li>
+							<li class="f-filterCar-block-item selected" data-value="1.6">1.6</li>
+							<li class="f-filterCar-block-item " data-value="1.7 TD">1.7 TD</li>
+							<li class="f-filterCar-block-item " data-value="1.7 TD AWD">1.7 TD AWD</li>
+							<li class="f-filterCar-block-item " data-value="1.7 TD">1.7 TD</li>
+							<li class="f-filterCar-block-item " data-value="1.7 TD AWD">1.7 TD AWD</li>
+							<li class="f-filterCar-block-item " data-value="1.7 TD">1.7 TD</li>
+							<li class="f-filterCar-block-item " data-value="1.7 TD AWD">1.7 TD AWD</li>
+						</ul>
+					</div>
+				</div>
+				<div class="f-filterCar-block"><label>Двигатель</label>
+					<div class="f-filterCar-block-list-wrapper">
+						<ul class="f-filterCar-block-list ">
+							<li class="f-filterCar-block-item selected" data-value="1.6, Бензиновый, 116л.с./85кВт., F16D4,LDE">1.6,
+								Бензиновый, 116л.с./85кВт., F16D4,LDE</li>
+						</ul>
+					</div>
+				</div>
+				<div class="f-filterCar-block"><label>Детали</label>
+					<div class="f-filterCar-block-list-wrapper">
+						<ul class="f-filterCar-block-list ">
+							<li class="f-filterCar-block-item selected" data-value="Front Wheel Drive">Front Wheel Drive</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="f-filterCar-summary">
+				<span>Автомобиль:</span> CHEVROLET, TRACKER, 2012-н.в., 1.6, 1.6, Бензиновый, 116л.с./85кВт.,
+				F16D4,LDE, Front Wheel Drive
+			</div>
+			<div class="category-select">
+				<span> <a href="#" class="category-select-current">ЗАПЧАСТИ ACDelco</a><span> / </span></span> Масла и жидкости
+			</div>
+			<div class="main">
+				<div class="part-group-wrapper">
+					<div class="part-group-lits">
+						<div class="part-group">
+							<div class="part-group-header">Все записи<div class="header-selectable "></div>
+							</div>
+						</div>
+						<div class="part-group">
+							<div class="part-group-header">Подвеска оси<div class="header-dropable droped"></div>
+							</div>
+							<ul class="part-group-list">
+								<li class="part-group-list-item " data-value="Ступица колеса">Ступица колеса</li>
+								<li class="part-group-list-item selected" data-value="Подшипник ступицы колеса">Подшипник ступицы колеса</li>
+
+							</ul>
+						</div>
+						<div class="part-group">
+							<div class="part-group-header">Щетки стеклоочистителя<div class="header-dropable droped"></div>
+							</div>
+							<ul class="part-group-list">
+								<li class="part-group-list-item " data-value="Ступица колеса">Ступица колеса</li>
+								<li class="part-group-list-item selected" data-value="Подшипник ступицы колеса">Подшипник ступицы колеса</li>
+
+							</ul>
+						</div>
+					</div>
+
+
+					<!-- <div>
+						<div>{"acdelco":"19347645"}</div>
+					</div> -->
+				</div>
+				<div class="cards">
+					<a href="#" class="cards-item">
+						<div class="cards-item-img">
+							<img src="img/item.jpg">
+						</div>
+						<p>DEXOS 2 LONG LIFE SYN 5W30 4,2 л.</p>
+					</a>
+					<a href="#" class="cards-item">
+						<div class="cards-item-img">
+							<img src="img/item.jpg">
+						</div>
+						<p>DEXOS 2 LONG LIFE SYN 5W30 4,2 л.</p>
+					</a>
+					<a href="#" class="cards-item">
+						<div class="cards-item-img">
+							<img src="img/item.jpg">
+						</div>
+						<p>DEXOS 2 LONG LIFE SYN 5W30 4,2 л.</p>
+					</a>
+					<a href="#" class="cards-item">
+						<div class="cards-item-img">
+							<img src="img/item.jpg">
+						</div>
+						<p>DEXOS 2 LONG LIFE SYN 5W30 4,2 л.</p>
+					</a>
+					<a href="#" class="cards-item">
+						<div class="cards-item-img">
+							<img src="img/item.jpg">
+						</div>
+						<p>DEXOS 2 LONG LIFE SYN 5W30 4,2 л.</p>
+					</a>
+					<a href="#" class="cards-item">
+						<div class="cards-item-img">
+							<img src="img/item.jpg">
+						</div>
+						<p>DEXOS 2 LONG LIFE SYN 5W30 4,2 л.</p>
+					</a>
+					<a href="#" class="cards-item">
+						<div class="cards-item-img">
+							<img src="img/item.jpg">
+						</div>
+						<p>DEXOS 2 LONG LIFE SYN 5W30 4,2 л.</p>
+					</a>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+	<script type="text/javascript" src="./ACDeco_files/bundle.js.Без названия"></script>
+	<script src="main.js"></script>
 
-<!-- HEADER -->
-
-<!-- https://codepen.io/mattgrosswork/pen/jrdwK -->
-<div id="header-block" class="black-block">
-    <div id="header-bg-video"></div>
-    <div id="header-bg-video-thumb"></div>
-
-    <div class="video-overflow">
-        <div class="lang-sel"><span class="rus active">Рус</span><span class="tat">Тат</span></div>
-
-        <div class="contact-btn-wrapper">
-            <a href="#" class="contact-btn icon-phone numbers">
-                <span class="contact-btn-inner">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="228.357 9778.038 29.35 29.962">
-                      <defs>
-                      </defs>
-                      <g transform="translate(212 9757.203)">
-                        <g transform="translate(31.859 20.835)">
-                          <g transform="translate(0)">
-                            <path d="M61.968,35.036h-.041a1.4,1.4,0,0,1-1.362-1.441,9.7,9.7,0,0,0-9.1-9.957,1.4,1.4,0,1,1,.2-2.8,12.5,12.5,0,0,1,11.7,12.834A1.4,1.4,0,0,1,61.968,35.036Zm-4.983-.029A1.278,1.278,0,0,1,56.852,35a1.4,1.4,0,0,1-1.264-1.527,4.118,4.118,0,0,0-1.2-3.354,4.656,4.656,0,0,0-3.435-1.7h-.029a1.4,1.4,0,0,1-.028-2.8,7.389,7.389,0,0,1,5.557,2.608,6.919,6.919,0,0,1,1.923,5.514A1.4,1.4,0,0,1,56.985,35.006Z" transform="translate(-49.525 -20.835)"/>
-                          </g>
-                        </g>
-                        <g transform="translate(16.357 24.576)">
-                          <g>
-                            <path d="M36.352,55.059h0a2.488,2.488,0,0,1-.746-.109,30.223,30.223,0,0,1-11.718-7.422,30.243,30.243,0,0,1-7.424-11.722,3.283,3.283,0,0,1,.765-3.006l3.045-3.046a3.12,3.12,0,0,1,4.413-.005l2.426,2.426a3.122,3.122,0,0,1-.006,4.413L25.89,37.807a.317.317,0,0,0,0,.447l7.276,7.277a.3.3,0,0,0,.219.09.314.314,0,0,0,.227-.094l1.219-1.218a3.119,3.119,0,0,1,4.413,0l2.425,2.425a3.123,3.123,0,0,1,0,4.412l-3.044,3.044A3.4,3.4,0,0,1,36.352,55.059ZM19.161,35.034a27.423,27.423,0,0,0,6.71,10.511,27.4,27.4,0,0,0,10.509,6.709.89.89,0,0,0,.288-.084l3.01-3.01a.317.317,0,0,0,0-.447l-2.425-2.425a.3.3,0,0,0-.219-.09.321.321,0,0,0-.23.1L35.59,47.511a3.119,3.119,0,0,1-4.412,0L23.9,40.238a3.124,3.124,0,0,1,0-4.411l1.218-1.218a.319.319,0,0,0,.1-.228.3.3,0,0,0-.089-.219L22.7,31.735a.308.308,0,0,0-.221-.09.313.313,0,0,0-.226.094l-3.014,3.014A.881.881,0,0,0,19.161,35.034Z" transform="translate(-16.357 -28.839)"/>
-                          </g>
-                        </g>
-                      </g>
-                    </svg>
-                    (843) 567-45-78
-                </span>
-            </a>
-            <a href="#" class="contact-btn" onclick="showModal('msg-create')">Оставить сообщение</a>
-        </div>
-
-        <div class="emblem animate-show"></div>
-        <div class="I-will-wrapper animate-show">
-            <a class="I-will" href="#" onclick="$('html, body').animate({ scrollTop: $('#faq-block').offset().top }, 1000);">Я&nbsp;еду!</a>
-        </div>
-    </div>
-</div>
-
-<!-- STATISTIC -->
-
-<div id="statistic-block" class="white-block">
-    <div class="statistic-block-inner animate-show">
-        <div class="text-wrapper">
-            <p>На форуме «Сэлэт» в Билярске мы создаем развивающую среду, которая объединяет молодежь – людей, увлеченных  интеллектуальным творчеством, духовным и культурным обогащением.</p>
-            <p>Форум – это территория реального татарско-русского двуязычия, платформа для обмена опытом и идеями в сфере образовательных и IT-технологий, для развития личностных и профессиональных качеств, для знакомства с наиболее актуальными мировыми научно-технологичными и социальными трендами.</p>
-        </div>
-
-        <div class="statistic-wrapper">
-            <div class="statistic participant-count animate-shift"><div class="numbers">20</div><div class="text">тыс<br/>участников</div></div>
-            <div class="statistic summer-shifts animate-shift"><div class="numbers">24</div><div class="text">летние смены</div></div>
-            <div class="statistic rf-regions animate-shift"><div class="numbers">43</div><div class="text">региона<br/>России</div></div>
-            <div class="statistic summer-forums animate-shift"><div class="numbers">15</div><div class="text">летних<br/>форумов</div></div>
-            <div class="statistic tent-count animate-shift"><div class="numbers">200</div><div class="text">палаток</div></div>
-            <div class="statistic round-tent-count animate-shift"><div class="numbers">32</div><div class="text">шатра</div></div>
-        </div>
-    </div>
-</div>
-
-<!-- SELECT FORUM -->
-
-<div id="sel-forum-block" class="white-block">
-    <h3>Выбери свой форум!</h3>
-    <div class="component-tab-wrapper" data-get-active-tab-on-init="const now = +new Date(); return now <= +new Date('2018-06-25')? 'SOFT SKILS' : now <= +new Date('2018-06-30') ? 'ARTS' : now <= +new Date('2018-07-09') ? 'SELET' : now <= +new Date('2018-07-21') ? 'IT' : now <= +new Date('2018-07-30') ? 'LEADERS' : 'MEDIA'">
-        <div class="forum-select component-tab-header-wrapper">
-            <div class="forum component-tab-header" data-page-id="SOFT SKILS">
-                <div class="forum-number numbers">1</div>
-                <div class="forum-body">
-                    <div class="forum-header">SOFT SKILS</div>
-                    <div class="forum-desc">BILER<br/>FORUM</div>
-                    <div class="forum-dates"><span class="numbers">21-25</span> ИЮНЬ</div>
-                </div>
-            </div>
-            <div class="forum component-tab-header" data-page-id="ARTS">
-                <div class="forum-number numbers">2</div>
-                <div class="forum-body">
-                    <div class="forum-header">ARTS</div>
-                    <div class="forum-desc">BILER<br/>FORUM</div>
-                    <div class="forum-dates"><span class="numbers">27-30</span> ИЮНЬ</div>
-                </div>
-            </div>
-            <div class="forum component-tab-header" data-page-id="SELET">
-                <div class="forum-number numbers">3</div>
-                <div class="forum-body">
-                    <div class="forum-header">SELET</div>
-                    <div class="forum-desc">BILER<br/>FORUM</div>
-                    <div class="forum-dates"><span class="numbers">04-09</span> ИЮЛЬ</div>
-                </div>
-            </div>
-            <div class="forum component-tab-header" data-page-id="IT">
-                <div class="forum-number numbers">4</div>
-                <div class="forum-body">
-                    <div class="forum-header">IT</div>
-                    <div class="forum-desc">BILER<br/>FORUM</div>
-                    <div class="forum-dates"><span class="numbers">16-21</span> ИЮЛЬ</div>
-                </div>
-            </div>
-            <div class="forum component-tab-header" data-page-id="LEADERS">
-                <div class="forum-number numbers">5</div>
-                <div class="forum-body">
-                    <div class="forum-header">LEADERS</div>
-                    <div class="forum-desc">BILER<br/>FORUM</div>
-                    <div class="forum-dates"><span class="numbers">25-30</span> ИЮЛЬ</div>
-                </div>
-            </div>
-            <div class="forum component-tab-header" data-page-id="MEDIA">
-                <div class="forum-number numbers">6</div>
-                <div class="forum-body">
-                    <div class="forum-header">MEDIA</div>
-                    <div class="forum-desc">BILER<br/>FORUM</div>
-                    <div class="forum-dates"><span class="numbers">03-08</span> АВГУСТ</div>
-                </div>
-            </div>
-        </div>
-        <div class="forum-select-split"></div>
-
-        <div class="component-tab-body-wrapper">
-
-            <!-- SOFT SKILS -->
-
-            <div class="component-tab-body" data-page-id="SOFT SKILS">
-                <div class="sel-forum-page">
-                    <div class="carousel-wrapper" data-cout-foo="return fullWidth >= 768 ? 3 : 1">
-                        <div class="carousel-flip" data-flip="prev"></div>
-
-                        <div class="sel-forum-text-column-wrapper carousel-viewport">
-                            <p class="sel-forum-text-column carousel-card">SOFT SKILLS — это навыки, которые обеспечивают эффективность профессиональной самореализации. Навыки, не связанные напрямую с конкретной предметной областью, однако, являющиеся ключевыми для достижения успеха. Навыки эффективной работы в команде, личной эффективности, критического мышления. </p>
-                            <p class="sel-forum-text-column carousel-card">Программа Форума предполагает разные форматы образовательных мероприятий — профильные лабораторий, творческие площадки, спортивно-развлекательные мероприятия. </p>
-                            <p class="sel-forum-text-column carousel-card">Наряду с мастер-классами и встречами с участием признанных экспертов, также запланированы сессии по обмену уникальным опытом и историями успеха от преуспевающей молодежи в разных сферах деятельности - науке, искусстве, бизнесе.</p>
-                        </div>
-
-                        <div class="carousel-flip" data-flip="next"></div>
-                    </div>
-
-                    <div class="carousel-paging"></div>
-
-                    <div class="video animate-show">
-                        <iframe class="autoheight" data-fn="return resolution >= 768 ? '' : (width / 1.777777777 + 'px')" src="https://www.youtube.com/embed/gJ0EGZAtqJo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ARTS -->
-
-            <div class="component-tab-body" data-page-id="ARTS">
-                <div class="sel-forum-page">
-                    <div class="carousel-wrapper" data-cout-foo="return fullWidth >= 768 ? 3 : 1">
-                        <div class="carousel-flip" data-flip="prev"></div>
-
-                        <div class="sel-forum-text-column-wrapper carousel-viewport">
-                            <p class="sel-forum-text-column carousel-card">SOFT SKILLS — это навыки, которые обеспечивают эффективность профессиональной самореализации. Навыки, не связанные напрямую с конкретной предметной областью, однако, являющиеся ключевыми для достижения успеха. Навыки эффективной работы в команде, личной эффективности, критического мышления. </p>
-                            <p class="sel-forum-text-column carousel-card">Программа Форума предполагает разные форматы образовательных мероприятий — профильные лабораторий, творческие площадки, спортивно-развлекательные мероприятия. </p>
-                            <p class="sel-forum-text-column carousel-card">Наряду с мастер-классами и встречами с участием признанных экспертов, также запланированы сессии по обмену уникальным опытом и историями успеха от преуспевающей молодежи в разных сферах деятельности - науке, искусстве, бизнесе.</p>
-                        </div>
-
-                        <div class="carousel-flip" data-flip="next"></div>
-                    </div>
-
-                    <div class="carousel-paging"></div>
-
-                    <div class="video animate-show">
-                        <iframe class="autoheight" data-fn="return resolution >= 768 ? '' : (width / 1.777777777 + 'px')" src="https://www.youtube.com/embed/gJ0EGZAtqJo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
-
-            <!-- SELET -->
-
-            <div class="component-tab-body" data-page-id="SELET">
-                <div class="sel-forum-page">
-                    <div class="carousel-wrapper" data-cout-foo="return fullWidth >= 768 ? 3 : 1">
-                        <div class="carousel-flip" data-flip="prev"></div>
-
-                        <div class="sel-forum-text-column-wrapper carousel-viewport">
-                            <p class="sel-forum-text-column carousel-card">SOFT SKILLS — это навыки, которые обеспечивают эффективность профессиональной самореализации. Навыки, не связанные напрямую с конкретной предметной областью, однако, являющиеся ключевыми для достижения успеха. Навыки эффективной работы в команде, личной эффективности, критического мышления. </p>
-                            <p class="sel-forum-text-column carousel-card">Программа Форума предполагает разные форматы образовательных мероприятий — профильные лабораторий, творческие площадки, спортивно-развлекательные мероприятия. </p>
-                            <p class="sel-forum-text-column carousel-card">Наряду с мастер-классами и встречами с участием признанных экспертов, также запланированы сессии по обмену уникальным опытом и историями успеха от преуспевающей молодежи в разных сферах деятельности - науке, искусстве, бизнесе.</p>
-                        </div>
-
-                        <div class="carousel-flip" data-flip="next"></div>
-                    </div>
-
-                    <div class="carousel-paging"></div>
-
-                    <div class="video animate-show">
-                        <iframe class="autoheight" data-fn="return resolution >= 768 ? '' : (width / 1.777777777 + 'px')" src="https://www.youtube.com/embed/gJ0EGZAtqJo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
-
-            <!-- IT -->
-
-            <div class="component-tab-body" data-page-id="IT">
-                <div class="sel-forum-page">
-                    <div class="carousel-wrapper" data-cout-foo="return fullWidth >= 768 ? 3 : 1">
-                        <div class="carousel-flip" data-flip="prev"></div>
-
-                        <div class="sel-forum-text-column-wrapper carousel-viewport">
-                            <p class="sel-forum-text-column carousel-card">SOFT SKILLS — это навыки, которые обеспечивают эффективность профессиональной самореализации. Навыки, не связанные напрямую с конкретной предметной областью, однако, являющиеся ключевыми для достижения успеха. Навыки эффективной работы в команде, личной эффективности, критического мышления. </p>
-                            <p class="sel-forum-text-column carousel-card">Программа Форума предполагает разные форматы образовательных мероприятий — профильные лабораторий, творческие площадки, спортивно-развлекательные мероприятия. </p>
-                            <p class="sel-forum-text-column carousel-card">Наряду с мастер-классами и встречами с участием признанных экспертов, также запланированы сессии по обмену уникальным опытом и историями успеха от преуспевающей молодежи в разных сферах деятельности - науке, искусстве, бизнесе.</p>
-                        </div>
-
-                        <div class="carousel-flip" data-flip="next"></div>
-                    </div>
-
-                    <div class="carousel-paging"></div>
-
-                    <div class="video animate-show">
-                        <iframe class="autoheight" data-fn="return resolution >= 768 ? '' : (width / 1.777777777 + 'px')" src="https://www.youtube.com/embed/gJ0EGZAtqJo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
-
-            <!-- LEADERS -->
-
-            <div class="component-tab-body" data-page-id="LEADERS">
-                <div class="sel-forum-page">
-                    <div class="carousel-wrapper" data-cout-foo="return fullWidth >= 768 ? 3 : 1">
-                        <div class="carousel-flip" data-flip="prev"></div>
-
-                        <div class="sel-forum-text-column-wrapper carousel-viewport">
-                            <p class="sel-forum-text-column carousel-card">SOFT SKILLS — это навыки, которые обеспечивают эффективность профессиональной самореализации. Навыки, не связанные напрямую с конкретной предметной областью, однако, являющиеся ключевыми для достижения успеха. Навыки эффективной работы в команде, личной эффективности, критического мышления. </p>
-                            <p class="sel-forum-text-column carousel-card">Программа Форума предполагает разные форматы образовательных мероприятий — профильные лабораторий, творческие площадки, спортивно-развлекательные мероприятия. </p>
-                            <p class="sel-forum-text-column carousel-card">Наряду с мастер-классами и встречами с участием признанных экспертов, также запланированы сессии по обмену уникальным опытом и историями успеха от преуспевающей молодежи в разных сферах деятельности - науке, искусстве, бизнесе.</p>
-                        </div>
-
-                        <div class="carousel-flip" data-flip="next"></div>
-                    </div>
-
-                    <div class="carousel-paging"></div>
-
-                    <div class="video animate-show">
-                        <iframe class="autoheight" data-fn="return resolution >= 768 ? '' : (width / 1.777777777 + 'px')" src="https://www.youtube.com/embed/gJ0EGZAtqJo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
-
-            <!-- MEDIA -->
-
-            <div class="component-tab-body" data-page-id="MEDIA">
-                <div class="sel-forum-page">
-                    <div class="carousel-wrapper" data-cout-foo="return fullWidth >= 768 ? 3 : 1">
-                        <div class="carousel-flip" data-flip="prev"></div>
-
-                        <div class="sel-forum-text-column-wrapper carousel-viewport">
-                            <p class="sel-forum-text-column carousel-card">SOFT SKILLS — это навыки, которые обеспечивают эффективность профессиональной самореализации. Навыки, не связанные напрямую с конкретной предметной областью, однако, являющиеся ключевыми для достижения успеха. Навыки эффективной работы в команде, личной эффективности, критического мышления. </p>
-                            <p class="sel-forum-text-column carousel-card">Программа Форума предполагает разные форматы образовательных мероприятий — профильные лабораторий, творческие площадки, спортивно-развлекательные мероприятия. </p>
-                            <p class="sel-forum-text-column carousel-card">Наряду с мастер-классами и встречами с участием признанных экспертов, также запланированы сессии по обмену уникальным опытом и историями успеха от преуспевающей молодежи в разных сферах деятельности - науке, искусстве, бизнесе.</p>
-                        </div>
-
-                        <div class="carousel-flip" data-flip="next"></div>
-                    </div>
-
-                    <div class="carousel-paging"></div>
-
-                    <div class="video animate-show">
-                        <iframe class="autoheight" data-fn="return resolution >= 768 ? '' : (width / 1.777777777 + 'px')" src="https://www.youtube.com/embed/gJ0EGZAtqJo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-</div>
-
-<!-- SPEAKERS -->
-
-<div id="speakers-block" class="white-block">
-
-    <div class="speaker-block avatar-yellow avatar-bg-rb animate-show">
-        <div class="speaker-avatar">
-            <div class="speaker-img-bg"></div>
-            <img src="static/speakers/speaker-001.png">
-        </div>
-        <div class="speaker-body animate-shift">
-            <h5>Фанис<br/>Зиганшин</h5>
-            <div class="speaker-info">Актер театра и кино, Общественный деятель</div>
-            <p class="speaker-intro">Я расскажу вам о том, как проживать историю на сцене, чтобы зрители думали о ней, а не о том, как вы играете.</p>
-        </div>
-    </div>
-
-    <div class="speaker-block avatar-red avatar-bg-lt animate-show">
-        <div class="speaker-avatar">
-            <div class="speaker-img-bg"></div>
-            <img src="static/speakers/speaker-001.png">
-        </div>
-        <div class="speaker-body animate-shift">
-            <h5>Фаниль<br/>Вакказов</h5>
-            <div class="speaker-info">Ведущий праздников</div>
-            <p class="speaker-intro">Я открою вам секреты ведущих: как все время быть на позитиве и как спасти безнадежный концерт.</p>
-        </div>
-    </div>
-
-    <div class="speaker-block avatar-aqua avatar-bg-rt animate-show">
-        <div class="speaker-avatar">
-            <div class="speaker-img-bg"></div>
-            <img src="static/speakers/speaker-001.png">
-        </div>
-        <div class="speaker-body animate-shift">
-            <h5>Азхар<br/>Шарипов</h5>
-            <div class="speaker-info">Продюсер, руководитель студии звукозаписи Шарип</div>
-            <p class="speaker-intro">В нашей лекции мы поговорим о том, как с нуля создать будущего лидера звукозаписи региона.</p>
-        </div>
-    </div>
-
-    <div class="speaker-block avatar-pink avatar-bg-lb animate-show">
-        <div class="speaker-avatar">
-            <div class="speaker-img-bg"></div>
-            <img src="static/speakers/speaker-001.png">
-        </div>
-        <div class="speaker-body animate-shift">
-            <h5>Азхар<br/>Шарипов</h5>
-            <div class="speaker-info">Продюсер, руководитель студии звукозаписи Шарип</div>
-            <p class="speaker-intro">В нашей лекции мы поговорим о том, как с нуля создать будущего лидера звукозаписи региона.</p>
-        </div>
-    </div>
-
-    <div class="speaker-block avatar-yellow avatar-bg-rt animate-show">
-        <div class="speaker-avatar">
-            <div class="speaker-img-bg"></div>
-            <img src="static/speakers/speaker-001.png">
-        </div>
-        <div class="speaker-body animate-shift">
-            <h5>Фанис Зиганшин</h5>
-            <div class="speaker-info">Актер театра и кино, Общественный деятель</div>
-            <p class="speaker-intro">Я расскажу вам о том, как проживать историю на сцене, чтобы зрители думали о ней, а не о том, как вы играете.</p>
-        </div>
-    </div>
-
-</div>
-
-<!-- GALLERY -->
-
-<div id="galery-block" class="black-block">
-    <div class="galery galery-block-inner">
-        <a class="img-001 animate-show" href="static/gallery/001.jpg"><img src="static/gallery/001-thumb.jpg" /></a>
-        <a class="img-002 animate-show" href="static/gallery/002.jpg"><img src="static/gallery/002-thumb.jpg" /></a>
-        <a class="img-003 animate-show" href="static/gallery/003.jpg"><img src="static/gallery/003-thumb.jpg" /></a>
-        <a class="img-004 animate-show" href="static/gallery/004.jpg"><img src="static/gallery/004-thumb.jpg" /></a>
-        <a class="img-005 animate-show" href="static/gallery/005.jpg"><img src="static/gallery/005-thumb.jpg" /></a>
-        <a class="img-006 animate-show" href="static/gallery/006.jpg"><img src="static/gallery/006-thumb.jpg" /></a>
-        <a class="img-007 animate-show" href="static/gallery/007.jpg"><img src="static/gallery/007-thumb.jpg" /></a>
-    </div>
-</div>
-
-<!-- FAQ -->
-
-<div id="faq-block" class="component-tab-wrapper" data-get-active-tab-on-init="const now = +new Date(); return now <= +new Date('2018-06-25')? 'SOFT SKILS' : now <= +new Date('2018-06-30') ? 'ARTS' : now <= +new Date('2018-07-09') ? 'SELET' : now <= +new Date('2018-07-21') ? 'IT' : now <= +new Date('2018-07-30') ? 'LEADERS' : 'MEDIA'">
-    <div class="forum-select component-tab-header-wrapper">
-        <div class="forum component-tab-header" data-page-id="SOFT SKILS">
-            <div class="forum-number numbers">1</div>
-            <div class="forum-body">
-                <div class="forum-header">SOFT SKILS</div>
-                <div class="forum-desc">BILER<br/>FORUM</div>
-                <div class="forum-dates"><span class="numbers">21-25</span> ИЮНЬ</div>
-            </div>
-        </div>
-        <div class="forum component-tab-header" data-page-id="ARTS">
-            <div class="forum-number numbers">2</div>
-            <div class="forum-body">
-                <div class="forum-header">ARTS</div>
-                <div class="forum-desc">BILER<br/>FORUM</div>
-                <div class="forum-dates"><span class="numbers">27-30</span> ИЮНЬ</div>
-            </div>
-        </div>
-        <div class="forum component-tab-header" data-page-id="SELET">
-            <div class="forum-number numbers">3</div>
-            <div class="forum-body">
-                <div class="forum-header">SELET</div>
-                <div class="forum-desc">BILER<br/>FORUM</div>
-                <div class="forum-dates"><span class="numbers">04-09</span> ИЮЛЬ</div>
-            </div>
-        </div>
-        <div class="forum component-tab-header" data-page-id="IT">
-            <div class="forum-number numbers">4</div>
-            <div class="forum-body">
-                <div class="forum-header">IT</div>
-                <div class="forum-desc">BILER<br/>FORUM</div>
-                <div class="forum-dates"><span class="numbers">16-21</span> ИЮЛЬ</div>
-            </div>
-        </div>
-        <div class="forum component-tab-header" data-page-id="LEADERS">
-            <div class="forum-number numbers">5</div>
-            <div class="forum-body">
-                <div class="forum-header">LEADERS</div>
-                <div class="forum-desc">BILER<br/>FORUM</div>
-                <div class="forum-dates"><span class="numbers">25-30</span> ИЮЛЬ</div>
-            </div>
-        </div>
-        <div class="forum component-tab-header" data-page-id="MEDIA">
-            <div class="forum-number numbers">6</div>
-            <div class="forum-body">
-                <div class="forum-header">MEDIA</div>
-                <div class="forum-desc">BILER<br/>FORUM</div>
-                <div class="forum-dates"><span class="numbers">03-08</span> АВГУСТ</div>
-            </div>
-        </div>
-    </div>
-    <div class="forum-select-split"></div>
-
-    <div class="component-tab-body-wrapper black-block">
-
-        <!-- SOFT SKILS -->
-
-        <div class="component-tab-body" data-page-id="SOFT SKILS">
-            <h4>В каком качестве вы хотите приехать?</h4>
-            <div class="who-link-wrapper">
-                <a href="form.html" class="who-link active">Участник</a>
-                <a href="#" class="who-link">Гость</a>
-            </div>
-            <p>Чтобы стать участником, необходимо пройти конкурсный отбор на одну из следующих профильных смен сообщества Сәләт: Тел, Осталар бистәсе, Болгар Туган тел, Изге Чишмә.</p>
-            <div class="portfolio-selet-link-wrapper">
-                <a href="https://portfolio-selet.ru/" class="portfolio-selet-link">portfolio-selet.ru</a>
-            </div>
-            <h2 class="animate-show">Часто задаваемые вопросы</h2>
-
-            <div class="carousel-wrapper animate-show" data-cout-foo="return fullWidth >= 1280 ? 6 : fullWidth >= 768 ? 4 : 1">
-                <div class="carousel-flip" data-flip="prev"></div>
-                <div class="carousel-viewport">
-                    <div class="hidden">
-                        <div class="carousel-card card-red">
-                            <h5>Что нужно взять с собой?</h5>
-                            3 комплекта одежды, еда, вода, аптечка, справки, документы и средства гигиены.
-                        </div>
-                        <div class="carousel-card card-aqua">
-                            <h5>Что должно быть в аптечке?</h5>
-                            Конкретного набора нет. На форуме будет дежурить отряд Медицины Катастроф, так что релакс.
-                        </div>
-                        <div class="carousel-card card-yellow">
-                            <h5>Какие средства защиты от солнца или дождя нужно привезти?</h5>
-                            Крем и зонт.
-                        </div>
-                        <div class="carousel-card card-yellow">
-                            <h5>Какие средства защиты от солнца или дождя нужно привезти?!</h5>
-                            Крем и зонт.
-                        </div>
-                        <div class="carousel-card card-red">
-                            <h5>Что нужно взять с собой?!</h5>
-                            3 комплекта одежды, еда, вода, аптечка, справки, документы и средства гигиены.
-                        </div>
-                        <div class="carousel-card card-aqua">
-                            <h5>Что должно быть в аптечке?!</h5>
-                            Конкретного набора нет. На форуме будет дежурить отряд Медицины Катастроф, так что релакс.
-                        </div>
-                        <div class="carousel-card card-red">
-                            <h5>2Что нужно взять с собой?</h5>
-                            3 комплекта одежды, еда, вода, аптечка, справки, документы и средства гигиены.
-                        </div>
-                        <div class="carousel-card card-aqua">
-                            <h5>2Что должно быть в аптечке?</h5>
-                            Конкретного набора нет. На форуме будет дежурить отряд Медицины Катастроф, так что релакс.
-                        </div>
-                        <div class="carousel-card card-yellow">
-                            <h5>2Какие средства защиты от солнца или дождя нужно привезти?</h5>
-                            Крем и зонт.
-                        </div>
-                        <div class="carousel-card card-yellow">
-                            <h5>2Какие средства защиты от солнца или дождя нужно привезти?!</h5>
-                            Крем и зонт.
-                        </div>
-                        <div class="carousel-card card-red">
-                            <h5>2Что нужно взять с собой?!</h5>
-                            3 комплекта одежды, еда, вода, аптечка, справки, документы и средства гигиены.
-                        </div>
-                        <div class="carousel-card card-aqua">
-                            <h5>2Что должно быть в аптечке?!</h5>
-                            Конкретного набора нет. На форуме будет дежурить отряд Медицины Катастроф, так что релакс.
-                        </div>
-                        <div class="carousel-card card-red">
-                            <h5>3Что нужно взять с собой?</h5>
-                            3 комплекта одежды, еда, вода, аптечка, справки, документы и средства гигиены.
-                        </div>
-                        <div class="carousel-card card-aqua">
-                            <h5>3Что должно быть в аптечке?</h5>
-                            Конкретного набора нет. На форуме будет дежурить отряд Медицины Катастроф, так что релакс.
-                        </div>
-                        <div class="carousel-card card-yellow">
-                            <h5>3Какие средства защиты от солнца или дождя нужно привезти?</h5>
-                            Крем и зонт.
-                        </div>
-                        <div class="carousel-card card-yellow">
-                            <h5>3Какие средства защиты от солнца или дождя нужно привезти?!</h5>
-                            Крем и зонт.
-                        </div>
-                        <div class="carousel-card card-red">
-                            <h5>3Что нужно взять с собой?!</h5>
-                            3 комплекта одежды, еда, вода, аптечка, справки, документы и средства гигиены.
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-flip" data-flip="next"></div>
-            </div>
-            <div class="carousel-paging"></div>
-        </div>
-
-        <!-- ARTS -->
-
-        <div class="component-tab-body" data-page-id="ARTS">
-            <h4>В каком качестве вы хотите приехать?</h4>
-            <div class="who-link-wrapper">
-                <a href="form.html" class="who-link active">Участник</a>
-                <a href="#" class="who-link">Гость</a>
-            </div>
-            <p>Чтобы стать участником, необходимо пройти конкурсный отбор на одну из следующих профильных смен сообщества Сәләт: Тел, Осталар бистәсе, Болгар Туган тел, Изге Чишмә.</p>
-            <div class="portfolio-selet-link-wrapper">
-                <a href="https://portfolio-selet.ru/" class="portfolio-selet-link">portfolio-selet.ru</a>
-            </div>
-            <h2 class="animate-show">Часто задаваемые вопросы</h2>
-
-            <div class="carousel-wrapper animate-show" data-cout-foo="return fullWidth >= 1280 ? 6 : fullWidth >= 768 ? 4 : 1">
-                <div class="carousel-flip" data-flip="prev"></div>
-                <div class="carousel-viewport">
-                    <div class="hidden">
-                        <div class="carousel-card card-red">
-                            <h5>Что нужно взять с собой?</h5>
-                            3 комплекта одежды, еда, вода, аптечка, справки, документы и средства гигиены.
-                        </div>
-                        <div class="carousel-card card-aqua">
-                            <h5>Что должно быть в аптечке?</h5>
-                            Конкретного набора нет. На форуме будет дежурить отряд Медицины Катастроф, так что релакс.
-                        </div>
-                        <div class="carousel-card card-yellow">
-                            <h5>Какие средства защиты от солнца или дождя нужно привезти?</h5>
-                            Крем и зонт.
-                        </div>
-                        <div class="carousel-card card-yellow">
-                            <h5>Какие средства защиты от солнца или дождя нужно привезти?!</h5>
-                            Крем и зонт.
-                        </div>
-                        <div class="carousel-card card-red">
-                            <h5>Что нужно взять с собой?!</h5>
-                            3 комплекта одежды, еда, вода, аптечка, справки, документы и средства гигиены.
-                        </div>
-                        <div class="carousel-card card-aqua">
-                            <h5>Что должно быть в аптечке?!</h5>
-                            Конкретного набора нет. На форуме будет дежурить отряд Медицины Катастроф, так что релакс.
-                        </div>
-                        <div class="carousel-card card-red">
-                            <h5>2Что нужно взять с собой?</h5>
-                            3 комплекта одежды, еда, вода, аптечка, справки, документы и средства гигиены.
-                        </div>
-                        <div class="carousel-card card-aqua">
-                            <h5>2Что должно быть в аптечке?</h5>
-                            Конкретного набора нет. На форуме будет дежурить отряд Медицины Катастроф, так что релакс.
-                        </div>
-                        <div class="carousel-card card-yellow">
-                            <h5>2Какие средства защиты от солнца или дождя нужно привезти?</h5>
-                            Крем и зонт.
-                        </div>
-                        <div class="carousel-card card-yellow">
-                            <h5>2Какие средства защиты от солнца или дождя нужно привезти?!</h5>
-                            Крем и зонт.
-                        </div>
-                        <div class="carousel-card card-red">
-                            <h5>2Что нужно взять с собой?!</h5>
-                            3 комплекта одежды, еда, вода, аптечка, справки, документы и средства гигиены.
-                        </div>
-                        <div class="carousel-card card-aqua">
-                            <h5>2Что должно быть в аптечке?!</h5>
-                            Конкретного набора нет. На форуме будет дежурить отряд Медицины Катастроф, так что релакс.
-                        </div>
-                        <div class="carousel-card card-red">
-                            <h5>3Что нужно взять с собой?</h5>
-                            3 комплекта одежды, еда, вода, аптечка, справки, документы и средства гигиены.
-                        </div>
-                        <div class="carousel-card card-aqua">
-                            <h5>3Что должно быть в аптечке?</h5>
-                            Конкретного набора нет. На форуме будет дежурить отряд Медицины Катастроф, так что релакс.
-                        </div>
-                        <div class="carousel-card card-yellow">
-                            <h5>3Какие средства защиты от солнца или дождя нужно привезти?</h5>
-                            Крем и зонт.
-                        </div>
-                        <div class="carousel-card card-yellow">
-                            <h5>3Какие средства защиты от солнца или дождя нужно привезти?!</h5>
-                            Крем и зонт.
-                        </div>
-                        <div class="carousel-card card-red">
-                            <h5>3Что нужно взять с собой?!</h5>
-                            3 комплекта одежды, еда, вода, аптечка, справки, документы и средства гигиены.
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-flip" data-flip="next"></div>
-            </div>
-            <div class="carousel-paging"></div>
-        </div>
-
-        <!-- SELET -->
-
-        <div class="component-tab-body" data-page-id="SELET">
-            <h4>В каком качестве вы хотите приехать?</h4>
-            <div class="who-link-wrapper">
-                <a href="form.html" class="who-link active">Участник</a>
-                <a href="#" class="who-link">Гость</a>
-            </div>
-            <p>Чтобы стать участником, необходимо пройти конкурсный отбор на одну из следующих профильных смен сообщества Сәләт: Тел, Осталар бистәсе, Болгар Туган тел, Изге Чишмә.</p>
-            <div class="portfolio-selet-link-wrapper">
-                <a href="https://portfolio-selet.ru/" class="portfolio-selet-link">portfolio-selet.ru</a>
-            </div>
-            <h2 class="animate-show">Часто задаваемые вопросы</h2>
-
-            <div class="carousel-wrapper animate-show" data-cout-foo="return fullWidth >= 1280 ? 6 : fullWidth >= 768 ? 4 : 1">
-                <div class="carousel-flip" data-flip="prev"></div>
-                <div class="carousel-viewport">
-                    <div class="hidden">
-                        <div class="carousel-card card-red">
-                            <h5>Что нужно взять с собой?</h5>
-                            3 комплекта одежды, еда, вода, аптечка, справки, документы и средства гигиены.
-                        </div>
-                        <div class="carousel-card card-aqua">
-                            <h5>Что должно быть в аптечке?</h5>
-                            Конкретного набора нет. На форуме будет дежурить отряд Медицины Катастроф, так что релакс.
-                        </div>
-                        <div class="carousel-card card-yellow">
-                            <h5>Какие средства защиты от солнца или дождя нужно привезти?</h5>
-                            Крем и зонт.
-                        </div>
-                        <div class="carousel-card card-yellow">
-                            <h5>Какие средства защиты от солнца или дождя нужно привезти?!</h5>
-                            Крем и зонт.
-                        </div>
-                        <div class="carousel-card card-red">
-                            <h5>Что нужно взять с собой?!</h5>
-                            3 комплекта одежды, еда, вода, аптечка, справки, документы и средства гигиены.
-                        </div>
-                        <div class="carousel-card card-aqua">
-                            <h5>Что должно быть в аптечке?!</h5>
-                            Конкретного набора нет. На форуме будет дежурить отряд Медицины Катастроф, так что релакс.
-                        </div>
-                        <div class="carousel-card card-red">
-                            <h5>2Что нужно взять с собой?</h5>
-                            3 комплекта одежды, еда, вода, аптечка, справки, документы и средства гигиены.
-                        </div>
-                        <div class="carousel-card card-aqua">
-                            <h5>2Что должно быть в аптечке?</h5>
-                            Конкретного набора нет. На форуме будет дежурить отряд Медицины Катастроф, так что релакс.
-                        </div>
-                        <div class="carousel-card card-yellow">
-                            <h5>2Какие средства защиты от солнца или дождя нужно привезти?</h5>
-                            Крем и зонт.
-                        </div>
-                        <div class="carousel-card card-yellow">
-                            <h5>2Какие средства защиты от солнца или дождя нужно привезти?!</h5>
-                            Крем и зонт.
-                        </div>
-                        <div class="carousel-card card-red">
-                            <h5>2Что нужно взять с собой?!</h5>
-                            3 комплекта одежды, еда, вода, аптечка, справки, документы и средства гигиены.
-                        </div>
-                        <div class="carousel-card card-aqua">
-                            <h5>2Что должно быть в аптечке?!</h5>
-                            Конкретного набора нет. На форуме будет дежурить отряд Медицины Катастроф, так что релакс.
-                        </div>
-                        <div class="carousel-card card-red">
-                            <h5>3Что нужно взять с собой?</h5>
-                            3 комплекта одежды, еда, вода, аптечка, справки, документы и средства гигиены.
-                        </div>
-                        <div class="carousel-card card-aqua">
-                            <h5>3Что должно быть в аптечке?</h5>
-                            Конкретного набора нет. На форуме будет дежурить отряд Медицины Катастроф, так что релакс.
-                        </div>
-                        <div class="carousel-card card-yellow">
-                            <h5>3Какие средства защиты от солнца или дождя нужно привезти?</h5>
-                            Крем и зонт.
-                        </div>
-                        <div class="carousel-card card-yellow">
-                            <h5>3Какие средства защиты от солнца или дождя нужно привезти?!</h5>
-                            Крем и зонт.
-                        </div>
-                        <div class="carousel-card card-red">
-                            <h5>3Что нужно взять с собой?!</h5>
-                            3 комплекта одежды, еда, вода, аптечка, справки, документы и средства гигиены.
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-flip" data-flip="next"></div>
-            </div>
-            <div class="carousel-paging"></div>
-        </div>
-
-        <!-- IT -->
-
-        <div class="component-tab-body" data-page-id="IT">
-            <h4>В каком качестве вы хотите приехать?</h4>
-            <div class="who-link-wrapper">
-                <a href="form.html" class="who-link active">Участник</a>
-                <a href="#" class="who-link">Гость</a>
-            </div>
-            <p>Чтобы стать участником, необходимо пройти конкурсный отбор на одну из следующих профильных смен сообщества Сәләт: Тел, Осталар бистәсе, Болгар Туган тел, Изге Чишмә.</p>
-            <div class="portfolio-selet-link-wrapper">
-                <a href="https://portfolio-selet.ru/" class="portfolio-selet-link">portfolio-selet.ru</a>
-            </div>
-            <h2 class="animate-show">Часто задаваемые вопросы</h2>
-
-            <div class="carousel-wrapper animate-show" data-cout-foo="return fullWidth >= 1280 ? 6 : fullWidth >= 768 ? 4 : 1">
-                <div class="carousel-flip" data-flip="prev"></div>
-                <div class="carousel-viewport">
-                    <div class="hidden">
-                        <div class="carousel-card card-red">
-                            <h5>Что нужно взять с собой?</h5>
-                            3 комплекта одежды, еда, вода, аптечка, справки, документы и средства гигиены.
-                        </div>
-                        <div class="carousel-card card-aqua">
-                            <h5>Что должно быть в аптечке?</h5>
-                            Конкретного набора нет. На форуме будет дежурить отряд Медицины Катастроф, так что релакс.
-                        </div>
-                        <div class="carousel-card card-yellow">
-                            <h5>Какие средства защиты от солнца или дождя нужно привезти?</h5>
-                            Крем и зонт.
-                        </div>
-                        <div class="carousel-card card-yellow">
-                            <h5>Какие средства защиты от солнца или дождя нужно привезти?!</h5>
-                            Крем и зонт.
-                        </div>
-                        <div class="carousel-card card-red">
-                            <h5>Что нужно взять с собой?!</h5>
-                            3 комплекта одежды, еда, вода, аптечка, справки, документы и средства гигиены.
-                        </div>
-                        <div class="carousel-card card-aqua">
-                            <h5>Что должно быть в аптечке?!</h5>
-                            Конкретного набора нет. На форуме будет дежурить отряд Медицины Катастроф, так что релакс.
-                        </div>
-                        <div class="carousel-card card-red">
-                            <h5>2Что нужно взять с собой?</h5>
-                            3 комплекта одежды, еда, вода, аптечка, справки, документы и средства гигиены.
-                        </div>
-                        <div class="carousel-card card-aqua">
-                            <h5>2Что должно быть в аптечке?</h5>
-                            Конкретного набора нет. На форуме будет дежурить отряд Медицины Катастроф, так что релакс.
-                        </div>
-                        <div class="carousel-card card-yellow">
-                            <h5>2Какие средства защиты от солнца или дождя нужно привезти?</h5>
-                            Крем и зонт.
-                        </div>
-                        <div class="carousel-card card-yellow">
-                            <h5>2Какие средства защиты от солнца или дождя нужно привезти?!</h5>
-                            Крем и зонт.
-                        </div>
-                        <div class="carousel-card card-red">
-                            <h5>2Что нужно взять с собой?!</h5>
-                            3 комплекта одежды, еда, вода, аптечка, справки, документы и средства гигиены.
-                        </div>
-                        <div class="carousel-card card-aqua">
-                            <h5>2Что должно быть в аптечке?!</h5>
-                            Конкретного набора нет. На форуме будет дежурить отряд Медицины Катастроф, так что релакс.
-                        </div>
-                        <div class="carousel-card card-red">
-                            <h5>3Что нужно взять с собой?</h5>
-                            3 комплекта одежды, еда, вода, аптечка, справки, документы и средства гигиены.
-                        </div>
-                        <div class="carousel-card card-aqua">
-                            <h5>3Что должно быть в аптечке?</h5>
-                            Конкретного набора нет. На форуме будет дежурить отряд Медицины Катастроф, так что релакс.
-                        </div>
-                        <div class="carousel-card card-yellow">
-                            <h5>3Какие средства защиты от солнца или дождя нужно привезти?</h5>
-                            Крем и зонт.
-                        </div>
-                        <div class="carousel-card card-yellow">
-                            <h5>3Какие средства защиты от солнца или дождя нужно привезти?!</h5>
-                            Крем и зонт.
-                        </div>
-                        <div class="carousel-card card-red">
-                            <h5>3Что нужно взять с собой?!</h5>
-                            3 комплекта одежды, еда, вода, аптечка, справки, документы и средства гигиены.
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-flip" data-flip="next"></div>
-            </div>
-            <div class="carousel-paging"></div>
-        </div>
-
-        <!-- LEADERS -->
-
-        <div class="component-tab-body" data-page-id="LEADERS">
-            <h4>В каком качестве вы хотите приехать?</h4>
-            <div class="who-link-wrapper">
-                <a href="form.html" class="who-link active">Участник</a>
-                <a href="#" class="who-link">Гость</a>
-            </div>
-            <p>Чтобы стать участником, необходимо пройти конкурсный отбор на одну из следующих профильных смен сообщества Сәләт: Тел, Осталар бистәсе, Болгар Туган тел, Изге Чишмә.</p>
-            <div class="portfolio-selet-link-wrapper">
-                <a href="https://portfolio-selet.ru/" class="portfolio-selet-link">portfolio-selet.ru</a>
-            </div>
-            <h2 class="animate-show">Часто задаваемые вопросы</h2>
-
-            <div class="carousel-wrapper animate-show" data-cout-foo="return fullWidth >= 1280 ? 6 : fullWidth >= 768 ? 4 : 1">
-                <div class="carousel-flip" data-flip="prev"></div>
-                <div class="carousel-viewport">
-                    <div class="hidden">
-                        <div class="carousel-card card-red">
-                            <h5>Что нужно взять с собой?</h5>
-                            3 комплекта одежды, еда, вода, аптечка, справки, документы и средства гигиены.
-                        </div>
-                        <div class="carousel-card card-aqua">
-                            <h5>Что должно быть в аптечке?</h5>
-                            Конкретного набора нет. На форуме будет дежурить отряд Медицины Катастроф, так что релакс.
-                        </div>
-                        <div class="carousel-card card-yellow">
-                            <h5>Какие средства защиты от солнца или дождя нужно привезти?</h5>
-                            Крем и зонт.
-                        </div>
-                        <div class="carousel-card card-yellow">
-                            <h5>Какие средства защиты от солнца или дождя нужно привезти?!</h5>
-                            Крем и зонт.
-                        </div>
-                        <div class="carousel-card card-red">
-                            <h5>Что нужно взять с собой?!</h5>
-                            3 комплекта одежды, еда, вода, аптечка, справки, документы и средства гигиены.
-                        </div>
-                        <div class="carousel-card card-aqua">
-                            <h5>Что должно быть в аптечке?!</h5>
-                            Конкретного набора нет. На форуме будет дежурить отряд Медицины Катастроф, так что релакс.
-                        </div>
-                        <div class="carousel-card card-red">
-                            <h5>2Что нужно взять с собой?</h5>
-                            3 комплекта одежды, еда, вода, аптечка, справки, документы и средства гигиены.
-                        </div>
-                        <div class="carousel-card card-aqua">
-                            <h5>2Что должно быть в аптечке?</h5>
-                            Конкретного набора нет. На форуме будет дежурить отряд Медицины Катастроф, так что релакс.
-                        </div>
-                        <div class="carousel-card card-yellow">
-                            <h5>2Какие средства защиты от солнца или дождя нужно привезти?</h5>
-                            Крем и зонт.
-                        </div>
-                        <div class="carousel-card card-yellow">
-                            <h5>2Какие средства защиты от солнца или дождя нужно привезти?!</h5>
-                            Крем и зонт.
-                        </div>
-                        <div class="carousel-card card-red">
-                            <h5>2Что нужно взять с собой?!</h5>
-                            3 комплекта одежды, еда, вода, аптечка, справки, документы и средства гигиены.
-                        </div>
-                        <div class="carousel-card card-aqua">
-                            <h5>2Что должно быть в аптечке?!</h5>
-                            Конкретного набора нет. На форуме будет дежурить отряд Медицины Катастроф, так что релакс.
-                        </div>
-                        <div class="carousel-card card-red">
-                            <h5>3Что нужно взять с собой?</h5>
-                            3 комплекта одежды, еда, вода, аптечка, справки, документы и средства гигиены.
-                        </div>
-                        <div class="carousel-card card-aqua">
-                            <h5>3Что должно быть в аптечке?</h5>
-                            Конкретного набора нет. На форуме будет дежурить отряд Медицины Катастроф, так что релакс.
-                        </div>
-                        <div class="carousel-card card-yellow">
-                            <h5>3Какие средства защиты от солнца или дождя нужно привезти?</h5>
-                            Крем и зонт.
-                        </div>
-                        <div class="carousel-card card-yellow">
-                            <h5>3Какие средства защиты от солнца или дождя нужно привезти?!</h5>
-                            Крем и зонт.
-                        </div>
-                        <div class="carousel-card card-red">
-                            <h5>3Что нужно взять с собой?!</h5>
-                            3 комплекта одежды, еда, вода, аптечка, справки, документы и средства гигиены.
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-flip" data-flip="next"></div>
-            </div>
-            <div class="carousel-paging"></div>
-        </div>
-
-        <!-- MEDIA -->
-
-        <div class="component-tab-body" data-page-id="MEDIA">
-            <h4>В каком качестве вы хотите приехать?</h4>
-            <div class="who-link-wrapper">
-                <a href="form.html" class="who-link active">Участник</a>
-                <a href="#" class="who-link">Гость</a>
-            </div>
-            <p>Чтобы стать участником, необходимо пройти конкурсный отбор на одну из следующих профильных смен сообщества Сәләт: Тел, Осталар бистәсе, Болгар Туган тел, Изге Чишмә.</p>
-            <div class="portfolio-selet-link-wrapper">
-                <a href="https://portfolio-selet.ru/" class="portfolio-selet-link">portfolio-selet.ru</a>
-            </div>
-            <h2 class="animate-show">Часто задаваемые вопросы</h2>
-
-            <div class="carousel-wrapper animate-show" data-cout-foo="return fullWidth >= 1280 ? 6 : fullWidth >= 768 ? 4 : 1">
-                <div class="carousel-flip" data-flip="prev"></div>
-                <div class="carousel-viewport">
-                    <div class="hidden">
-                        <div class="carousel-card card-red">
-                            <h5>Что нужно взять с собой?</h5>
-                            3 комплекта одежды, еда, вода, аптечка, справки, документы и средства гигиены.
-                        </div>
-                        <div class="carousel-card card-aqua">
-                            <h5>Что должно быть в аптечке?</h5>
-                            Конкретного набора нет. На форуме будет дежурить отряд Медицины Катастроф, так что релакс.
-                        </div>
-                        <div class="carousel-card card-yellow">
-                            <h5>Какие средства защиты от солнца или дождя нужно привезти?</h5>
-                            Крем и зонт.
-                        </div>
-                        <div class="carousel-card card-yellow">
-                            <h5>Какие средства защиты от солнца или дождя нужно привезти?!</h5>
-                            Крем и зонт.
-                        </div>
-                        <div class="carousel-card card-red">
-                            <h5>Что нужно взять с собой?!</h5>
-                            3 комплекта одежды, еда, вода, аптечка, справки, документы и средства гигиены.
-                        </div>
-                        <div class="carousel-card card-aqua">
-                            <h5>Что должно быть в аптечке?!</h5>
-                            Конкретного набора нет. На форуме будет дежурить отряд Медицины Катастроф, так что релакс.
-                        </div>
-                        <div class="carousel-card card-red">
-                            <h5>2Что нужно взять с собой?</h5>
-                            3 комплекта одежды, еда, вода, аптечка, справки, документы и средства гигиены.
-                        </div>
-                        <div class="carousel-card card-aqua">
-                            <h5>2Что должно быть в аптечке?</h5>
-                            Конкретного набора нет. На форуме будет дежурить отряд Медицины Катастроф, так что релакс.
-                        </div>
-                        <div class="carousel-card card-yellow">
-                            <h5>2Какие средства защиты от солнца или дождя нужно привезти?</h5>
-                            Крем и зонт.
-                        </div>
-                        <div class="carousel-card card-yellow">
-                            <h5>2Какие средства защиты от солнца или дождя нужно привезти?!</h5>
-                            Крем и зонт.
-                        </div>
-                        <div class="carousel-card card-red">
-                            <h5>2Что нужно взять с собой?!</h5>
-                            3 комплекта одежды, еда, вода, аптечка, справки, документы и средства гигиены.
-                        </div>
-                        <div class="carousel-card card-aqua">
-                            <h5>2Что должно быть в аптечке?!</h5>
-                            Конкретного набора нет. На форуме будет дежурить отряд Медицины Катастроф, так что релакс.
-                        </div>
-                        <div class="carousel-card card-red">
-                            <h5>3Что нужно взять с собой?</h5>
-                            3 комплекта одежды, еда, вода, аптечка, справки, документы и средства гигиены.
-                        </div>
-                        <div class="carousel-card card-aqua">
-                            <h5>3Что должно быть в аптечке?</h5>
-                            Конкретного набора нет. На форуме будет дежурить отряд Медицины Катастроф, так что релакс.
-                        </div>
-                        <div class="carousel-card card-yellow">
-                            <h5>3Какие средства защиты от солнца или дождя нужно привезти?</h5>
-                            Крем и зонт.
-                        </div>
-                        <div class="carousel-card card-yellow">
-                            <h5>3Какие средства защиты от солнца или дождя нужно привезти?!</h5>
-                            Крем и зонт.
-                        </div>
-                        <div class="carousel-card card-red">
-                            <h5>3Что нужно взять с собой?!</h5>
-                            3 комплекта одежды, еда, вода, аптечка, справки, документы и средства гигиены.
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-flip" data-flip="next"></div>
-            </div>
-            <div class="carousel-paging"></div>
-        </div>
-
-    </div>
-
-</div>
-
-<!-- MAP -->
-
-<div id="map-block" class="black-block">
-    <div class="map-block-inner animate-show">
-        <h3>Карта форума</h3>
-        <img src="static/map.jpg">
-    </div>
-</div>
-
-<!-- ORG AND PARTNERS -->
-
-<div id="org-and-partners-block" class="white-block">
-    <h4>Организаторы</h4>
-    <div class="org-list animate-show">
-        <a href="#" class="org-item tat">
-            <img src="static/org/org-rt.png"/>
-            <br/>
-            <span>Правительство<br/>Республики<br/>Татарстан</span>
-        </a><a href="#" class="org-item selet">
-            <img src="static/org/org-salet.png"/>
-        </a>
-    </div>
-    <h4>Партнеры</h4>
-    <div class="partner-list animate-show">
-        <a href="#" class="partner-item yold"><img src="static/partner/partner-yold.png"
-        /></a><a href="#" class="partner-item school"><img src="static/partner/partner-school.png"
-        /></a><a href="#" class="partner-item imag"><img src="static/partner/partner-imag.png"
-        /></a><a href="#" class="partner-item sell"><img src="static/partner/partner-sell.png"
-        /></a><a href="#" class="partner-item hava"><img src="static/partner/partner-hava.png"
-        /></a><a href="#" class="partner-item ikea"><img src="static/partner/partner-ikea.png"
-        /></a><a href="#" class="partner-item mega"><img src="static/partner/partner-mega.png"
-        /></a><a href="#" class="partner-item radio"><img src="static/partner/partner-tat-radio.png"
-        /></a><a href="#" class="partner-item kamal"><img src="static/partner/partner-kamal.png"
-        /></a>
-    </div>
-</div>
-
-<!-- FOOTER -->
-
-<div id="footer-block" class="black-block">
-    <div class="footer-inner">
-        <div class="social-link-wrapper">
-            <a class="social-link selet" href="#"></a>
-            <a class="social-link inst" href="#"></a>
-            <a class="social-link vk" href="#"></a>
-            <a class="social-link yt" href="#"></a>
-            <a class="social-link fb" href="#"></a>
-        </div>
-
-        <div class="callback-text">
-            <span class="callback-text-qst">Остались вопросы?</span><br/>
-            Свяжитесь с нами, мы на них ответим.
-        </div>
-
-        <div class="contact-btn-wrapper">
-            <a href="#" class="contact-btn icon-phone numbers">
-                <span class="contact-btn-inner">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="228.357 9778.038 29.35 29.962">
-                      <defs>
-                      </defs>
-                      <g transform="translate(212 9757.203)">
-                        <g transform="translate(31.859 20.835)">
-                          <g transform="translate(0)">
-                            <path d="M61.968,35.036h-.041a1.4,1.4,0,0,1-1.362-1.441,9.7,9.7,0,0,0-9.1-9.957,1.4,1.4,0,1,1,.2-2.8,12.5,12.5,0,0,1,11.7,12.834A1.4,1.4,0,0,1,61.968,35.036Zm-4.983-.029A1.278,1.278,0,0,1,56.852,35a1.4,1.4,0,0,1-1.264-1.527,4.118,4.118,0,0,0-1.2-3.354,4.656,4.656,0,0,0-3.435-1.7h-.029a1.4,1.4,0,0,1-.028-2.8,7.389,7.389,0,0,1,5.557,2.608,6.919,6.919,0,0,1,1.923,5.514A1.4,1.4,0,0,1,56.985,35.006Z" transform="translate(-49.525 -20.835)"/>
-                          </g>
-                        </g>
-                        <g transform="translate(16.357 24.576)">
-                          <g>
-                            <path d="M36.352,55.059h0a2.488,2.488,0,0,1-.746-.109,30.223,30.223,0,0,1-11.718-7.422,30.243,30.243,0,0,1-7.424-11.722,3.283,3.283,0,0,1,.765-3.006l3.045-3.046a3.12,3.12,0,0,1,4.413-.005l2.426,2.426a3.122,3.122,0,0,1-.006,4.413L25.89,37.807a.317.317,0,0,0,0,.447l7.276,7.277a.3.3,0,0,0,.219.09.314.314,0,0,0,.227-.094l1.219-1.218a3.119,3.119,0,0,1,4.413,0l2.425,2.425a3.123,3.123,0,0,1,0,4.412l-3.044,3.044A3.4,3.4,0,0,1,36.352,55.059ZM19.161,35.034a27.423,27.423,0,0,0,6.71,10.511,27.4,27.4,0,0,0,10.509,6.709.89.89,0,0,0,.288-.084l3.01-3.01a.317.317,0,0,0,0-.447l-2.425-2.425a.3.3,0,0,0-.219-.09.321.321,0,0,0-.23.1L35.59,47.511a3.119,3.119,0,0,1-4.412,0L23.9,40.238a3.124,3.124,0,0,1,0-4.411l1.218-1.218a.319.319,0,0,0,.1-.228.3.3,0,0,0-.089-.219L22.7,31.735a.308.308,0,0,0-.221-.09.313.313,0,0,0-.226.094l-3.014,3.014A.881.881,0,0,0,19.161,35.034Z" transform="translate(-16.357 -28.839)"/>
-                          </g>
-                        </g>
-                      </g>
-                    </svg>
-                    (843) 567-45-78
-                </span>
-            </a>
-            <a href="#" class="contact-btn" onclick="showModal('msg-create')">Оставить сообщение</a>
-            <a href="#" class="contact-btn">selet.biz</a>
-        </div>
-
-        <div class="copyright">© Selet, Официальный сайт Форума 2018</div>
-        <div class="master">Сделано в <a href="http://teorius.ru/">Теории</a></div>
-    </div>
-</div>
-
-
-<!-- MODAL: msg-create -->
-
-<div id="msg-create" class="modal">
-    <form class="msg-create-body">
-        <div class="close-icon close-action"></div>
-        <div class="msg">Сообщение</div>
-
-        <div class="input-block">
-            <label for="fio">Фамилия, имя, отчество</label>
-            <input type="text" id="fio" name="fio">
-        </div>
-
-        <div class="input-block">
-            <label for="phone">Мобильный телефон</label>
-            <input type="text" id="phone" name="phone">
-        </div>
-
-        <div class="input-block">
-            <label for="msg">Сообщение</label>
-            <textarea id="msg" name="msg"></textarea>
-        </div>
-
-        <div class="input-block">
-            <label for="capcha">Введите числа</label>
-            <input type="text" id="capcha" name="capcha">
-        </div>
-
-        <p class="contract">
-            Обработка личных данных.Настоящим в соответствии с Федеральным законом №152-ФЗ «О персональных данных» от 27.07.2006 Вы подтверждаете, что, действуя свободно, своей волей и в своем интересе, а также являясь законным представителем несовершеннолетнего ребенка, и в его интересах, даете согласие на обработку (сбор, систематизацию, накопление, хранение, уточнение (обновление, изменение), использование, блокирование, обезличивание, уничтожение) Ваших персональных данных и персональных данных ребенка. Мы, ТРМОФ «Сэлэт» и аффилированные к нему лица, гарантируем конфиденциальность получаемой нами информации. Обработка персональных данных осуществляется в целях эффективной организации летнего отдыха, эффективной организации работы с одаренными детьми) и пр. Срок действия Вашего согласия является неограниченным».
-        </p>
-
-        <div class="accept">
-            <label for="accept"><input type="checkbox" id="accept" name="accept"><span class="checkbox"></span>Да, я согласен на обработку личных данных.</label>
-        </div>
-
-        <div class="submit-msg-wrapper">
-            <button class="submit-msg" type="button">Отправить</button>
-        </div>
-
-    </form>
-</div>
-
-<!-- MODAL: msg-registred -->
-
-<div id="msg-registred" class="modal">
-    <div class="msg-registred-body">
-        <div class="close-icon close-action"></div>
-        <div class="msg">Сообщение</div>
-        <h2>Спасибо!</h2>
-        <div class="desc">Ваше сообщение отправлено.</div>
-        <div class="back close-action">На главную</div>
-    </div>
-</div>
-
-<script src="static/vendors/jquery-3.3.1.min.js"></script>
-<script src="static/vendors/lightgallery.js-1.0.2/js/lightgallery.min.js"></script>
-<script src="sources/app.js"></script>
 
 </body>
+
 </html>
